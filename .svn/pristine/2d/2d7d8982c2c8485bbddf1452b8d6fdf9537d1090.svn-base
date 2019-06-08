@@ -1,0 +1,72 @@
+
+[Y] Concertar carregamento do jquery qye não está pegando as vezes!!!
+
+- organizar models de arquivos (jogar para core)
+
+[X] refactorar o dispatcher
+
+
+Formulários:
+
+- helper val_errors
+- helpers de input select checkbox radio e textarea
+
+- terminar de implementar a classe model
+  - implementar uma solução para a inserção automática do ID!!
+
+- aplicar validação automática por javascript
+- aplicar validação automática por php
+
+- tirar a porra do "file_" da classe de upload
+
+
+CSS:
+
+- javascript para barras de rolagem
+- colocar temas e plugins do uniform na engine (forms.less)
+- fazer coisas terem um posicionamento padrão independente de rows/cols
+
+
+Debug:
+
+- mostrar local de chamada de vars dumpadas
+- escrita de arquivos e envio de email para production level.
+- macete para exibir terminal oculto.
+
+
+Outros:
+
+- transformar funções de escrever código em funções de compilador (smarty) 
+  (form, input, js e css autoload)
+
+[X] fazer herança de templates também por controller
+
+- para dar suporte a transitions:
+  adidionar classe e propriedades ao elemento que foi transitionada usando o htc 
+  e fazer a transição pelo jquery!! (estudar ainda)
+
+
+X portar tudo do initializr para minha engine
+X colocar touch icons no head do html
+X zebra database
+
+
+estruturar os modelos como objetos
+criar classe de view para mapear o post para objetos
+puxar conceitos do dataAcess
+[X] renomear arquivos de controller para ficar igual ao nome da classe
+usar a palavra DAO para referenciar o DataAcess
+
+-----------------------
+
+mods feitas na engine pelo interpoili antes de 18/09:
+
+- estilos padrão > variables e foms
+- helper "a"
+- default controller: index =>static
+- site.tpl -> container2 (para usar na adm sem problemas)
+- view.class -> coment p/ ide referenciar o controller
+
+->novo estilo de modelo e DAO
+->passar variables.less para o escopo "web"
+->baixar novo bootstrap!! (pegar as mods que eu fiz no variables.less)

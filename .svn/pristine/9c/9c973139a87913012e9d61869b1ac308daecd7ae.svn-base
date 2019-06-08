@@ -1,0 +1,18 @@
+<?php
+/*
+ * Smarty plugin
+ * *feito pelo Werneck
+ * -------------------------------------------------------------
+ * File:     function.input.php
+ * Type:     function
+ * Name:     input
+ * Purpose:  input helper
+ * -------------------------------------------------------------
+ */
+function smarty_function_val_error($params, &$view)
+{
+	//TODO fazer ele imprimir os erros que estão no array do model do formulário equivalente
+	return null;
+}
+
+?>

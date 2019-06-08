@@ -1,0 +1,44 @@
+﻿{extends file="site.tpl"}
+
+{block "style"}{style_autoload default="adm"}{/block}
+{block "script"}{script_autoload default="adm"}{/block}
+
+{block "content"}
+
+    <div id="admSidebar" class="span_3">
+        <ul class="nav nav-list">
+            {*<li class="nav-header">
+                Painel Aministrativo
+            </li>*}
+            <li class="{getLinkState a='home' c='adm'}">
+                {a c="adm" a="home"}Home da adm &nbsp;<i class="icon-home icon-white pull-right"></i>{/a}
+            </li>
+            <li class="{getLinkState c="usuarios" a="listar"}">
+                {a c="usuarios" a="listar"}Administrar Usuários &nbsp;<i class="icon-user icon-blue pull-right"></i>{/a}
+            </li>
+            <li class="{getLinkState c="destinos"}">
+                {a c="destinos"}Administrar Destinos &nbsp;<i class="icon-road icon-blue pull-right"></i>{/a}
+            </li>
+            <li class="{getLinkState c="bolsas"}">
+                {a c="bolsas"}Administrar Bolsas &nbsp;<i class="icon-lock icon-blue pull-right"></i>{/a}
+            </li>
+            <li class="{getLinkState c="equivalencias"}">
+                {a c="equivalencias"}Administrar Equivalências &nbsp;<i class="icon-check icon-blue pull-right"></i>{/a}
+            </li>
+            <li class="{getLinkState c="programas"}">
+                {a c="programas"}Administrar Programas &nbsp;<i class="icon-book icon-blue pull-right"></i>{/a}
+            </li>
+            <li class="{getLinkState c="relatorios"}">
+                {a c="relatorios"}Relatórios &nbsp;<i class="icon-signal icon-blue pull-right"></i>{/a}
+            </li>
+        </ul>
+    </div>
+
+    <div id="admSidebarPush" class="span_3"></div>
+
+    <div id="admContentContainer" class="span_3">
+        {block "content2"}
+        {/block}
+    </div> <!-- /admContentContainet -->
+
+{/block}

@@ -1,0 +1,40 @@
+model -> transformar em dataAcess
+
+terminar classe de comunicação entre view e controller
+(DataStream)
+
+Pegar o array fields e setar as variáveis "parameters" das prepared querys de acordo com as configurações passadas.
+Com o mesmo array setar as configurações de validação php e javascript.
+pegar as mesmas informações para definir o tipo de impout na classe view que depois será puxado pelo helpper de view.
+
+model>autoMail() = envia emails já utilizando as informações de configuração automaticamente
+
+terminar de fazer o debugger pegar o tema!!
+
+[Y] fazer todos os paths padronizados
+
+converter log de erros para xml 
+e fazer um xsls para ver como html 
+
+terminal:
+- posição absoluta com max height e overflow:scroll
+- colocar div logo acima como "push"
+	(expessura dele fechado)
+- background-color dos "p"s de acordo com a classe do erro
+- margem: 0 e paddin:3 nos "p"
+
+-------
+
+[X] herança de templates por controller
+	- pensar em fazer automático por nome
+
+[X] pegar dispatcher do pedro para usar (refactorei sozinho)
+
+
+[X] ceoncertar jquery (aparentemente tudo ok)
+
+[X] adicionar estrutura de view (template)
+	defaults, pages, system (, hellpers) > templates, styles, scripts
+	- alterar vars de view e constantes 'paths'
+
+[x] colocar de volta autoloads!!

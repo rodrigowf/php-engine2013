@@ -1,0 +1,18 @@
+<?php
+/**
+ * Aqui vão as funções referentes à cada elemento.
+ * Inserir-se, atualizar-se, excluir-se.
+ * validar-se.
+ *
+ * Aqui vão todos os dados referentes à essa entidade
+ *
+ * Essa classe é um singleton, e ela vai ser instanciada indiretamente através das classes modelos.
+ */
+class DataObject
+{
+
+	public __construct()
+	{
+
+	}
+}

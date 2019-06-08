@@ -1,0 +1,38 @@
+<?php
+/**
+ * Aqui vão as funções referentes à cada tipo de elemento (tabela).
+ * Inserir-se, atualizar-se, excluir-se.
+ * validar-se.
+ *
+ * Aqui vai um array com
+ *
+ * Essa classe é um singleton, e ela vai ser instanciada indiretamente através das classes modelos.
+ */
+class DataAcessObject
+{
+
+
+	public function loadDOFromArray($dataArr)
+	{
+		$singleModel = true;
+
+		foreach ( $dataArr as $index => $value )
+		{
+			if ( is_numeric($index) )
+			{
+				$className = ucfirst($this->name);
+				$this->data[] = new $className($value);
+			}
+			else
+			{
+				$singleModel = true;
+			}
+		}
+
+		if ( $singleModel )
+		{
+			$className = ucfirst($this->name);
+			$this->data[] = new $className($dataArr);
+		}
+	}
+}

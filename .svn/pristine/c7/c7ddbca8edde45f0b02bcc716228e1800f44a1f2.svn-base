@@ -1,0 +1,62 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_conferencia;
+#layoutUp .barraMenu .menu ul li.conferencia
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+#layoutUp .barraMenu .menu ul li ul li.speakers
+{ a { color: #aaaaaa !important; } &:hover, a:hover { border: none !important; } }
+
+.icone1{
+   .icon(url('../images/speakers_icon.png'), 50px);
+}
+
+.speaker{
+    padding: 10px;
+    margin-bottom:200px;
+}
+.speaker h4{
+    float:left;
+    margin-left:30px;
+    width:300px;
+}
+.icone2{
+   .icon(url('../images/the_city_seta.png'), 30px);
+}
+.empurra1{
+    //width:500px!important;
+    .cols(16);
+    margin-right:500px;
+    margin-top:80px !important;
+    margin-bottom:40px !important;
+    //height:40px;
+    
+}
+.empurra{
+    width:100%;
+    height:-15px;
+}
+.border{
+    border:1px solid gray;
+}
+.speaker p{
+   display: block;
+   width: 80%;
+   float:left;
+   margin-left:30px;
+}
+.pic{
+    margin-top:5px;
+    float:left;
+    width: 152px;
+    height: 215px;
+}
+
+#gouveia{
+    height: 295px;
+}
+
+#neuen{
+    width: 152px !important;
+    height: 240px !important;
+}

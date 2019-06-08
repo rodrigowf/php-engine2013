@@ -1,0 +1,79 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_noticias;
+#layoutUp .barraMenu .menu ul li.noticias 
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+
+h1.icone {
+  .icon(url('../images/blog_icon_balao.png'), 55px, 0, 3px);
+}
+
+#newsBox{
+    border-right: 1px solid #bfbebe;
+    .cols(19);
+}
+
+.newsBody{
+    border-bottom: 1px solid #ebebeb;
+    .cols(18);
+    word-wrap: break-word
+}
+
+.postDate{
+    font-family: GauntletThin;
+    color: #bababa;
+    position: relative;
+    left: 27px;
+    bottom: 13px;
+}
+
+.pageHeader{
+   .icon(url("../images/blog_icon_balao.png"), 50px,-3px);
+}
+
+.title{
+    .icon(url("../images/blog_seta.png"), 17px, -3px);
+}
+
+.newsTitle{
+    text-decoration: none;
+    position: relative;
+    left: 5px;
+}
+
+.redesSociais2{
+    .cols(3);
+    float:right !important;
+    padding-right: 20px;
+    .row(3);
+        h4 {
+          .cols(3);
+          margin-top: 17px;
+          margin-left:24px
+        }
+}
+
+
+.socialTitle{
+    float: left;
+}
+
+.facebook2 {
+      .cols(1);
+      margin-left: 20px;
+      left: 5px;
+      height: 28px;
+      background-image: url('../images/facebook.png');
+    }
+
+.twitter2 {
+    .cols(1);
+     left: 5px;
+     height: 28px;
+     background-image: url('../images/twitter.png');
+}
+
+a span {
+      font-size: 0px;
+}

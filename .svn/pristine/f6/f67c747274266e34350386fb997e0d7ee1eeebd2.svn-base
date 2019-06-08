@@ -1,0 +1,58 @@
+﻿{extends file="adm.tpl"}
+    
+{block "content2"}
+
+    <h1>Usuários</h1>
+
+    {form}
+
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            {input name='nome' label='Nome'}
+            {input name='curso' label='Curso'}
+            {input name='dre' label='DRE'}
+            {input name='ingresso' label='Ano/Semestre de entrada'}
+            {input name='facebook' label='Facebook'}
+            {input name='email_poli' label='Email Poli'}
+            {input name='email_pessoal' label='E-mail Pessoal'}
+            {input name='telefone_br' label='Telefone'}
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados De intercâmbio</legend>
+
+            {input name='telefone_ext' label='Telefone do aluno no exterior'}
+            {input name='contato_br' label='Nome do contato no Brasil'}
+            {input name='tel_contato_br' label='Telefone do contato no Brasil'} {*TODO adicionar esse campo no banco!!*}
+            {input name='partida' label='Semestre de partida'}
+            {input name='retorno' label='Semestre de partida'}
+
+            {input name='modalidade' label='Modalidade de Intercâmbio'}
+            {input model='programas' name='nome' label='Programa'}
+            {input model='bolsas' name='nome' label='Bolsa'}
+
+            <fieldset>
+                <legend>Instituição de destino</legend>
+
+                {input model='destino' name='universidade' label='Universidade'}
+                {input model='destino' name='pais' label='País'}
+                {input model='destino' name='cidade' label='Cidade'}
+                {input name='destino_escola' label='Escola'}
+            </fieldset>
+
+            <fieldset>
+                <legend>Módulo Acadêmido</legend>
+
+                {input name='facebook' label='Disciplinas cursadas'}
+                {input name='facebook' label='Equivalências solicitadas'}
+                {input name='facebook' label='Estágio feito no exterior'}
+            </fieldset>
+
+            {input type='file' name='facebook' label='Relatório de intercâmbio'}
+            {input type='file' name='facebook' label='Relatório de estágio'}
+
+        </fieldset>
+
+    {/form}
+{/block}

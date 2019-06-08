@@ -1,0 +1,246 @@
+/* Arquivo que faz o carregamento de fontes */
+
+@import './fonts.less';
+
+// VARIAVEIS:
+
+@fontesTitulos: Cafeta, CafetaIe, LeagueGothic, LeagueGothicIe,  sans-serif;
+
+
+//FUNDO E HTML ====================================================
+
+body {
+  /*  
+    background-image: url('./images/fundo.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100% 100%;  
+  */
+  
+  width:auto;
+
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  
+  div.svgBackground {
+    float:left;
+    position:fixed;
+    z-index:-999;
+    height: 100%;
+    width: 100%;
+    left:0px;
+    top:0px;
+   // background-color:red !important;
+ 
+    .svgBackground {
+      left:0px;
+      top:0px;
+      float:left;
+    }
+  }
+}
+
+.container {
+  .grid_container();
+  overflow-x: hidden;
+  width:985px;
+  padding-left:25px;
+   // background-color:blue !important;
+}
+
+// ESTILOS =============================================================
+
+//Cleanfix em todos os elementos para que eles interajam com os que estão no grid corretamente.
+.container div, img, br, 
+form, fieldset, legend, input, label, 
+h1,h2,h3,h4,h5,h6, p, a,
+input, button, select, textarea {
+  .clearfix();
+  .first();
+  float:none;
+}
+
+li {
+  float: none;
+}
+
+legend {
+  display:block;
+  float:left;
+  clear:left; //TODO isso
+}
+
+// TEXTOS ==============================================================
+
+//Cores ====================================
+
+* { color: #2e2d2c; }
+p, span, li, td { color: #787877; }
+a { color: #a8a8a7 - #333; }
+
+//Fontes ===================================
+
+h1,h2,h3,h4,h5,h6,
+button, a.button, *[type="button"], input[type="submit"],
+legend {
+  font-family: @fontesTitulos;
+  text-transform: uppercase;
+}
+
+p, span, a, label {
+  font-family: arial;
+  
+  &.thin {
+    font-family: arial;
+  }
+}
+
+a {
+  font-style:underline;
+}
+
+//TAMANHOS =================================
+
+h1 { 
+  font-size: 60px;
+  line-height: 60px;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  
+  &.atention { font-size: 68px; }
+}
+h2 { 
+  font-size: 38px;
+  line-height: 38px;
+  margin-bottom: 20px;
+}
+h3, 
+legend {
+  margin-top: 28px;
+  margin-bottom: 28px;
+  font-size: 28px; 
+  line-height: 28px; 
+}
+h4 { 
+  font-size: 18px; 
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 20px;
+  
+  &.big {
+    font-size: 21px;
+    line-height: 28px;
+  }
+}
+
+li {
+  margin-left: 20px;
+}
+
+label {
+  font-size: 15px;
+  line-height: 18px;
+  vertical-align: center;
+}
+
+//botoes ===============================
+
+button, a.button, *[type="button"], *[type="submit"] {
+  
+  background: #a8a7a7;
+  border-radius: 0px;
+  border: 0px solid #a8a7a7;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.5),inset 0px 0px 2px rgba(0,0,0,0.3);
+  text-shadow: 0px -1px 0px rgba(000,000,000,0.1),0px 1px 0px rgba(255,255,255,0.2);
+  
+  .clearfix();
+  width:auto;
+  margin-top:20px;
+  margin-bottom:0;
+  padding: 0 20px 0 20px;
+  
+  color: #ffffff;
+  font-size: 23px;
+  line-height: 32px;
+  text-decoration: none; 
+  text-align: center;
+  
+  &.small {
+    font-size: 16px;
+    line-height: 16px;
+    padding: 5px 10px 5px 10px;
+  }  
+}
+
+//Forms ============================================================
+
+//tamanho de cada linha do formulário
+@form_label_cols: 5;
+@form_cols: 17;
+@form_row_height: 36px;
+@form_line_margins: 3px;
+@form_label_fontSize: 15px;
+
+form {
+  margin-top:20px;
+  margin-bottom:100px;
+
+  fieldset{
+    margin-bottom: 40px;
+  }
+  
+  label {
+    margin-top: @form_line_margins !important;
+    margin-bottom: @form_line_margins !important;
+    height: @form_row_height - (@form_row_height - @form_label_fontSize)/2px;
+    padding-top:(@form_row_height - @form_label_fontSize)/2px;
+    .cols(@form_label_cols);
+    .first();
+   // vertical-align:middle;
+    //height: @form_lineH - 10;
+  }
+
+  div.row label{
+    .cols(@form_label_cols);
+  }
+  
+  input 
+  {
+    margin-top: @form_line_margins !important;
+    margin-bottom: @form_line_margins !important;
+    height: @form_row_height; 
+    padding: 0 5px;
+    
+    &[type="checkbox"],
+    &[type="radio"] {
+      .cols(1);
+      border: 1px solid #d6d6d6;
+    }
+    
+    &[type="text"],
+    &[type="password"] {
+      .b_cols(7, @form_cols - @form_label_cols);
+    }
+  }
+  
+  textarea{
+    .b_cols(4, @form_cols);
+    .first();
+    border: 1px solid #d6d6d6;
+    margin-top:10px;
+  }
+  
+  select {
+    .b_cols(1, @form_cols - @form_label_cols);
+    padding-left: 5px;
+    height: @form_row_height;
+    border: 1px solid #d6d6d6;
+  }
+  
+}

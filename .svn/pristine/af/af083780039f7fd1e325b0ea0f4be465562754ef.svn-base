@@ -1,0 +1,123 @@
+﻿{extends file="adm.tpl"}
+    
+{block "content2"}
+
+<div class="page-fixed-top">
+
+    <div class="page-header">
+        <h1>Usuários</h1>
+        <p class="subtitle"> - {$numCadastrados} cadastrados atualmente</p>
+    </div>
+
+    <div class="btn-toolbar row">
+        <div class="btn-group span_5">
+            <button class="btn success"><i class="icon-plus icon-white"></i> Novo usuário</button>
+            <button class="btn danger"><i class="icon-minus icon-white"></i>Excluir Usuários</button>
+        </div>
+
+        <form class="filtro search pull-right">
+            <input type="text" class="medium search-query" placeholder="Filtrar lista">
+            <button type="submit" class="btn hidden">Filtrar lista</button>
+        </form>
+    </div>
+
+</div>
+
+
+<table class="table tableStriped admList">
+    <thead>
+    <tr>
+        <th></th>
+            <th>DRE</th>
+            <th>Nome</th>
+            <th>Curso</th>
+            <th>Destino</th>
+        </tr>
+    </thead>
+    <tbody>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>fundão</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Franco</td>
+            <td>Ciência da Computação</td>
+            <td>fundão</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>outra faculdade</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>outra faculdade</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>outra faculdade</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>outra faculdade</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>outra faculdade</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>outra faculdade</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>outra faculdade</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>123456789</td>
+            <td>Rodrigo Werneck Franco</td>
+            <td>Ciência da Computação</td>
+            <td>outra faculdade</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="pagination pagination-centered">
+    <ul>
+        <li class="disabled"><a href="#">«</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">»</a></li>
+    </ul>
+</div>
+
+{/block}

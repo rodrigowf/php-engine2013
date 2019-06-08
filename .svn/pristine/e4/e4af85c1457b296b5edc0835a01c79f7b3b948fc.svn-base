@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- saved from url=(0226)https://www.facebook.com/plugins/like.php?locale=en_US&href=http%3A%2F%2Fstefangabos.ro%2Fphp-libraries%2Fzebra-database%2F&layout=button_count&show_faces=false&width=150&action=recommend&font=arial&colorscheme=light&height=20 -->
+<html lang="pt" id="facebook" class="no_js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="robots" content="noodp, noydir"><meta name="referrer" content="default" id="meta_referrer"><meta name="description" content=" O Facebook é uma rede social que reúne pessoas a seus amigos e àqueles com quem trabalham, estudam e convivem. As pessoas participam do Facebook para manter contato com seus amigos, carregar um número ilimitado de fotos, compartilhar links e vídeos e aprender mais sobre as pessoas que conhecem."><script></script><title>Facebook</title><style>body.plugin{background:transparent;overflow:hidden}
+body{background:#fff;font-size:11px;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;color:#333;line-height:1.28;margin:0;padding:0;text-align:left;direction:ltr;unicode-bidi:embed}
+h1, h2, h3, h4, h5, h6{font-size:13px;color:#333;margin:0;padding:0}
+h1{font-size:14px}
+h4, h5{font-size:11px}
+p{margin:1em 0}
+a{cursor:pointer;color:#3b5998;text-decoration:none}
+a:hover{text-decoration:underline}
+img{border:0}
+td, td.label{font-size:11px;text-align:left}
+dd{color:#000}
+dt{color:#777}
+ul{list-style-type:none;margin:0;padding:0}
+abbr{border-bottom:none}
+hr{background:#d9d9d9;border-width:0;color:#d9d9d9;height:1px}
+.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
+.clearfix{zoom:1}
+.datawrap{word-wrap:break-word}
+.word_break{display:inline-block}
+wbr:after{content:"\00200B"}
+.ellipsis{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.img_loading{position:absolute;top:-9999999px}
+.aero{opacity:.5}
+.column{float:left}
+.center{margin-left:auto;margin-right:auto}
+#facebook .hidden_elem{display:none !important}
+#facebook .invisible_elem{visibility:hidden}
+#facebook .accessible_elem{left:-9999px;position:fixed}
+.direction_ltr{direction:ltr}
+.direction_rtl{direction:rtl}
+.text_align_ltr{text-align:left}
+.text_align_rtl{text-align:right}
+.pluginFontArial{font-family:"arial", sans-serif}
+.pluginFontLucida{font-family:"lucida grande", sans-serif}
+.pluginFontSegoe{font-family:"segoe ui", sans-serif}
+.pluginFontTahoma{font-family:"tahoma", sans-serif}
+.pluginFontTrebuchet{font-family:"trebuchet ms", sans-serif}
+.pluginFontVerdana{font-family:"verdana", sans-serif}
+.uiGrid{border:0;border-collapse:collapse;border-spacing:0}
+.uiGridFixed{table-layout:fixed;width:100%}
+.uiGrid .vTop{vertical-align:top}
+.uiGrid .vMid{vertical-align:middle}
+.uiGrid .vBot{vertical-align:bottom}
+.uiGrid .hLeft{text-align:left}
+.uiGrid .hCent{text-align:center}
+.uiGrid .hRght{text-align:right}
+.pluginErrorLink{color:#f03d25}
+.fss{font-size:9px}
+.fsm{font-size:11px}
+.fsl{font-size:13px}
+.fsxl{font-size:16px}
+.fsxxl{font-size:18px}
+.fwn{font-weight:normal}
+.fwb{font-weight:bold}
+.fcb{color:#333}
+.fcg{color:gray}
+form{margin:0;padding:0}
+label{cursor:pointer;color:#666;font-weight:bold;vertical-align:middle}
+label input{font-weight:normal}
+textarea, .inputtext, .inputpassword{border:1px solid #bdc7d8;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:11px;margin:0;padding:3px;-webkit-appearance:none;-webkit-border-radius:0}
+textarea{max-width:100%}
+select{border:1px solid #bdc7d8;font-family:'lucida grande',tahoma,verdana,arial,sans-serif;font-size:11px;padding:2px}
+.inputtext, .inputpassword{padding-bottom:4px}
+.inputradio{padding:0;margin:0 5px 0 0;vertical-align:middle}
+.inputcheckbox{border:0;vertical-align:middle}
+.inputbutton, .inputsubmit{border-style:solid;border-width:1px;border-color:#d9dfea #0e1f5b #0e1f5b #d9dfea;background-color:#3b5998;color:#fff;padding:2px 15px 3px 15px;text-align:center}
+.inputsubmit_disabled{background-color:#999;border-bottom:1px solid #000;border-right:1px solid #666;color:#fff}
+.inputaux{background:#f0f0f0;border-color:#e7e7e7 #666 #666 #e7e7e7;color:#000}
+.inputaux_disabled{color:#999}
+.inputsearch{background:#fff url(https://s-static.ak.fbcdn.net/rsrc.php/v2/y7/x/IJYgcESal33.png) no-repeat left 4px;padding-left:17px}
+.pluginButton{background:#eceef5;-webkit-border-radius:3px;border:1px solid #cad4e7;cursor:pointer;padding:2px 6px 4px;white-space:nowrap;color:#3b5998}
+.pluginButtonInline{display:inline-block}
+.pluginButtonX{cursor:default}
+.pluginButton button{background:transparent;border:0;margin:-1px;padding:0;font:inherit;color:inherit;cursor:pointer}
+.pluginButtonIcon{position:relative;top:3px;margin-right:3px}
+.pluginButtonSmall{padding:0 5px 2px 5px}
+.pluginButtonSmall .pluginButtonIcon{margin-right:2px}
+.pluginButton:hover{border-color:#9dacce}
+.pluginButtonPressed, .pluginButtonPressed:hover{background-color:#eee;border-color:#ddd;color:#aaa}
+.pluginSkinDark .pluginButton{background-color:#c7c7c7;border-color:#999;color:#333}
+.pluginSkinDark .pluginButton:hover{background-color:#d9d9d9;border-color:#ddd}
+.pluginSkinDark .pluginButtonPressed, .pluginSkinDark .pluginButtonPressed:hover{background-color:#444;border-color:#555;color:#666}
+.pluginButtonErrorLink{color:#a00;font-weight:bold}
+.pluginButtonX .pluginButtonXOff, .pluginButtonX button:hover .pluginButtonXOn{display:inline-block}
+.pluginButtonX .pluginButtonXOn, .pluginButtonX button:hover .pluginButtonXOff{display:none}
+.pluginButton .pluginButtonThrobber, form.async_saving .pluginButtonIconWithThrobber{display:none}
+form.async_saving .pluginButtonThrobber{display:inline-block;margin-top:2px;margin-bottom:1px;max-width:14px}
+.sp_like{background-image:url(https://s-static.ak.fbcdn.net/rsrc.php/v2/yI/x/1dQf_ATK831.png);background-repeat:no-repeat;display:inline-block;height:14px;width:14px}
+.sx_like_fav{background-position:-0px -0px}
+.sx_like_ch{background-position:-0px -15px}
+.sx_like_x{background-position:-0px -30px}
+.sx_like_thumb{background-position:-0px -45px}
+i.img u{position:absolute;top:-9999999px}
+.pluginCountButton{background:#fff;border:1px solid #c1c1c1;display:inline-block;height:14px;line-height:14px;margin-left:6px;min-width:15px;padding:1px 2px;text-align:center;white-space:nowrap}
+.pluginCountButtonNub{height:0;left:2px;position:relative;top:-14px;width:5px;z-index:2}
+.pluginCountButtonNub s, .pluginCountButtonNub i{border-color:transparent #D7D7D7 transparent;border-style:solid;border-width:4px 5px 4px 0;display:block;position:relative;top:1px}
+.pluginCountButtonNub i{border-right-color:#fff;left:2px;top:-7px}
+.pluginCountButtonDark{background:#d7d7d7;border-color:#d7d7d7;color:#333}
+.pluginCountButtonDarkNub i{display:none}
+.pluginCountTextConnected,
+.pluginCountConnected .pluginCountTextDisconnected{display:none}
+.pluginCountConnected .pluginCountTextConnected{display:inline}
+</style><script>var ServerJSQueue=(function(){var a=[];return {add:function(b){a.push(b);},run:function(){if(!window.require)return;var b=new (window.require('ServerJS'))();for(var c=0;c<a.length;c++)b.handle(a[c]);}};}());
+document.write=function(){};var onloadRegister_DEPRECATED=function(){},onafterloadRegister_DEPRECATED=function(){},AsyncLoaderLazy=(function(){var a=false,b=false,c={loaded:1,complete:1},d=function(){},e=document;function f(){if(e.readyState in c){e.detachEvent('onreadystatechange',f);d('t_domcontent');}}function g(i){if(i)b=true;if(window._cavalry&&a&&b){d('t_layout');d('t_onload');d('t_paint');_cavalry.send();}}function h(i){var j;if(typeof XDomainRequest!=='undefined'){j=new XDomainRequest();j.onload=function(){g(true);};}else if(typeof XMLHttpRequest!=='undefined'){j=new XMLHttpRequest();if(!("withCredentials" in j))return;j.onreadystatechange=function(){if(j.readyState===4)g(true);};}else return;j.open("GET",i,true);j.send(null);return true;}if(window._cavalry)d=function(i){_cavalry.log(i);};window.onload=function(){a=true;g();};if(window.addEventListener){window.addEventListener('DOMContentLoaded',function(){d('t_domcontent');},false);}else if(e.attachEvent)e.attachEvent('onreadystatechange',f);return {load:function(i){this.file=i;if(!h(i)){window.onload=function(){AsyncLoaderLazy.execute();a=true;g();};return;}e.onkeydown=e.onmouseover=e.onclick=onfocus=function(){AsyncLoaderLazy.execute();};},execute:function(i){e.onkeydown=e.onmouseover=e.onclick=onfocus=null;var j=function(){ServerJSQueue.run();i&&i();},k=e.createElement('script');k.src=AsyncLoaderLazy.file;k.async=true;if(k.addEventListener){k.addEventListener('load',j,false);}else k.onreadystatechange=function(l){return function(){if(l.readyState in c){l.onreadystatechange=null;j();}};}(k);e.getElementsByTagName('head')[0].appendChild(k);},wakeUp:function(i,j,k){this.execute(function(){window.require("Arbiter").inform(i,j,k);});}};})();
+AsyncLoaderLazy.load("https:\/\/s-static.ak.fbcdn.net\/rsrc.php\/v2\/yg\/r\/BYITDbuU_tw.js");</script><script>ServerJSQueue.add({"require":[["lowerDomain"],["Primer"]]});</script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/menu_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/change_sink.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="number_injection_builder.js"><meta name="menu_injection_builder.js"><meta name="string_finder.js"><meta name="change_sink.js"></head><body class="plugin webkit win Locale_en_US"><div id="FB_HiddenContainer" style="position:absolute; top:-10000px; width:0px; height:0px;"></div><div class="pluginSkinLight pluginFontArial"><table class="uiGrid" cellspacing="0" cellpadding="0"><tbody><tr><td class="hCent"><div><form rel="async" ajaxify="/plugins/like/connect" method="post" action="https://www.facebook.com/plugins/like/connect" onsubmit="return window.Event &amp;&amp; Event.__inlineSubmit &amp;&amp; Event.__inlineSubmit(this,event)" id="u28off_1"><input type="hidden" name="fb_dtsg" value="AQBc-HHz" autocomplete="off"><input type="hidden" autocomplete="off" name="href" value="http://stefangabos.ro/php-libraries/zebra-database/"><input type="hidden" autocomplete="off" name="action" value="recommend"><input type="hidden" autocomplete="off" name="nobootload"><input type="hidden" autocomplete="off" name="iframe_referer" value="http://stefangabos.ro/php-libraries/zebra-database/"><input type="hidden" autocomplete="off" name="ref"><div class="pluginConnectButton"><div class="pluginButton pluginButtonSmall pluginConnectButtonDisconnected" title=""><div><button type="submit"><i class="pluginButtonIcon img sp_like sx_like_fav"></i>Recommend</button></div></div><div class="pluginButton pluginButtonSmall pluginButtonPressed pluginButtonX pluginConnectButtonConnected hidden_elem" title=""><div><button type="submit"><i class="pluginButtonIcon pluginButtonXOff img sp_like sx_like_ch"></i><i class="pluginButtonIcon pluginButtonXOn img sp_like sx_like_x" title=""></i></button>Recommend</div></div></div></form></div></td><td><div id="u28off_2"><div class="pluginCountButton pluginCountNum"><span><span class="pluginCountTextConnected">7</span><span class="pluginCountTextDisconnected">6</span></span></div><div class="pluginCountButtonNub"><s></s><i></i></div></div></td></tr></tbody></table></div><script>function envFlush(a){function b(c){for(var d in a)c[d]=a[d];}if(window.requireLazy){requireLazy(['Env'],b);}else{Env=window.Env||{};b(Env);}}
+envFlush({"fb_dtsg":"AQBc-HHz","ajaxpipe_token":"AXhX35umc6Y7tdxE","lhsh":"JAQE0Okxx","user":"100000773556549"});</script><script>
+
+
+ServerJSQueue.add({"instances":[["m363895_2",["PluginConnectButton","m363895_1"],[{"plugin":"like","identifier":"http:\/\/stefangabos.ro\/php-libraries\/zebra-database\/","connected":false,"canpersonalize":true,"autosubmit":false,"form":{"__m":"m363895_1"}}],1]],"elements":[["m363895_1","u28off_1",2],["m363895_4","u28off_2",2],["m363895_3","u28off_1",2]],"require":[["m363895_2"],["PluginConnection","init",["m363895_4"],[[["http:\/\/stefangabos.ro\/php-libraries\/zebra-database\/",{"__m":"m363895_4"},"pluginCountConnected"]]]]]});
+
+</script><div class="ugdv_contextMenu" id="ugdv_myMenu" style="display: none; "><ul id="ugdv_contextMenu"><li id="ugdv_menuItem_google_docs">Open in Google Docs Viewer</li><li id="ugdv_menuItem_new_tab">Open link in new tab</li><li id="ugdv_menuItem_new_window">Open link in new window</li><li id="ugdv_menuItem_new_incognito">Open link in new incognito window</li><li class="ugdv_seperator"></li><li id="ugdv_menuItem_download_file">Download file</li><li id="ugdv_menuItem_copy">Copy link address</li><li id="ugdv_menuItem_editpdf">Edit PDF File on PDFescape.com</li></ul></div><div style="display: none; " id="hiddenlpsubmitdiv"></div><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); form.lpsubmitorig2(); } } }}catch(e){}</script><div id="ugdv_jqContextMenu" style="display: none; position: absolute; z-index: 9999; "></div><div style="background-color: rgb(0, 0, 0); position: absolute; opacity: 0.2; z-index: 9998; display: none; "></div><script>try{if (typeof(lpcurruser) == 'undefined') lpcurruser = ''; if (document.getElementById('lpcurruserelt') && document.getElementById('lpcurruserelt').value != '') { lpcurruser = document.getElementById('lpcurruserelt').value; document.getElementById('lpcurruserelt').value = ''; } if (typeof(lpcurrpass) == 'undefined') lpcurrpass=''; if (document.getElementById('lpcurrpasselt') && document.getElementById('lpcurrpasselt').value != '') { lpcurrpass = document.getElementById('lpcurrpasselt').value; document.getElementById('lpcurrpasselt').value = ''; } var lploc=1;var lponlyfill=1;function lastpass_fixfacebook(){if(document.location.href.indexOf("/plugins")!=-1){return;}if(document.getElementById("email")){document.getElementById("email").focus();}if(document.getElementById("pass_placeholder")){var ph=document.getElementById("pass_placeholder");if(ph.style.visibility!="hidden" && ph.style.display!="none"){try{ph.focus();}catch(err){}}}}lastpass_fixfacebook();setTimeout("lastpass_fixfacebook();", 500);lpcurruser = ''; lpcurrpass = '';}catch(e){}</script><script>try{if (typeof(lpcurruser) == 'undefined') lpcurruser = ''; if (document.getElementById('lpcurruserelt') && document.getElementById('lpcurruserelt').value != '') { lpcurruser = document.getElementById('lpcurruserelt').value; document.getElementById('lpcurruserelt').value = ''; } if (typeof(lpcurrpass) == 'undefined') lpcurrpass=''; if (document.getElementById('lpcurrpasselt') && document.getElementById('lpcurrpasselt').value != '') { lpcurrpass = document.getElementById('lpcurrpasselt').value; document.getElementById('lpcurrpasselt').value = ''; } var lploc=2;var lponlyfill=1;function lastpass_fixfacebook(){if(document.location.href.indexOf("/plugins")!=-1){return;}if(document.getElementById("email")){document.getElementById("email").focus();}if(document.getElementById("pass_placeholder")){var ph=document.getElementById("pass_placeholder");if(ph.style.visibility!="hidden" && ph.style.display!="none"){try{ph.focus();}catch(err){}}}}lastpass_fixfacebook();setTimeout("lastpass_fixfacebook();", 500);lpcurruser = ''; lpcurrpass = '';}catch(e){}</script></body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1"></span><object id="skype_plugin_object" location.href="https://www.facebook.com/plugins/like.php?locale=en_US&amp;href=http%253A%252F%252Fstefangabos.ro%252Fphp-libraries%252Fzebra-database%252F&amp;layout=button_count&amp;show_faces=false&amp;width=150&amp;action=recommend&amp;font=arial&amp;colorscheme=light&amp;height=20" location.hostname="www.facebook.com" style="position: absolute; visibility: hidden; left: -100px; top: -100px; " width="0" height="0" type="application/x-vnd.skype.click2call.chrome.5.7.0"></object></html>

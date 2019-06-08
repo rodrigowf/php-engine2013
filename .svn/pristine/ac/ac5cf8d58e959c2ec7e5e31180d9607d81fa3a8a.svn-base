@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<locale lang="de"> 
+   <header> 
+      <project>Project Name</project> 
+      <create>2003-01-12 17:24-0500</create> 
+      <revise>2003-01-15 19:15-0500</revise> 
+      <trans>Your Name - Your Email</trans> 
+      <lang>Deutsch</lang> 
+   </header> 
+   <message> 
+      <id>[#TEXTO ORIGINAL NÃO TRADUZIDO#]</id> 
+      <string>[#TRANSLATED TEXT#]</string> 
+   </message> 
+</locale>

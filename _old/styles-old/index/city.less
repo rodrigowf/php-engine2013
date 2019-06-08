@@ -1,0 +1,39 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_conferencia;
+#layoutUp .barraMenu .menu ul li.conferencia 
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+#layoutUp .barraMenu .menu ul li ul li.city
+{ a { color: #aaaaaa !important; } &:hover, a:hover { border: none !important; } }
+
+#direita1{
+    width: 541px;
+    float: left;
+    margin-left:45px;
+}
+#gmaps{
+    float:left;
+}
+.icone1{
+   .icon(url('../images/the_city_icon.png'), 50px, 0, 3px);
+}
+.icone2{
+   .icon(url('../images/the_city_seta.png'), 30px);
+}
+ul li { display: inline; }
+
+.border img{
+    border:1px solid black;
+}
+#city_mapa{
+  margin-top:75px;
+  margin-left: 28px;
+  float:left;
+}
+#jewc_city{
+
+  margin-top:75px;
+  width: 400px;
+  float:left;
+}

@@ -1,0 +1,86 @@
+<?php
+/*
+ * Smarty plugin
+ * *feito pelo Werneck
+ * -------------------------------------------------------------
+ * File:     function.input.php
+ * Type:     function
+ * Name:     input
+ * Purpose:  input helper
+ * -------------------------------------------------------------
+ */
+function smarty_function_input($params, &$view)
+{
+	//OBS: se o nome do modelo que o cara colocou como parametro não existir testar para não dar merda!!
+
+	//AJEITA ALGUNS PARAMETROS:
+	
+	$fieldName = false;
+	$modelName = false;
+	
+	if ( isset($params['name']) )
+	{
+		$modelName = isset($params['model']) ? $params['model'] : $view->getTemp('form_modelName'); //checa em que form estou (qual o modelo dele)
+		$fieldName = $params['name'];
+		
+		
+		//coloca um id automaticamente para se o label precisar
+		if( !isset($modelName) || $modelName === NULL)
+		{
+			//caso em que não tem um modelo setado
+			$params['name'] = "data[$fieldName]";
+			$id				= isset($params['id']) ? $params['id'] : "input-$fieldName";
+		}
+		else 
+		{
+			//caso em que tem um modelo setado
+			$params['name']	= "data[$modelName][$fieldName]";
+			$id				= isset($params['id']) ? $params['id'] : "input-$modelName-$fieldName"; 
+		}
+
+		//Tratamento do value (para caso em que a validação falhou ou o caso é de update)
+		if ( isset($view->data[$modelName][$fieldName]) && !isset($params['value']) )
+		{
+			$params['value'] = $view->data[$modelName][$fieldName];
+		}
+	}
+	
+	if ( !isset($params['type']) )
+	{
+		$params['type'] = 'text'; //TODO pegar esse valor no modelo (array de validação, ou array de tipos que correspondem aos de validação)
+	}
+	if ( $params['type'] == 'file' )
+	{
+		$params['name']  = $modelName ? $modelName.':' : '';
+		$params['name'] .= $fieldName;
+	}
+	
+	//COMEÇA A IMPRIMIR:
+	
+	$output = "";
+	
+	//IMPRIME O LABEL
+	if ( isset($params['label']) )
+	{		
+		$params['id']	= $id;
+		$text			= $params['label'];
+		
+		$output .= "\n<label id='$id"."_label' for='$id'>$text</label>\n";
+
+		unset($params['label']);
+	}
+	
+	//limpa parametros indesejados no html
+	if(isset($params['model'])) unset($params['model']);
+	
+	//Passa os parametros inúteis para o processamento direto para a tag
+	$output .= '<input';
+	foreach($params as $name => $value){
+		$output .= " $name='$value'";
+	}
+	$output .= '>';
+	
+	return $output;
+}
+
+?>

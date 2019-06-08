@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- saved from url=(0577)http://pinit-cdn.pinterest.com/pinit.html?url=http%3A%2F%2Fstefangabos.ro%2Fphp-libraries%2Fzebra-database%2F&media=http%3A%2F%2Fstefangabos.ro%2Fwp-content%2Fthemes%2Fzebra%2Fpublic%2Fimages%2Flogo.png&description=An+advanced%2C+compact+%28one-file+only%29%2C+lightweight%2C+object-oriented+MySQL+database+wrapper+built+upon+PHP%27s+MySQL+extension.+It+provides+methods+for+interacting+with+MySQL+databases+that+are+more+powerful+and+more+intuitive+than+PHP%27s+default+ones&layout=horizontal&ref=http%3A%2F%2Fstefangabos.ro%2Fphp-libraries%2Fzebra-database%2F%23documentation -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <style type="text/css">
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            #PinItButton {
+                position: absolute;
+                background: url(/images/pinit6.png);
+                font: 11px Arial, sans-serif;
+                text-indent: -9999em;
+                font-size: .01em;
+                color: #CD1F1F;
+                height: 20px;
+                width: 43px;
+                background-position: 0 -7px;
+            }
+            #PinItButton:hover {
+                background-position: 0 -28px;
+            }
+            #PinItButton:active {
+                background-position: 0 -49px;
+            }
+            #PinItButton.pinned {
+                background-position: 0 -70px !important;
+            }
+            #CountPointer {
+                position: absolute;
+                z-index: 1;
+                background: url(/images/pinit6.png);
+                text-indent: -9999em;
+                font-size: .01em;
+                color: #FFF;
+            }
+            #CountBubble {
+                position: absolute;
+                border: 1px solid #C9C5C5;
+                color: #777;
+                background-color: #FCF9F9;
+                border-radius: 1px;
+            }
+            body.horizontal #CountPointer {
+                left: 43px;
+                height: 18px;
+                width: 4px;
+                background-position: -43px -8px;
+            }
+            body.horizontal #CountBubble {
+                top: 1px;
+                left: 46px;
+                height: 10px;
+                line-height: 10px;
+                padding: 2px 5px 4px 5px;
+                font: 10px Arial, Helvetica, sans-serif;
+                display: inline-block;
+            }
+            body.vertical #PinItButton {
+                top: 38px;
+            }
+            body.vertical #CountPointer {
+                top: 31px;
+                height: 7px;
+                width: 41px;
+                background-position: 0 0;
+            }
+            body.vertical #CountBubble {
+                left: 1px;
+                height: 21px;
+                width: 39px;
+                font: 12px Arial, Helvetica, sans-serif;
+                line-height: 12px;
+                padding: 9px 0 0;
+                text-align: center;
+            }
+            body.none #PinItCount {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript">
+            var countLayout = 'horizontal';
+            var alwaysShowCount = false;
+
+            function pinIt(pinItButton, pinUrl) {
+                return function(e) {
+                    var t;
+                    if (e.target) t = e.target;
+                    else t = e.srcElement;
+                    if (t.id != pinItButton.id)
+                        return false;
+
+                    var modal = window.open(pinUrl, 'signin', 'width=665,height=300,scrollbars=1,resizable=1');
+                    var wait = function() {
+                        setTimeout(function() {
+                            if (modal == null) {
+                                failure();
+                                return;
+                            }
+                            if (modal.closed)
+                                pinItButton.setAttribute('class', 'pinned');
+                            else
+                                wait();
+                        }, 25);
+                    };
+
+                    wait();
+                    return false;
+                };
+            }
+
+            function receiveCount(data) {
+                if (data['error'])
+                    return;
+
+                var targetUrl = data['url'];
+                var pinItCount = document.getElementById('PinItCount');
+                var countBubble = document.getElementById('CountBubble');
+
+                if (!alwaysShowCount && data['count'] < 1 && countLayout === 'horizontal') 
+                    return;
+
+                pinItCount.style.display = 'block';
+                var count = data['count'];
+                if (count > 999 && count <= 999999)
+                    count = Math.floor(count / 1000) + "K+";
+                else if (count > 999999 && count <= 999999999)
+                    count = Math.floor(count / 1000000) + "M+";
+                else if (count > 999999999)
+                    count = "++";
+                countBubble.innerHTML = count;
+            }
+
+            window.onload = function() {
+                var pinItButton = document.getElementById('PinItButton');
+                var pinItCount = document.getElementById('PinItCount');
+
+                // Parse args
+                var vars = {}, url = window.location.href;
+                var pairs = url.slice(url.indexOf('?') + 1).split('&');
+                for (var i = 0; i < pairs.length; i++) {
+                    var parts = pairs[i].split('=');
+                    vars[parts[0]] = parts[1];
+                }
+
+                countLayout = vars['layout'] || countLayout;
+                alwaysShowCount = vars['count'] || alwaysShowCount;
+
+                // Apply count layout class
+                document.body.className = countLayout;
+
+                // Build pin URL
+                delete vars['layout'];
+                delete vars['count'];
+                var sep = '?', pinUrl = 'http://pinterest.com/pin/create/button/';
+                for (var i in vars) {
+                    pinUrl += sep + i + '=' + vars[i];
+                    sep = '&';
+                }
+
+                // Button click handler
+                if (document.addEventListener)
+                    pinItButton.addEventListener('click', pinIt(pinItButton, pinUrl), false);
+                else if (document.attachEvent)
+                    pinItButton.attachEvent('onclick', pinIt(pinItButton, pinUrl));
+
+                // Request count from API
+                if (countLayout != 'none' || alwaysShowCount) {
+                    var targetUrl = vars['url'] || vars['media'];
+                    var snode = document.createElement('script');
+                    var hnode = document.getElementsByTagName('head')[0];
+                    snode.setAttribute('async', 'true');
+                    snode.setAttribute('src', '//api.pinterest.com/v1/urls/count.json?callback=receiveCount&url='+targetUrl);
+                    hnode.appendChild(snode);
+                }
+            };
+        </script>
+    <script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/menu_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/change_sink.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="number_injection_builder.js"><meta name="menu_injection_builder.js"><meta name="string_finder.js"><meta name="change_sink.js"><script async="true" src="count(1).json"></script></head>
+    <body class="horizontal">
+        <a href="javascript:void(0)" id="PinItButton" title="Pin it on Pinterest">Pin it</a>
+        <div id="PinItCount" style="display:none;">
+            <div id="CountPointer">«</div>
+            <div id="CountBubble">0</div>
+        </div>
+    
+
+<div class="ugdv_contextMenu" id="ugdv_myMenu" style="display: none; "><ul id="ugdv_contextMenu"><li id="ugdv_menuItem_google_docs">Open in Google Docs Viewer</li><li id="ugdv_menuItem_new_tab">Open link in new tab</li><li id="ugdv_menuItem_new_window">Open link in new window</li><li id="ugdv_menuItem_new_incognito">Open link in new incognito window</li><li class="ugdv_seperator"></li><li id="ugdv_menuItem_download_file">Download file</li><li id="ugdv_menuItem_copy">Copy link address</li><li id="ugdv_menuItem_editpdf">Edit PDF File on PDFescape.com</li></ul></div><div id="ugdv_jqContextMenu" style="display: none; position: absolute; z-index: 9999; "></div><div style="background-color: rgb(0, 0, 0); position: absolute; opacity: 0.2; z-index: 9998; display: none; "></div></body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1"></span><object id="skype_plugin_object" location.href="http://pinit-cdn.pinterest.com/pinit.html?url=http%253A%252F%252Fstefangabos.ro%252Fphp-libraries%252Fzebra-database%252F&amp;media=http%253A%252F%252Fstefangabos.ro%252Fwp-content%252Fthemes%252Fzebra%252Fpublic%252Fimages%252Flogo.png&amp;description=An+advanced%252C+compact+%2528one-file+only%2529%252C+lightweight%252C+object-oriented+MySQL+database+wrapper+built+upon+PHP%2527s+MySQL+extension.+It+provides+methods+for+interacting+with+MySQL+databases+that+are+more+powerful+and+more+intuitive+than+PHP%2527s+default+ones&amp;layout=horizontal&amp;ref=http%253A%252F%252Fstefangabos.ro%252Fphp-libraries%252Fzebra-database%252F%2523documentation" location.hostname="pinit-cdn.pinterest.com" style="position: absolute; visibility: hidden; left: -100px; top: -100px; " width="0" height="0" type="application/x-vnd.skype.click2call.chrome.5.7.0"></object></html>

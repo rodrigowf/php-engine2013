@@ -1,0 +1,17 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_conferencia;
+#layoutUp .barraMenu .menu ul li.conferencia 
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+#layoutUp .barraMenu .menu ul li ul li.jewc2012
+{ a { color: #aaaaaa !important; } &:hover, a:hover { border: none !important; } }
+
+
+h1.icone {
+  .icon(url('../images/conferencia_icone.png'), 50px);
+}
+
+p{
+  .cols(20);
+}

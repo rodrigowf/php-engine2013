@@ -1,0 +1,18 @@
+@import '../admUser.less';
+
+label {
+	width: 130px!important;
+	padding-top: 8px;
+}
+
+input {
+	width: 300px!important;
+}
+
+p.error {
+  color:red!important;
+  margin-left: 20px!important;
+  .cols(5);
+
+  margin-top:10px;
+}

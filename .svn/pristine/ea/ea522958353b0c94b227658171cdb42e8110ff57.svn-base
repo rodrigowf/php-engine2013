@@ -1,0 +1,11 @@
+@import '../site.less';
+
+@page_color: #ffffff;
+
+h1.icon{
+    .icon(url('../images/erro.png'), 90px, 0px, 14px);
+}
+
+h1, p {
+    .cols(20);
+}

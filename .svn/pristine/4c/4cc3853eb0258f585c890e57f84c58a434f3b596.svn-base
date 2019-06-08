@@ -1,0 +1,22 @@
+<?php
+    /**
+	 * Configuracoes do Banco de Dados
+	 */
+	
+	//*/ //DEVELOPMENT
+	
+	define('BD_CONFIG_HOST', 'localhost');
+	define('BD_CONFIG_USER', 'root');
+	define('BD_CONFIG_PASS', '');
+	define('BD_CONFIG_DB', 'testeEngine');
+	
+	/*/ //PRODUCTION
+	
+	define('BD_CONFIG_HOST', 'localhost');
+	define('BD_CONFIG_USER', 'root');
+	define('BD_CONFIG_PASS', '');
+	define('BD_CONFIG_DB', 'testeEngine');
+	
+	//*/
+
+?>

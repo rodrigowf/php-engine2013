@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+  </head>
+
+  <body>
+
+<div class="container">
+
+  <h1 style="font-size: 45px; margin: -30px 20px 60px 180px; width:auto;">Werneck's engine documentation.</h1>
+    <div class="row">
+        <div class="span4">
+            <h2><a href="./zebra_database/class_overview.htm">
+                <img class="bs-icon" src="assets/img/glyphicons/glyphicons_155_show_thumbnails.png">
+                Zebra Database</a></h2>
+            <p>The default mysql database wrapper.</p>
+            <a href="./zebra_database/class_overview.htm">Class Overview</a>
+            <span>|</span>
+            <a href="./zebra_database/usage_overview.htm">Usage</a>
+        </div>
+    <!--</div>&lt;!&ndash;/row&ndash;&gt;-->
+    <!--<div class="row">-->
+        <div class="span4">
+
+            <h2><a href="./smarty/index.html">
+                <img class="bs-icon" src="assets/img/glyphicons/glyphicons_266_book_open.png">
+                Smarty</a></h2>
+            <p>The template's engine used by default.</p>
+        </div>
+    <!--</div>&lt;!&ndash;/row&ndash;&gt;-->
+    <!--<div class="row">-->
+        <div class="span4">
+            <h2>
+                <img class="bs-icon" src="assets/img/glyphicons/glyphicons_009_magic.png">
+                <a href="./default_style/index.html">Twitter Bootstrap *adapted</a></h2>
+                <p>The engine used for default styles and scripts.</p>
+            </div>
+        </div><!--/row-->
+    </div><!--/container-->
+
+  </body>
+</html>

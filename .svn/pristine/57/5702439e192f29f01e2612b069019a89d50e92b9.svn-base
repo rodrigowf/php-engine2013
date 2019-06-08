@@ -1,0 +1,91 @@
+@import "site.less";
+
+@sidebarDefaultWidth: 200px;
+
+#admSidebarPush {
+    min-width: @sidebarDefaultWidth;
+    height: 200px;
+}
+
+#admSidebar {
+    position: fixed;
+    margin-bottom: 30px;
+    //padding: 0;
+    //padding-bottom: 10px;
+    border-right: 2px solid @linkColor;
+    //margin-top: -86px;
+    //padding-top: 90px;
+    //margin-left: 10px;
+    min-width: @sidebarDefaultWidth;
+    z-index: 10;
+    
+    li a {
+        text-align: right;
+    }
+}
+
+
+#admContentContainer
+{
+    padding-left: 10px;
+    max-width: 940px - 10px - @sidebarDefaultWidth - @gridGutterWidth*3;
+}
+
+@media (max-width: 767px) {
+    #admSidebar {
+        position: relative;
+        padding-bottom: 10px;
+        border-bottom: 2px solid @linkColor;
+        border-right: none;
+        li a {
+            text-align: left;
+        }
+  }
+    #admSidebarPush {
+        height: 0px;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 979px)
+{
+    #admContentContainer
+    {
+        padding-left: 10px;
+        max-width: 760px - 10px - @sidebarDefaultWidth - @gridGutterWidth*3 !important;
+    }
+
+    .container {
+        width: 760px;
+    }
+}
+
+@media (max-width: 767px)
+{
+    #admContentContainer
+    {
+        padding-left: 0;
+    }
+
+    form.filtro {
+        float:none;
+        margin-top: 20px;
+    }
+}
+
+// Para resolver o problema do menu sidebar pulando em cima do menu principal
+@media (max-width: 979px)
+{
+    .navbar-fixed-top, .navbar-fixed-bottom {
+        position: relative;
+    }
+}
+
+table.admList {
+    width: 670px;
+}
+@media (max-width: 979px)
+{
+    table.admList {
+        width: auto;
+    }
+}

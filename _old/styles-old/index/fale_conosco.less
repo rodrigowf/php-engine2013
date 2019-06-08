@@ -1,0 +1,94 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_fale;
+#layoutUp .barraMenu .menu ul li.fale 
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+
+input{
+  margin-right: 200px !important;
+}
+
+textarea {
+  //width: 700px !important;
+  height: 150px !important;
+  //background-color:red;
+}
+
+h1.icone {
+  .icon(url('../images/fale2_icone_tittulo.png'), 45px);
+}
+
+button {
+  .first();
+  background-color: #a8a7a7;
+  margin-left: 10px;
+}
+
+div.texto{
+  height:200px!important;
+}
+
+#contatos{
+    margin-top: 200px;
+}
+
+
+.ie #contatos h4{
+    //font-size: 15px !important;
+    //background-color: red;
+
+}
+
+
+
+.contatosEsquerda{
+    .cols(12);
+
+}
+.contatosDireita{
+    .cols(12);
+
+}
+
+
+.contato{
+    .first();
+    .cols(4);
+    float: left;
+}
+
+.contatoMail{
+
+    border-left: 1px solid #d6d5d5;
+    height: 30px;
+    line-height: 50%;
+    padding: 20px;
+
+
+}
+
+.ie .contatoMail {
+       margin-left: 50px;
+       border-left: 1px solid #d6d5d5;
+       height: 30px;
+       line-height: 50%;
+       padding: 20px;
+
+}
+
+.subtitle{
+    position: relative;
+    bottom: 10px;
+    left: 5px;
+
+}
+
+.ie .subtitle {
+    position: relative;
+    top: 0px;
+
+
+}
+
+

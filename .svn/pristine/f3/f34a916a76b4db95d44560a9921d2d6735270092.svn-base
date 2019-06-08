@@ -1,0 +1,160 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_conferencia;
+#layoutUp .barraMenu .menu ul li.conferencia
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+#layoutUp .barraMenu .menu ul li ul li.schedule
+{ a { color: #aaaaaa !important; } &:hover, a:hover { border: none !important; } }
+
+.ie h1{
+    font-size: 50px !important;
+
+}
+
+
+.dia{
+    .cols(6);
+    //height: 400px;
+
+    padding: 0px !important;
+}
+
+.dia h2{
+    font-size: 34px !important;
+    margin-bottom: 0px !important;
+
+}
+
+.ie .dia h2{
+    font-size: 28px !important;
+    margin-bottom: 0px !important;
+
+}
+.dia h4{
+    margin-top: 17px !important;
+    line-height: 19px !important;
+
+
+}
+
+
+#dia6 {
+    .first();
+    .cols(6);
+    background-color: @color_fale;
+    margin-top: 2px !important;
+    padding-top: 23px !important;
+    padding-bottom: 50px !important;
+
+    .blocoInterno{
+        .underarea{
+            h4{
+                color: @color_fale;
+            }
+        }
+    }
+}
+
+#dia7 {
+    .cols(6);
+    background-color: @color_conferencia;
+    margin-top: 2px !important;
+    padding-top: 23px !important;
+    padding-bottom: 50px !important;
+
+    .blocoInterno{
+        .underarea{
+            h4{
+                color: @color_conferencia;
+            }
+        }
+    }
+}
+
+#dia8 {
+    .cols(6);
+    background-color: @color_noticias;
+    margin-top: 2px !important;
+    padding-top: 23px !important;
+    padding-bottom: 50px !important;
+
+    .blocoInterno{
+        .underarea{
+            h4{
+                color: @color_noticias;
+            }
+        }
+    }
+}
+
+#dia9 {
+    .cols(6);
+    background-color: @color_inscricao;
+    margin-top: 2px !important;
+    padding-top: 23px !important;
+    padding-bottom: 50px !important;
+
+    .blocoInterno{
+        .underarea{
+            h4{
+                color: @color_inscricao;
+            }
+        }
+    }
+}
+
+.blocoInterno{
+    margin: 0px !important;
+    color: #ffffff;
+    .cols(6);
+    height: 400px;
+    background-color: #30302f;
+    padding: 0px !important;
+    padding-top: 25px !important;
+    position:relative;
+
+    p{
+        color: #ffffff !important;
+        padding-left: 15px !important;
+        .last();
+
+        .big{
+            margin-bottom: 25px !important;
+            margin-top: 25px !important;
+            font-size: 20px !important;
+        }
+
+
+    }
+
+    .main{
+        margin-top: 25px !important;
+        font-size: 24px !important;
+        margin-bottom: 7px !important;
+    }
+
+    .underarea{
+        margin: 0px !important;
+        height: 50px;
+        .cols(6);
+        position: absolute;
+        left: 0px !important;
+        bottom: 12px !important;
+
+        h4{
+            margin: 0px !important;
+            padding: 0px !important;
+            padding-left: 15px !important;
+
+        }
+
+
+    }
+
+
+}
+
+.ie h4{
+    font-size: 14px !important;
+}

@@ -1,0 +1,14 @@
+@import '../site.less';
+
+@cor-titulo: #9bb58f;
+
+.icon{
+    margin-top:50px;
+	.icon(url('../images/sucessoFila_icon.png'),79px,0px,0px);
+	.cols(20);
+}
+p{
+    .push(2);
+    margin-top: 30px;
+
+}

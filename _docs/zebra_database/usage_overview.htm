@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://stefangabos.ro/php-libraries/zebra-database/#documentation -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Zebra_Database, a MySQL database wrapper written in PHP  </title>
+<meta name="description" content="An advanced, compact (one-file only), lightweight, object-oriented MySQL database wrapper built upon PHP&#39;s MySQL extension. It provides methods for interacting with MySQL databases that are more powerful and more intuitive than PHP&#39;s default ones">
+<link rel="alternate" type="application/rss+xml" title="Subscribe to the RSS feeds" href="http://stefangabos.ro/feed/">
+<!--<base href="http://stefangabos.ro/">--><base href=".">
+<meta name="google-site-verification" content="qPHLdVGLa6uZUJRWdB0APXdpmYVca6ylbn6uId1UsXM">
+<meta name="msvalidate.01" content="845C753398810DCD146E17D728177990">
+<meta property="og:image" content="http://stefangabos.ro/wp-content/themes/zebra/public/images/logo.png">
+<meta property="og:site_name" content="Stefan Gabos - web developer extraordinaire">
+<meta charset="utf-8">
+<meta name="geo.position" content="44.448;26.100">
+<meta name="geo.placename" content="Bucharest, Romania">
+<meta name="geo.region" content="ro-ro">
+<meta name="DC.title" lang="en" content="Stefan Gabos - web developer extraordinaire">
+<meta name="DC.creator" content="Stefan Gabos">
+<meta name="DC.subject" lang="en" content="php, jquery, mootools, wordpress, libraries, classes, stefan gabos, javascript">
+<meta name="DC.description" lang="en" content="Free, open-source PHP libraries and jQuery plugins for web developers">
+<meta name="DC.publisher" content="Stefan Gabos">
+<meta name="DC.date" scheme="DCTERMS.W3CDTF" content="2011-08-10">
+<meta name="DC.type" scheme="DCTERMS.DCMIType" content="Text">
+<meta name="DC.format" content="text/html; charset=utf-8">
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="http://stefangabos.ro">
+<meta name="DC.language" scheme="DCTERMS.RFC1766" content="en">
+<link rel="shortcut icon" href="http://stefangabos.ro/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="./usage_overview_files/104fc4056ad53fbc1d0eb8dfa97c7010_6654737944.css" type="text/css">
+<!--[if IE 6]>
+<script type="text/javascript" src="wp-content/themes/zebra/public/javascript/pngfix.js"></script>
+<![endif]-->
+<script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/menu_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/change_sink.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="number_injection_builder.js"><meta name="menu_injection_builder.js"><meta name="string_finder.js"><meta name="change_sink.js"></head>
+<body data-twttr-rendered="true">
+<div id="main-wrapper">
+<a name="top"></a>
+<div id="navigation">
+<ul id="menu-navigation" class=""><li><a href="http://stefangabos.ro/">Home</a></li>
+<li><a href="http://stefangabos.ro/php-libraries/">PHP libraries</a>
+<ul style="opacity: 0; ">
+<li class="current-menu-item"><a href="http://stefangabos.ro/php-libraries/zebra-database/">Zebra_Database</a></li>
+<li><a href="http://stefangabos.ro/php-libraries/zebra-form/">Zebra_Form</a></li>
+<li><a href="http://stefangabos.ro/php-libraries/zebra-image/">Zebra_Image</a></li>
+<li><a href="http://stefangabos.ro/php-libraries/zebra-mptt/">Zebra_Mptt</a></li>
+<li><a href="http://stefangabos.ro/php-libraries/zebra-pagination/">Zebra_Pagination</a></li>
+<li><a href="http://stefangabos.ro/php-libraries/zebra-session/">Zebra_Session</a></li>
+</ul>
+</li>
+<li><a href="http://stefangabos.ro/jquery/">jQuery plugins</a>
+<ul style="opacity: 0; ">
+<li><a href="http://stefangabos.ro/jquery/jquery-plugin-boilerplate-oop/">jQuery Plugin Boilerplate</a></li>
+<li><a href="http://stefangabos.ro/jquery/zebra-accordion/">Zebra_Accordion</a></li>
+<li><a href="http://stefangabos.ro/jquery/zebra_cookie/">Zebra_Cookie</a></li>
+<li><a href="http://stefangabos.ro/jquery/zebra-datepicker/">Zebra_Datepicker</a></li>
+<li><a href="http://stefangabos.ro/jquery/zebra-dialog/">Zebra_Dialog</a></li>
+<li><a href="http://stefangabos.ro/jquery/zebra-tooltips/">Zebra_Tooltips</a></li>
+<li><a href="http://stefangabos.ro/jquery/zebra-transform/">Zebra_TransForm</a></li>
+</ul>
+</li>
+<li><a href="http://stefangabos.ro/wordpress-plugins/">WordPress plugins</a>
+<ul style="opacity: 0; ">
+<li><a href="http://stefangabos.ro/wordpress-plugins/revisions-control/">Revisions Control</a></li>
+</ul>
+</li>
+<li><a href="http://stefangabos.ro/other-projects/">Other projects</a>
+<ul style="opacity: 0; visibility: hidden; ">
+<li><a href="http://stefangabos.ro/other-projects/list-of-world-countries-with-national-flags/">World countries, with national flags</a></li>
+</ul>
+</li>
+<li><a href="http://stefangabos.ro/about-me/">About me</a></li>
+<li><a href="http://stefangabos.ro/contact/">Contact</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+<div id="header">
+<h2>
+<a href="http://stefangabos.ro/">Stefan Gabos</a>
+<span>web developer extraordinaire</span>
+</h2>
+<div class="social">
+<a href="http://stefangabos.ro/feed/" rel="nofollow" class="rss _blank" title="Subscribe to the RSS feed" target="_blank">Subscribe to the RSS feed</a>
+<a href="http://www.facebook.com/pages/Zebra-Components-Framework/115516235236253" rel="nofollow" class="facebook _blank" title="Follow me on Facebook" target="_blank">Follow me on Facebook</a>
+<a href="http://www.twitter.com/stefangabos/" rel="nofollow" class="twitter _blank" title="Follow me on Twitter" target="_blank">Follow me on Twitter</a>
+<a href="http://www.linkedin.com/in/stefangabos/" class="linkedin _blank" title="View my profile on LinkedIn" target="_blank">View my profile on LinkedIn</a>
+</div>
+</div>
+<div id="content-wrapper">
+<div id="page-508" class="page">
+<div class="share"><iframe scrolling="no" frameborder="0" allowtransparency="true" style="overflow: hidden; margin: 0px; padding: 0px; border: 0px; " src="./usage_overview_files/saved_resource.htm" width="74" height="18" id="iframe-stmblpn-widget-1"></iframe><script type="text/javascript" async="" src="./usage_overview_files/ga.js"></script><script src="./usage_overview_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" async="" src="./usage_overview_files/plusone.js" gapi_processed="true"></script><script id="twitter-wjs" src="./usage_overview_files/widgets.js"></script><script type="text/javascript" async="" src="./usage_overview_files/widgets(1).js"></script><script type="text/javascript">(function() { var li = document.createElement('script'); li.type = 'text/javascript'; li.async = true; li.src = 'https://platform.stumbleupon.com/1/widgets.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(li, s); })();</script><a href="http://www.delicious.com/save" style="margin:0 10px" onclick="window.open(&#39;http://www.delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url=&#39;+encodeURIComponent(location.href)+&#39;&amp;title=&#39;+encodeURIComponent(document.title), &#39;delicious&#39;,&#39;toolbar=no,width=550,height=550&#39;); return false;"> <img src="./usage_overview_files/ico-delicious.png" height="18" width="18" alt="Delicious"></a><iframe allowtransparency="true" frameborder="0" scrolling="no" src="./usage_overview_files/tweet_button.1346314371.htm" class="twitter-share-button twitter-count-horizontal" style="width: 110px; height: 20px; " title="Twitter Tweet Button" data-twttr-rendered="true"></iframe><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><iframe src="./usage_overview_files/like.htm" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:20px;" allowtransparency="true"></iframe>
+<iframe src="./usage_overview_files/pinit.htm" scrolling="no" frameborder="0" style="border: none; width: 90px; height: 20px; "></iframe>
+<script type="text/javascript" src="./usage_overview_files/pinit.js"></script>
+<div style="height: 20px; width: 120px; display: inline-block; text-indent: 0px; margin: 0px; padding: 0px; background-color: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; background-position: initial initial; background-repeat: initial initial; " id="___plusone_0"><iframe allowtransparency="true" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 120px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px; " tabindex="0" vspace="0" width="100%" id="I0_1346343605486" name="I0_1346343605486" src="./usage_overview_files/fastbutton.htm" title="+1"></iframe></div>
+<script type="text/javascript">
+(function() {
+var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+})();
+</script><div class="clear"></div></div>
+<h1>Zebra_Database, a MySQL database wrapper written in PHP</h1>
+<a href="http://stefangabos.ro/category/zebra-database/feed/" title="Get the latest updates on this PHP library via RSS">
+<img src="./usage_overview_files/ico-social-rss.png" class="png" width="16" alt="">
+Get the latest updates on this PHP library via RSS
+</a>
+<p><a name="overview"></a></p>
+<ul class="page-sections png">
+<li class="version">
+<div class="title">Latest version</div>
+<div class="version">2.7.3</div>
+<div class="subtitle">released on</div>
+<div class="date">July 16, 2012</div>
+</li>
+<li>1. <a href="http://stefangabos.ro/php-libraries/zebra-database/#overview">Overview</a></li>
+<li>2. <a href="http://stefangabos.ro/php-libraries/zebra-database/#features">Features</a></li>
+<li>3. <a href="http://stefangabos.ro/php-libraries/zebra-database/#requirements">Requirements</a></li>
+<li>4. <a href="http://stefangabos.ro/php-libraries/zebra-database/#installation">Installation</a></li>
+<li>5. <a href="http://stefangabos.ro/php-libraries/zebra-database/#how-to-use">How to use</a></li>
+<li>6. <a href="http://stefangabos.ro/php-libraries/zebra-database/#download">Download</a></li>
+<li>7. <a href="./usage_overview_files/usage_overview.htm">Documentation</a></li>
+<li>8. <a href="http://stefangabos.ro/php-libraries/zebra-database/#changelog">Changelog</a></li>
+<li>9. <a href="http://stefangabos.ro/php-libraries/zebra-database/#comments">Comments</a></li>
+</ul>
+<p>Zebra_Database it is an advanced, compact (one-file only), lightweight, object-oriented MySQL database wrapper built upon PHP’s MySQL extension. It provides methods for interacting with MySQL databases that are more powerful and intuitive than PHP’s default ones.</p>
+<p>It supports transactions and provides ways for caching query results either by saving cached data on the disk, or by using <strong><a href="http://memcached.org/">memcache</a></strong>.</p>
+<p>The class provides a comprehensive debugging interface with detailed information about the executed queries: execution time, returned/affected rows, excerpts of the found rows, error messages, etc. It also automatically <a href="http://dev.mysql.com/doc/refman/5.0/en/explain.html">EXPLAIN</a>‘s each SELECT query (so you don’t miss those keys again!).</p>
+<p>It encourages developers to write maintainable code and provides a better default security layer by encouraging the use of <em>prepared statements</em>, where parameters are automatically <a href="http://www.php.net/manual/en/function.mysql-real-escape-string.php">escaped</a>.</p>
+<p><strong>Zebra_Database</strong>‘s code is heavily commented and generates no warnings/errors/notices when PHP’s error reporting level is set to <a href="http://www.php.net/manual/en/function.error-reporting.php">E_ALL</a>.</p>
+<p>In the image below you see the debugger in its default state: minimized and in the top-right corner of the page. It shows the number of successful queries and the number of unsuccessful queries:</p>
+<p><img class="alignnone size-full wp-image-535" title="Zebra_Database, Debug Console" src="./usage_overview_files/Zebra_Database_1.gif" alt="Zebra_Database, Debug Console" width="630"></p>
+<p>Once the debug console is clicked, it will maximize and show a menu from where successful queries, unsuccessful queries and global variables can be viewed:</p>
+<p><img class="alignnone size-full wp-image-536" title="Zebra_Database, Debug Console" src="./usage_overview_files/Zebra_Database_2.gif" alt="Zebra_Database, Debug Console" width="630"></p>
+<p>If the “successful queries” tab is clicked, the debug console will show detailed information about all the successful queries that have been run: the syntax highlighted queries, the execution time (in milliseconds) and how much (in percents) it represents of the total execution time, the number of returned/affected rows (for SELECT queries this can be clicked to show the actual returned rows), a link to see the query <a href="http://dev.mysql.com/doc/refman/5.0/en/explain.html">EXPLAIN</a>-ed (only for SELECT queries), and a link to see backtracing information.</p>
+<p><img class="alignnone size-full wp-image-537" title="Zebra_Database, Debug Console" src="./usage_overview_files/Zebra_Database_3.gif" alt="Zebra_Database, Debug Console" width="630"></p>
+<p>For SELECT queries, clicking on “returned rows” shows a table with the actual records returned by the query:</p>
+<p><img class="alignnone size-full wp-image-538" title="Zebra_Database, Debug Console, image 4" src="./usage_overview_files/Zebra_Database_4.gif" alt="Zebra_Database, Debug Console, image 4" width="630"></p>
+<p>For SELECT queries, clicking on “explain” shows the query <a href="http://dev.mysql.com/doc/refman/5.0/en/explain.html">EXPLAIN</a>-ed:</p>
+<p><img class="alignnone size-full wp-image-539" title="Zebra_Database, Debug Console, image 5" src="./usage_overview_files/Zebra_Database_5.gif" alt="Zebra_Database, Debug Console, image 5" width="630"></p>
+<p>For all successful queries, clicking on “backtrace” shows a table with information on what files and functions lead to the displayed query:</p>
+<p><img class="alignnone size-full wp-image-540" title="Zebra_Database, Debug Console, image 6" src="./usage_overview_files/Zebra_Database_6.gif" alt="Zebra_Database, Debug Console, image 6" width="630"></p>
+<p>If there is an unsuccessful query, the debug console will open automatically to the respective query and besides the query will show the message returned by the MySQL server and backtracing information to easily find from what part of your code the query originated:</p>
+<p><img class="alignnone size-full wp-image-541" title="Zebra_Database, Debug Console, image 7" src="./usage_overview_files/Zebra_Database_7.gif" alt="Zebra_Database, Debug Console, image 7" width="630"></p>
+<p>The images above are screen shots of what you’d get when running the example file available in the download-able package. The example uses the <a href="http://dev.mysql.com/doc/index-other.html"><em>world</em></a> database available on MySQL’s website.</p>
+<p>The icons in the debug console are created by <a href="http://pixel-mixer.com/">pixel-mixer.com</a>.</p>
+<div class="clear"></div>
+<div class="to-top">
+<p><a class="png" href="http://stefangabos.ro/php-libraries/zebra-database/#top">Top</a></p>
+<div class="clear"></div>
+</div>
+<p><a name="features"></a></p>
+<h3>Features review</h3>
+<ul class="default">
+<li>offers lots of powerful methods for easier interaction with MySQL</li>
+<li>provides a better security layer by encouraging the use of prepared statements, where parameters are automatically escaped</li>
+<li>provides a very detailed debugging interface with lots of useful information about executed queries; it also automatically EXAPLAIN’s each SELECT query</li>
+<li>supports caching of query results to disk or to a memcache server</li>
+<li>has comprehensive documentation</li>
+<li>code is heavily commented and generates no warnings/errors/notices when PHP’s error reporting level is set to E_ALL</li>
+</ul>
+<div class="to-top">
+<p><a class="png" href="http://stefangabos.ro/php-libraries/zebra-database/#top">Top</a></p>
+<div class="clear"></div>
+</div>
+<p><a name="requirements"></a></p>
+<h3>Requirements</h3>
+<p>PHP 4.4.9+, MySQL 4.1.22+</p>
+<p>For using <strong>memcache</strong> as caching method, PHP must be compiled with the <a href="http://pecl.php.net/package/memcache">memcache</a> extension and, if <a href="http://stefangabos.ro/wp-content/docs/Zebra_Database/Zebra_Database/Zebra_Database.html#var$memcache_compressed">memcache_compressed</a> property is set to TRUE, needs to be configured with <em>–with-zlib[=DIR]</em></p>
+<div class="to-top">
+<p><a class="png" href="http://stefangabos.ro/php-libraries/zebra-database/#top">Top</a></p>
+<div class="clear"></div>
+</div>
+<p><a name="installation"></a></p>
+<h3>Installation</h3>
+<p>Download the latest version, unpack it, and put it in a place accessible to your scripts.</p>
+<div class="to-top">
+<p><a class="png" href="http://stefangabos.ro/php-libraries/zebra-database/#top">Top</a></p>
+<div class="clear"></div>
+</div>
+<p><a name="how-to-use"></a></p>
+<h3>How to use</h3>
+<p>Connect to a database</p>
+<pre><code class="php"><span class="preprocessor">&lt;?php</span>
+
+<span class="keyword">require</span> <span class="string">'path/to/Zebra_Database.php'</span>;
+
+<span class="variable">$db</span> = <span class="keyword">new</span> Zebra_Database();
+
+<span class="comment">// turn debugging on</span>
+<span class="variable">$db</span>-&gt;debug = <span class="keyword">true</span>;
+
+<span class="variable">$db</span>-&gt;connect(<span class="string">'host'</span>, <span class="string">'username'</span>, <span class="string">'password'</span>, <span class="string">'database'</span>);
+
+<span class="comment">// code goes here</span>
+
+<span class="comment">// this should always be present at the end of your scripts;</span>
+<span class="comment">// whether it should output anything should be controlled by the $debug property</span>
+<span class="variable">$db</span>-&gt;show_debug_console();
+
+<span class="preprocessor">?&gt;</span>
+</code></pre>
+<p>A SELECT statement</p>
+<pre><code class="php"><span class="preprocessor">&lt;?php</span>
+
+<span class="comment">// $criteria will be escaped and enclosed in grave accents, and will</span>
+<span class="comment">// replace the corresponding ? (question mark) automatically</span>
+<span class="variable">$db</span>-&gt;select(
+    <span class="string">'column1, column2'</span>,
+    <span class="string">'table'</span>,
+    <span class="string">'criteria = ?'</span>,
+    <span class="keyword">array</span>(<span class="variable">$criteria</span>)
+);
+
+<span class="comment">// after this, one of the "fetch" methods can be run:</span>
+
+<span class="comment">// to fetch all records to one associative array</span>
+<span class="variable">$records</span> = <span class="variable">$db</span>-&gt;fetch_assoc_all();
+
+<span class="comment">// or fetch records one by one, as associative arrays</span>
+<span class="keyword">while</span> (<span class="variable">$row</span> = <span class="variable">$db</span>-&gt;fetch_assoc()) {
+    <span class="comment">// do stuff</span>
+}
+<span class="preprocessor">?&gt;</span>
+</code></pre>
+<p>An INSERT statement</p>
+<pre><code class="php"><span class="preprocessor">&lt;?php</span>
+
+<span class="variable">$db</span>-&gt;insert(
+    <span class="string">'table'</span>,
+    <span class="keyword">array</span>(
+        <span class="string">'column1'</span> =&gt; <span class="variable">$value1</span>,
+        <span class="string">'column2'</span> =&gt; <span class="variable">$value2</span>,
+    )
+);
+
+<span class="preprocessor">?&gt;</span>
+</code></pre>
+<p>An UPDATE statement</p>
+<pre><code class="php"><span class="preprocessor">&lt;?php</span>
+
+<span class="comment">// $criteria will be escaped and enclosed in grave accents, and will</span>
+<span class="comment">// replace the corresponding ? (question mark) automatically</span>
+<span class="variable">$db</span>-&gt;update(
+    <span class="string">'table'</span>,
+    <span class="keyword">array</span>(
+        <span class="string">'column1'</span> =&gt; <span class="variable">$value1</span>,
+        <span class="string">'column2'</span> =&gt; <span class="variable">$value2</span>,
+    ),
+    <span class="string">'criteria = ?'</span>,
+    <span class="keyword">array</span>(<span class="variable">$criteria</span>)
+);
+
+<span class="preprocessor">?&gt;</span>
+</code></pre>
+<div class="to-top">
+<p><a class="png" href="http://stefangabos.ro/php-libraries/zebra-database/#top">Top</a></p>
+<div class="clear"></div>
+</div>
+<p><a name="download"></a></p><h3 style="float: left">Download</h3><div style="float: left; margin: 15px 0 0 20px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7721503008742862";
+/* stefangabos.ro 468x15, link unit, download */
+google_ad_slot = "9243997063";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="./usage_overview_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><ins id="aswift_0_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><iframe allowtransparency="true" frameborder="0" height="15" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+=&#39;.call&#39;;setTimeout(h,0)}else if(h.match){i+=&#39;.nav&#39;;w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" scrolling="no" vspace="0" width="468" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div><div class="clear"></div>
+<div class="download-button"><a class="download-now png" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;PHP Libraries&#39;, &#39;Download&#39;, &#39;zebra_database&#39;]);" href="http://stefangabos.ro/wp-content/uploads/php-libraries/zebra_database.2.7.3.zip">version 2.7.3 (zip, 55.7KB)</a>
+<div style="font-size:10px; line-height:1; margin-bottom: 30px; color: #666">If you find this library to be useful to you, you can support the author by donating a small amount via PayPal:</div>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="margin-left: 15px" name="donate-using-paypal" id="donate-using-paypal">
+<div>
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="contact@stefangabos.ro">
+<input type="hidden" name="currency_code" value="USD">
+<input type="hidden" name="item_name" value="Zebra_Database, a MySQL database wrapper written in PHP">
+<input type="hidden" name="amount" id="amount" value="">
+<img src="./usage_overview_files/donate-using-paypal-options.png" width="244" height="98" alt="PayPal - The safer, easier way to pay online!" usemap="#amounts">
+<map id="amounts" name="amounts">
+<area shape="rect" alt="" title="" coords="0,0,240,46" href="javascript:void(0)" onclick="javascript: document.getElementById(&#39;donate-using-paypal&#39;).submit()">
+<area shape="rect" alt="" title="" coords="14,47,59,95" href="javascript:void(0)" onclick="javascript: document.getElementById(&#39;amount&#39;).value = &#39;3&#39;; document.getElementById(&#39;donate-using-paypal&#39;).submit()">
+<area shape="rect" alt="" title="" coords="65,47,110,95" href="javascript:void(0)" onclick="javascript: document.getElementById(&#39;amount&#39;).value = &#39;6&#39;; document.getElementById(&#39;donate-using-paypal&#39;).submit()">
+<area shape="rect" alt="" title="" coords="116,47,161,95" href="javascript:void(0)" onclick="javascript: document.getElementById(&#39;amount&#39;).value = &#39;9&#39;; document.getElementById(&#39;donate-using-paypal&#39;).submit()">
+</map>
+<img alt="" src="./usage_overview_files/pixel.gif" width="1" height="1">
+</div>
+</form>
+</div>
+<div class="download-info">
+<p><strong>Zebra_Database</strong> is distributed under the <strong><a class="_blank" href="http://www.gnu.org/licenses/lgpl-3.0.txt" target="_blank">LGPL</a></strong>.</p>
+<p>In plain English, this means that you have the right to view and to modify the source code of this software, but if you modify and distribute it, you are required to license your copy under a LGPL-compatible license, and to make the entire source code of your derivation available to anybody you distribute the software to.</p>
+<p>You also have the right to use this software together with software thas has different licensing terms (including, but not limited to, commercial and closed-source software), and distribute the combined software, as long as state that your software contains portions licensed under the LGPL license, and provide information about where the LGPL licensed software can be downloaded.</p>
+<p>If you distribute copies of this software you may not change the copyright or license of this software.</p>
+</div>
+<div class="clear"></div>
+<br><p><strong>You may also like:</strong></p><ul class="default"><li style="margin: 2px 0"><strong>Zebra_Database</strong>, a <a href="http://stefangabos.ro/php-libraries/zebra-database/">MySQL database wrapper written in PHP</a></li><li style="margin: 2px 0"><strong>Zebra_Form</strong>, a jQuery augmented <a href="http://stefangabos.ro/php-libraries/zebra-form/">PHP library for creating and validating forms</a></li><li style="margin: 2px 0"><strong>Zebra_Image</strong>, a lightweight <a href="http://stefangabos.ro/php-libraries/zebra-image/">image manipulation library written in PHP</a></li><li style="margin: 2px 0"><strong>Zebra_Mptt</strong>, <a href="http://stefangabos.ro/php-libraries/zebra-mptt/">a PHP implementation of the modified preorder tree traversal algorithm</a></li><li style="margin: 2px 0"><strong>Zebra_Pagination</strong>, a <a href="http://stefangabos.ro/php-libraries/zebra-pagination/">generic pagination class written in PHP</a></li><li style="margin: 2px 0"><strong>Zebra_Session</strong>, <a href="http://stefangabos.ro/php-libraries/zebra-session/">a wrapper for PHP's default session handling functions, using MySQL for storage</a></li></ul>
+<div class="to-top">
+<p><a class="png" href="http://stefangabos.ro/php-libraries/zebra-database/#top">Top</a></p>
+<div class="clear"></div>
+</div>
+<p><a name="documentation"></a></p>
+<h3>Documentation</h3>
+<table>
+<tbody><tr>
+<td>
+<img src="./usage_overview_files/documentation.png" width="64" height="64" alt="Documentation">
+</td>
+<td>
+Become a ninja.<br>Read the <a href="http://stefangabos.ro/wp-content/docs/Zebra_Database/Zebra_Database/Zebra_Database.html">comprehensive documentation.</a>
+</td>
+</tr>
+</tbody></table>
+<div class="to-top">
+<a class="png" href="http://stefangabos.ro/php-libraries/zebra-database/#top">Top</a><p></p>
+<div class="clear"></div>
+</div>
+<p><a name="changelog"></a></p>
+<h3>Changelog</h3>
+<p>Click on a version to expand/collapse information.</p>
+<dl class="Zebra_Accordion">
+<dt class="Zebra_Accordion_Expanded">version 2.7.3 (July 16, 2012)</dt>
+<dd style="visibility: visible; display: block; border-top-width: 1px; border-bottom-width: 1px; height: 186px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 1; ">
+<ul class="default">
+<li>the library now tries to write errors to the system log (if PHP is configured so; read more <a href="http://www.php.net/manual/en/errorfunc.configuration.php#ini.log-errors">here</a>) when the “debug” property is set to FALSE (as when the “debug” property is set to TRUE the error messages are reported in the debug console);</li>
+<li>the library will now show a warning message in the debug console if the “memcache” extension is loaded but it is not used;</li>
+<li>cached data is now gzcompress-ed and base64_encoded which means cached data is a bit more secure and a bit more faster to load; thanks to <strong>PunKeel</strong> for suggesting this a while ago;</li>
+<li>changed (again!) the order of the arguments for the “select” method – “limit” now comes before “order”; <em style="color:#C40000">note that this update made the select() method backward incompatible and that you will have to change the order of the arguments for this to work!</em></li>
+<li>added a small example on how to use caching through memcache; see the documentation for the “caching_method” property;</li>
+</ul>
+</dd>
+<dt>version 2.7.2 (April 07, 2012)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug that most likely appeared since 2.7, where the “seek” method (and any method relying on it, like all the “fetch” methods) would produce a warning in the debug console if there were no records in the sought resource;</li>
+<li>fixed a bug where NULL could not be used in the “replacements” array of a query; thanks to <strong>בניית אתרים</strong>;</li>
+</ul>
+</dd>
+<dt>version 2.7.1 (February 10, 2012)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>the select() method took arguments in a different order than specified in the documentation; thanks to <strong>Andrei Bodeanschi</strong>; <em style="color:#C40000">note that this update made the select() method backward incompatible and that you will have to change the order of the arguments for this to work!</em></li>
+<li>fixed a bug where the update() and insert_update() methods were not working if in the array with the columns to update, the INC() keyword was used with a replacement marker instead of a value, and the actual value was given in the replacements array; thanks to <strong>Andrei Bodeanschi</strong>;</li>
+<li>fixed a bug where the insert_update() method was not working when the only update field used the INC() keyword; the generated query contained an invalid comma between UPDATE and the field name; thanks to <strong>Allan</strong>;</li>
+</ul>
+</dd>
+<dt>version 2.7 (January 07, 2012)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>added support for caching query results using memcache. thanks to <strong>Balazs</strong> for suggesting it a while ago, and to <strong>Ovidiu Mihalcea</strong> for introducing me to memcache;</li>
+<li>fixed a bug where the script would crash if the object was instantiated more than once and the <em>language</em> method was being called for each of the instances; thanks to <strong>Edy Galantzan</strong>;</li>
+<li>completely rewritten the dlookup method which was not working correctly if anything else than a comma separated list of column names was used (like an expression, for example); thanks to <strong>Allan</strong>;</li>
+<li>the “connect” method can now take an additional argument instructing it to connect to the database right away rather than using a “lazy” connection;</li>
+<li>fixed a bug where some of the elements in the debug console were incorrectly inheriting the page’s body color</li>
+</ul>
+</dd>
+<dt>version 2.6 (September 03, 2011)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>changed the name of “get_columns” method to “get_table_columns” as it returned the number of columns in a given table, and added a new “get_columns” method which takes as argument a resource and returns the number of columns in the given resource;</li>
+<li>some documentation clarifications</li>
+</ul>
+</dd>
+<dt>version 2.5 (July 02, 2011)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>a new method is now available: “get_link” which returns the MySQL link identifier associated with the current connection to the MySQL server. Why as a separate method? Because the library uses “lazy connection” (it is not actually connecting to the database until first query is executed) there’s no link identifier available when calling the <em>connect</em> method.</li>
+<li>a new argument is now available for the <em>insert</em> and <em>insert_bulk</em> methods which allows the creation of INSERT IGNORE queries which will skip records that would cause a duplicate entry for a primary key.</li>
+<li>the default value of the “debug” property was set to FALSE</li>
+</ul>
+</dd>
+<dt>version 2.4 (June 20, 2011)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug with the <em>insert_bulk</em> method (thanks to <strong>Edy Galantzan</strong> for reporting)</li>
+<li>added a new method: <em>table_exists</em> which checks to see if a table with the name given as argument exists in the database</li>
+<li>the <em>select</em> method now also accepts <em>limit</em> and <em>order</em> arguments; due to this change, this method is not compatible with previous versions (thanks to <strong>Monil</strong> for suggesting this)</li>
+<li>some documentation refinements</li>
+</ul>
+</dd>
+<dt>version 2.3 (April 15, 2011)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where the script would generate a warning if the “update” method was called with invalid arguments;</li>
+<li>changed how the <em>insert_bulk</em> method needs to receive arguments, making it more simple to use</li>
+</ul>
+</dd>
+<dt>version 2.2 (March 05, 2011)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where the “select” method war returning a boolean value rather than a resource (thanks to <strong>Monil</strong>);</li>
+<li>the class now uses “lazy connection” meaning that it will not actually connect to the database until the first query is run;</li>
+<li>the debug console now shows also session variables;</li>
+<li>the “show_debug_console” method can now be instructed to return output rather than print it to the screen;</li>
+<li>the highlighter now highlights more keywords;</li>
+<li>improved documentation for the “connect” method;</li>
+</ul>
+</dd>
+<dt>version 2.1 (January 27, 2011)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where the console inherited CSS properties from the parent application;</li>
+<li>fixed some bugs in the JavaScript file that would break the code when parent application was running MooTools;</li>
+<li>transactions are now supported;</li>
+<li>added a new “insert_bulk” method which allows inserting multiple values into a table using a single query (thanks <strong>Sebi P.</strong> for the suggestion);</li>
+<li>added a new “insert_update” method which will create INSERT statements with ON DUPLICATE UPDATE (thank <strong>Sebi P.</strong> for the suggestion);</li>
+<li>enhanced the “update” method;</li>
+<li>the debug console now shows a warning if no charset and collation was specified;</li>
+<li>corrections to the documentation;</li>
+</ul>
+</dd>
+<dt>version 2.0 (January 21, 2011)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>the entire code was improved and some of the properties as well as method names were changed and, therefore, this version breaks compatibility with earlier versions;</li>
+<li>fixed a bug where the script would try to also cache action queries; thanks to <strong>Romulo Gomez</strong>;</li>
+<li>fixed a bug in the “seek” method;</li>
+<li>fixed a bug where on some configurations of Apache/PHP the script would not work;</li>
+<li>fixed a bug where if there was a connection error or MySQL generated an error and the debug console was minimized, it would not be shown automatically;</li>
+<li>fixed a bug where the “dlookup” method would not return escaped column names (i.e. `order`);</li>
+<li>fixed a bug where the “found_rows” property was incorrect for cached queries;</li>
+<li>fixed a bug where the debug console would improperly manage columns enclosed in ` (backtick);</li>
+<li>fixed a bug that caused improper display of some strings in the debug console;</li>
+<li>added a new method “select” – a shorthand for selecting queries;</li>
+<li>added a new method “get_columns” – returns information about a given table’s columns;</li>
+<li>added a new method “implode” – similar to PHP’s own implode() function, with the difference that this method “escapes” imploded elements and also encloses them in grave accents;</li>
+<li>added a new method “set_charset” – sets the characters set and the collation of the database;</li>
+<li>improved functionality of fetch_assoc_all() and fetch_obj_all() methods;</li>
+<li>the debug console shows more information and in a much better and organized way;</li>
+<li>rewritten the method for logging queries to a txt file making the output very easy to read;</li>
+<li>dropped the XTemplate templating engine in order to improve speed; every aspect of the debug console can still be changed through the CSS file;</li>
+</ul>
+</dd>
+<dt>version 1.1.4 (July 24, 2008)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug in the update() method when calling the method without the replacements argument;</li>
+</ul>
+</dd>
+<dt>version 1.1.3 (June 02, 2008)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug that was causing an E_WARNING error when the caching folder could not be found;</li>
+<li>fixed a minor issue that would trigger an error message if replacements were specified even though there was nothing to replace;</li>
+<li>documentation is now clearer on how to define the caching folder;</li>
+</ul>
+</dd>
+<dt>version 1.1.2b (May 08, 2008)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a huge bug in the highlighter when using $replacements;</li>
+<li>fixed an issue where when calling a function/method that executes a method of the class by using of call_user_func_array() and friends, will produce a warning message due to the fact that, in such cases, the information returned by debug_backtrace() function is incomplete;</li>
+<li>fixed a small issue in the template file that would produce an odd output when not having anything in the “messages” section;</li>
+</ul>
+</dd>
+<dt>version 1.1.2 (April 01, 2008)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where the debug console’s position could be influenced by the host application’s stylesheet;</li>
+<li>fixed a minor bug in the “log_debug_info” method;</li>
+<li>fixed a few minor bugs;</li>
+<li>added new methods – “fetch_assoc_all” and “fetch_obj_all” which will fetch all the rows in a record set as an associative array or an array of objects respectively; “get_tables” – returns all the tables in the currently used database; “get_table_status” – returns useful information on all or only on specific tables; “optimize” – automatically optimizes tables that have overhead (unused, lost space);</li>
+<li>full backtrace is now available in the debug console;</li>
+<li>debug console is now a bit smarter and it does not highlight keywords in strings; also knows some more MySQL keywords;</li>
+<li>more accurate reporting of duplicate queries;</li>
+<li>better error reporting for when not being able to connect to the MySQL server or select a database;</li>
+</ul>
+</dd>
+<dt>version 1.1.1 (December 03, 2007)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug in the close() method; thanks <strong>mokster</strong>;</li>
+<li>some documentation refinements (thanks to Vincent van Daal);</li>
+</ul>
+</dd>
+<dt>version 1.1.0 (September 15, 2007)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where calling on a fetch method and on a cached query would send the script into an infinite loop;</li>
+<li>improved the speed of the “dlookup” method by adding LIMIT to it; thanks to <strong>A.Leeming</strong>;</li>
+<li>added some new methods: “close” (alias of mysql_close()), “log_debug_info” which writes debug information to a log file, and “seek” – alias of mysql_data_seek();</li>
+<li>the “connect” method now returns the link identifier of the connection, which can be later used for closing the connection with the “close” method;</li>
+<li>the “connect” method now returns the link identifier of the connection, which can be later used for closing the connection with the “close” method;</li>
+<li>some documentation refinements; thanks <strong>Vincent van Daal</strong>;</li>
+<li>completely rewritten debug console’s template file and stylesheet;</li>
+</ul>
+</dd>
+<dt>version 1.0.9 (May 30, 2007)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where the script would crash upon executing queries like SHOW TABLES, DESCRIBE, etc;</li>
+<li>fixed a bug where due to a typo, no error message was shown if database could not be selected;</li>
+<li>fixed a bug with $replacements containing apostrophes;</li>
+<li>queries can now be cached;</li>
+<li>new methods were added: “delete”, “truncate”, “insert” and “update” which are;</li>
+<li>previously, all records returned by a SELECT query were shown in the debug console and that could crash the script if there were queries returning LOTS of rows;  now there’s a new property called “showMaxRows” instructing the script on how many rows returned by SELECT queries to be shown in the debug console (thanks <strong>Dee S.</strong>);</li>
+<li>the “debug” property is now TRUE by default</li>
+<li>lots of code cleanups and documentation refinements</li>
+</ul>
+</dd>
+<dt>version 1.0.8 (January 28, 2007)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>THIS VERSION BREAKS COMPATIBILITY WITH PREVIOUS ONES!</li>
+<li>fixed a bug with $replacements containing question marks; thanks <strong>Joeri</strong>;</li>
+<li>the debug console now shows backtracing information;</li>
+<li>a new method was added: “fetch_obj” which is an alias of MySQL’s mysql_fetch_object function;</li>
+<li>warnings of duplicate queries were incorrectly being displayed in the console window;</li>
+</ul>
+</dd>
+<dt>version 1.0.7 (November 24, 2006)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>the debug console now also shows the result of EXPLAIN for SELECT queries;</li>
+<li>queries can now be highlighted in debug console by setting the newly added $highlight argument for most of the methods;</li>
+<li>the debug console now reports if two or more queries returned the same records (previously this feature was based on comparing the MySQL statements rahter than on the returned records);</li>
+<li>a new “halt” method was added; this stops the execution of the script at the line where is called and displays the debug console (if the “debug” property is set to TRUE and the viewer’s IP address is in the allowed range set by the “debuggerIP” property);</li>
+<li>fixed some Java Script issues with the debug console;</li>
+<li>some code cleanup and documentation refinements;</li>
+</ul>
+</dd>
+<dt>version 1.0.6 (October 21, 2006)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where it was not possible to connect to two different databases by running two instances of this class in the same script;</li>
+<li>fixed a bug where specifying two or more columns to be returned by the “dlookup” method would produce a warning if the column names were separated by a comma AND a space; there were no warnings if there was NO SPACE just one comma separating the column names;</li>
+<li>fixed a bug where the “haltOnErrors” property was not implemented correctly and the script would actually be halted only on a few exceptional cases;</li>
+<li>fixed a bug where the language could not be changed from the default one;</li>
+<li>added a new method “setLanguage”;</li>
+<li>the debug console can be instructed to appear only for a specific IP address;</li>
+<li>the debug console now displays the actual returned rows for SELECT queries (thanks <strong>Zed</strong>);</li>
+<li>each entry of each tab in the debug console can now be collapsed/expanded;</li>
+</ul>
+</dd>
+<dt>version 1.0.5 (October 02, 2006)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where the “insert_id()” method was not returning correct values (thanks arlc);</li>
+<li>introduced a new boolean property called “haltOnErrors”; when set to TRUE the execution of the script will be halted upon fatal errors and the debug console will be shown (if the “debug” property is set to TRUE);</li>
+<li>the debug console now highlights more keywords;</li>
+<li>the debug console now shows MySQL keywords in upper case;</li>
+</ul>
+</dd>
+<dt>version 1.0.4 (September 03, 2006)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>fixed a bug where the “affectedRows” property always returned 1;</li>
+<li>fixed a bug where query execution time was incorrect in PHP 4;</li>
+<li>fixed a bug where execution time was also computed for unsuccessful queries;</li>
+<li>symbols are now highlighted in the debug console;</li>
+<li>added a new method: “insert_id”, alias of mysql_insert_id() function;</li>
+<li>the debug console now shows the number of returned rows for SELECT queries; this information is also available by reading the newly added “returnedRows” property;</li>
+<li>the debug console can now be minimized both in real-time or by default by setting the newly added “minimizeDebugger” property;</li>
+<li>the debug console shows queries in a more readable way;</li>
+<li>the debug console now highlights more keywords;</li>
+<li>tweaked various aesthetical aspects of the debug console;</li>
+<li>debug information now can be logged to a file instead of being outputted to the screen;</li>
+</ul>
+</dd>
+<dt>version 1.0.3 (August 12, 2006)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>the $_FILES and $_SESSION superglobals are now also shown in the debug console;</li>
+<li>properties now have default values in PHP 4;</li>
+</ul>
+</dd>
+<dt>version 1.0.2 (August 10, 2006)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>the debug console will now report if the same query was run more than once;</li>
+<li>fixed a bug where the “_connected” method was reporting errors to the debug console; because it is a private method, it should report to the method that called it;</li>
+<li>an example is now available in the downloadable package;</li>
+</ul>
+</dd>
+<dt>version 1.0.1 (August 05, 2006)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>the “escape_string” method now escapes any values – in previous version it didn’t escape numbers;</li>
+</ul>
+</dd>
+<dt>version 1.0 (July 20, 2006)</dt>
+<dd style="visibility: visible; display: none; border-top-width: 1px; border-bottom-width: 1px; height: 0px; padding-top: 0px; padding-bottom: 0px; margin-top: 0px; margin-bottom: 0px; opacity: 0; ">
+<ul class="default">
+<li>initial release;</li>
+</ul>
+</dd>
+</dl>
+<div class="to-top">
+<p><a class="png" href="http://stefangabos.ro/php-libraries/zebra-database/#top">Top</a></p>
+<div class="clear"></div>
+</div>
+<p><a name="comments"></a></p>
+<h3><strong>109 responses</strong> to “Zebra_Database, a MySQL database wrapper written in PHP”</h3>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/feed/" title="Follow the comments via RSS" class="comments-feed">
+<img src="./usage_overview_files/ico-social-rss.png" class="png" width="16" alt="">
+Follow the comments via RSS
+</a>
+<ul class="commentlist">
+<li class="even thread-even depth-1 thread">
+<a name="comment-906"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Allan</span>,
+<span class="date">2011-12-06, 05:58</span>
+</div>
+<p>The query it has created is …</p>
+<pre><code class="sql"><span class="operator"><span class="keyword">UPDATE</span>
+lq_mailers 
+<span class="keyword">SET</span>
+<span class="string">`submitted`</span> = ? 
+<span class="keyword">WHERE</span>
+id=?</span></code></pre>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=906#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/8ef731f7c4ea8edd8122e9eca0a8f1d2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="depth-2">
+<a name="comment-907"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Allan</span>,
+<span class="date">2011-12-06, 06:19</span>
+</div>
+<p>I believe I have found the issue and it is a bug …<br>
+$sendafter is a dlookup that returns 1 field but is coming back as an array</p>
+<pre><code class="sql"><span class="operator"><span class="keyword">SELECT</span>
+    IF(IFNULL(DATE_ADD(<span class="aggregate">MAX</span>(sendafter), <span class="keyword">INTERVAL</span> <span class="number">8</span> <span class="keyword">HOUR</span>),NOW())&lt;NOW(),
+    NOW(),
+    IFNULL(DATE_ADD(<span class="aggregate">MAX</span>(sendafter), <span class="keyword">INTERVAL</span> <span class="number">8</span> <span class="keyword">HOUR</span>),NOW())) 
+<span class="keyword">FROM</span>
+    lq_mailqueue 
+<span class="keyword">WHERE</span>
+    type=<span class="string">'solo'</span> 
+LIMIT
+<span class="number">1</span></span></code></pre>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/8ef731f7c4ea8edd8122e9eca0a8f1d2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="bypostauthor even depth-2">
+<a name="comment-908"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2011-12-06, 06:43</span>
+</div>
+<p>indeed that’s a bug. i never intended the dlookup method to be used like this <img src="./usage_overview_files/icon_smile.gif" alt=":)" class="wp-smiley">  i always use dlookup with column names and for anything more fancier i use the good ‘ol query method – but you are not the first to be using it like that <img src="./usage_overview_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+<p>so, I took a look at method’s code, and man, that was SO wrong <img src="./usage_overview_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+<p>replace whole body of the method with this code</p>
+<pre><code class="php">        <span class="comment">// run the query</span>
+        <span class="variable">$this</span>-&gt;query(<span class="string">'
+
+            SELECT
+                '</span> . <span class="variable">$column</span> . <span class="string">'
+            FROM
+                '</span> . <span class="variable">$table</span> .
+            (<span class="variable">$where</span> != <span class="string">''</span> ? <span class="string">' WHERE '</span> . <span class="variable">$where</span> : <span class="string">''</span>) . <span class="string">'
+            LIMIT 1
+
+        '</span>, <span class="variable">$replacements</span>, <span class="variable">$cache</span>, <span class="variable">$highlight</span>);
+
+        <span class="comment">// if query was executed successfully and one or more records were returned</span>
+        <span class="keyword">if</span> (<span class="variable">$this</span>-&gt;last_result &amp;&amp; <span class="variable">$this</span>-&gt;returned_rows &gt; <span class="number">0</span>) {
+
+            <span class="comment">// fetch the result</span>
+            <span class="variable">$row</span> = <span class="variable">$this</span>-&gt;fetch_assoc();
+
+            <span class="comment">// if there is only one column in the returned set</span>
+            <span class="comment">// return as a single value</span>
+            <span class="keyword">if</span> (count(<span class="variable">$row</span>) == <span class="number">1</span>) <span class="keyword">return</span> array_pop(<span class="variable">$row</span>);
+
+            <span class="comment">// if more than one columns, return as an array</span>
+            <span class="keyword">else</span> <span class="keyword">return</span> <span class="variable">$row</span>;
+
+        }
+
+        <span class="comment">// if error or no records</span>
+        <span class="keyword">return</span> <span class="keyword">false</span>;</code></pre>
+<p>…and thanks for reporting!</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="depth-2">
+<a name="comment-910"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Allan</span>,
+<span class="date">2011-12-06, 11:14</span>
+</div>
+<p>Awesome, thanks Stefen</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/8ef731f7c4ea8edd8122e9eca0a8f1d2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even depth-1 thread">
+<a name="comment-968"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Mark</span>,
+<span class="date">2012-01-03, 12:45</span>
+</div>
+<p>Hi Stefan!<br>
+Happy New Year and thank you for your great work <img src="./usage_overview_files/icon_biggrin.gif" alt=":D" class="wp-smiley"> </p>
+<p>I am wondering, how can I have more than one $db query, if I need to make a looping query ?<br>
+$db-&gt;query( sql1 );<br>
+while( $row = $db-&gt;fetch_assoc()){<br>
+// Make new query and loop the result here…<br>
+}</p>
+<p>Am I barking up the wrong tree ?</p>
+<p>Best regards,<br>
+Mark</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=968#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/0369d5f5c802e88c075bcfc10d045f4c" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-969"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-01-03, 13:32</span>
+</div>
+<p>as stated in the documentation, unless specifying a result set to work on, all method work on the last used resource set. therefore, as soon as you do a query inside the loop, its result will become the “last resource set”, and as soon as it’ll try to fetch_assoc again, it’ll throw an error. the correct code is</p>
+<pre><code class="php"><span class="comment">// cache the result set and use it to fetch rows from it</span>
+<span class="variable">$result</span> = <span class="variable">$db</span>-&gt;query(<span class="variable">$sql1</span>);
+<span class="keyword">while</span> (<span class="variable">$row</span> = <span class="variable">$db</span>-&gt;fetch_assoc(<span class="variable">$result</span>)) {
+    <span class="comment">// queries go here</span>
+}</code></pre>
+<p>i hope it makes sense</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="even depth-2">
+<a name="comment-971"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Mark</span>,
+<span class="date">2012-01-03, 15:09</span>
+</div>
+<p>Stefan, thanks for your quick reply <img src="./usage_overview_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+<p>Works like a charm!!</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/0369d5f5c802e88c075bcfc10d045f4c" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="thread-even depth-1 thread">
+<a name="comment-976"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author"><a href="http://www.kedesign.co.il/" rel="external nofollow" class="url">בניית אתרים</a></span>,
+<span class="date">2012-01-07, 06:33</span>
+</div>
+<p>The function truncate not affect affected_rows.<br>
+How I can get the number of deleted rows?</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=976#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/73f90ba2616e9e83f20f908279a8b941" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor even depth-2">
+<a name="comment-977"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-01-07, 09:51</span>
+</div>
+<p>that is a particularity of the MySQL engine and it makes sense: TRUNCATE, for performance reasons, drops and recreates the table, so it doesn’t care about the number of records (as opposed to the DELETE statement which deletes rows one-by-one and, hence, it knows about the number of deleted rows)</p>
+<p>the <a href="http://dev.mysql.com/doc/refman/5.0/en/truncate-table.html" rel="nofollow">MySQL documentation</a> states that <em>Truncation operations do not return a meaningful value for the number of deleted rows. The usual result is ’0 rows affected,’ which should be interpreted as ‘no information’</em></p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="depth-1 thread">
+<a name="comment-1018"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Jackman</span>,
+<span class="date">2012-01-26, 12:57</span>
+</div>
+<p>How to do this in Zebra_Database way:</p>
+<pre><code class="sql"><span class="operator"><span class="keyword">SELECT</span> 
+  <span class="string">`ID`</span> 
+<span class="keyword">FROM</span> 
+  <span class="string">`users`</span> 
+<span class="keyword">WHERE</span> 
+  <span class="string">`email`</span> = <span class="string">'$email'</span> <span class="keyword">AND</span> 
+  <span class="string">`password`</span> = <span class="string">'$password'</span> <span class="keyword">AND</span> 
+  <span class="string">`status`</span> = <span class="string">'$status'</span></span></code></pre>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1018#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/696f51d7a95d58483b4d343d367f1a11" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="even depth-2">
+<a name="comment-1019"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Jackman</span>,
+<span class="date">2012-01-26, 13:04</span>
+</div>
+<p>I mean is: for example</p>
+<pre><code class="php"><span class="variable">$db</span>-&gt;query(<span class="string">'
+  SELECT 
+    `ID` 
+  FROM 
+    `users` 
+  WHERE 
+    `email` = ?'</span>, <span class="keyword">array</span>(<span class="variable">$email</span>))</code></pre>
+<p>then how to do more criteria?</p>
+<pre><code class="php"><span class="keyword">AND</span> `password` = <span class="string">'$password'</span> <span class="keyword">AND</span> `status` = <span class="string">'$status'</span></code></pre>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/696f51d7a95d58483b4d343d367f1a11" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="bypostauthor depth-2">
+<a name="comment-1020"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-01-26, 13:05</span>
+</div>
+<pre><code class="php"><span class="variable">$db</span> = <span class="keyword">new</span> Zebra_Database();
+<span class="variable">$db</span>-&gt;connect(<span class="string">'host'</span>, <span class="string">'username'</span>, <span class="string">'password'</span>, <span class="string">'database'</span>);
+<span class="variable">$db</span>-&gt;query(<span class="string">'
+  SELECT
+    ID
+  FROM
+    users
+  WHERE
+    email = ? AND password = ? AND status = ?
+'</span>, <span class="keyword">array</span>(<span class="variable">$email</span>, <span class="variable">$password</span>, <span class="variable">$status</span>);</code></pre>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even thread-even depth-1 thread">
+<a name="comment-1058"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Chris Dye</span>,
+<span class="date">2012-01-29, 07:03</span>
+</div>
+<p>I was wondering if you’ve developed an efficient way to connect to multiple databases — or switch between them?</p>
+<p>Thanks Again for your fantastic work!</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1058#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/7f2719529f3448771fee51d67606187e" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1059"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-01-29, 09:46</span>
+</div>
+<pre><code class="php"><span class="comment">// connect to database 1</span>
+<span class="variable">$db1</span> = <span class="keyword">new</span> Zebra_Database();
+<span class="variable">$db1</span>-&gt;connect(..);
+
+<span class="comment">// connect to database 2</span>
+<span class="variable">$db2</span> = <span class="keyword">new</span> Zebra_Database();
+<span class="variable">$db2</span>-&gt;connect(..);</code></pre>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="even depth-2">
+<a name="comment-1066"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Chris Dye</span>,
+<span class="date">2012-01-30, 22:11</span>
+</div>
+<p>That’s what I ended up doing — I just didn’t know if there was an adverse performance impact by doing that way, vs. any more elegant way of accomplishing it that I wasn’t seeing.</p>
+<p>Thanks so much for the clarification, and for all of your libraries. They’re a staple of my development arsenal.</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/7f2719529f3448771fee51d67606187e" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="bypostauthor depth-2">
+<a name="comment-1067"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-01-31, 07:33</span>
+</div>
+<p>that’s the most elegant way of doing it in OOP <img src="./usage_overview_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even depth-1 thread">
+<a name="comment-1080"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">JACKMAN</span>,
+<span class="date">2012-02-06, 08:40</span>
+</div>
+<p>can i use SET time_zone = ‘-8:00′; ?</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1080#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/d22c88fbbda37aff3c67de046a29489d" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1081"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-02-06, 10:00</span>
+</div>
+<p>you mean:</p>
+<pre><code class="php"><span class="variable">$this</span>-&gt;db-&gt;update(<span class="string">'table_name'</span>, <span class="keyword">array</span>(
+  <span class="string">'time_zone'</span>  =&gt;  <span class="string">'-8:00'</span>,
+), <span class="string">'criteria_column = ?'</span>, <span class="keyword">array</span>(<span class="variable">$value</span>));</code></pre>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="even depth-2">
+<a name="comment-1082"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">JACKMAN</span>,
+<span class="date">2012-02-06, 10:05</span>
+</div>
+<p>I mean:<br>
+mysql_query(“SET time_zone = ‘-8:00′ “);<br>
+<a href="http://dev.mysql.com/doc/refman/5.5/en/time-zone-support.html" rel="nofollow">http://dev.mysql.com/doc/refman/5.5/en/time-zone-support.html</a></p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/d22c88fbbda37aff3c67de046a29489d" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="bypostauthor depth-2">
+<a name="comment-1084"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-02-06, 10:08</span>
+</div>
+<p>you tried </p>
+<pre><code class="php"><span class="variable">$db</span>-&gt;query(<span class="string">'SET time_zone = "-8:00"'</span>);</code></pre>
+<p>and it didn’t work?</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="even depth-2">
+<a name="comment-1083"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">JACKMAN</span>,
+<span class="date">2012-02-06, 10:06</span>
+</div>
+<p>like:<br>
+$db-&gt;set_charset(”);</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/d22c88fbbda37aff3c67de046a29489d" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="depth-2">
+<a name="comment-1085"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">JACKMAN</span>,
+<span class="date">2012-02-06, 10:17</span>
+</div>
+<p>It’s not work:<br>
+$db-&gt;query(‘SET time_zone = “-5:00″‘);</p>
+<p>timestamp value still by system_time_zone default set</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/d22c88fbbda37aff3c67de046a29489d" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even thread-even depth-1 thread">
+<a name="comment-1104"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Allan</span>,
+<span class="date">2012-02-10, 05:30</span>
+</div>
+<p>Found an issue with insert_update when the only update field uses INC(). The generated query is adding a comma between UPDATE and the field name.</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1104#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/8ef731f7c4ea8edd8122e9eca0a8f1d2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1109"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-02-10, 12:23</span>
+</div>
+<p>thanks! version 2.7.1, containing a fix for the reported problem, is now available for download</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even depth-1 thread">
+<a name="comment-1139"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Kesuma</span>,
+<span class="date">2012-02-28, 13:59</span>
+</div>
+<p>Great database wrapper. Amazing part on debug console. Now I can learn more about query statement properly when showing a warning message.</p>
+<p>Let’s say I want to call users table, then I created a function an example</p>
+<pre><code class="php"><span class="keyword">function</span> get_user(<span class="variable">$string</span>)
+{
+    <span class="keyword">global</span> <span class="variable">$db</span>;
+	<span class="variable">$logged_userid</span> = (int)<span class="variable">$_SESSION</span>[<span class="string">'logged'</span>][<span class="string">'uid'</span>];
+    <span class="variable">$user</span>   = <span class="variable">$db</span>-&gt;dlookup(<span class="string">'
+			  user_id, user_username, user_email, user_fullname, user_gender, user_birthdate, user_created, user_status'</span>, <span class="string">'users'</span>, <span class="string">'user_id = ?'</span>, <span class="keyword">array</span>(
+        <span class="variable">$logged_userid</span>
+    ));
+    <span class="variable">$return</span> = secure(<span class="variable">$user</span>[<span class="variable">$string</span>]);
+    <span class="keyword">return</span> <span class="variable">$return</span>;
+}
+</code></pre>
+<p>So I call it by </p>
+<pre><code class="php">get_user(<span class="string">'user_email'</span>) <span class="keyword">or</span> get_user(<span class="string">'user_fullname'</span>) etc..
+</code></pre>
+<p>When I check on debug console show me a warning message</p>
+<pre><code class="javascript">WARNING: The first few results <span class="keyword">return</span>ed by <span class="keyword">this</span> query are the same as <span class="keyword">return</span>ed by <span class="number">1</span> other queries!
+</code></pre>
+<p>Question : What is the best way to call result on every column of users table?</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1139#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/72c35b1cd9f2c704da0443fa2e1e8881" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1148"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-03-02, 04:44</span>
+</div>
+<p>there’s nothing particularly wrong with your approach…that message is because you simply retrieve the same data more than once, which is a waste of resources. you have to figure out a way in the flow of your code to optimally query the database</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even thread-even depth-1 thread">
+<a name="comment-1173"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Mark</span>,
+<span class="date">2012-03-05, 13:55</span>
+</div>
+<p>Hi Stefan<br>
+How can I perform a LIKE query ? I did the following but wioth no luck…</p>
+<p>$db-&gt;query(“SELECT id as value, concat(first_name,’ ‘, last_name) as label FROM userprofiles WHERE fid = ? AND (first_name LIKE ‘%?%’ OR last_name LIKE ‘%?%’) ORDER BY first_name”, array($fid,$_POST['term'],$_POST['term']) );</p>
+<p>This is for a JSON result – usually not a fan of LIKE statements…</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1173#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/0369d5f5c802e88c075bcfc10d045f4c" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1189"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-03-09, 21:42</span>
+</div>
+<p>you could either prepare you $_POST values like</p>
+<pre><code class="php"><span class="variable">$_POST</span>[<span class="string">'term'</span>] = <span class="string">'%'</span> . <span class="variable">$_POST</span>[<span class="string">'term'</span>] . <span class="string">'%'</span></code></pre>
+<p>and then have</p>
+<pre><code class="undefined">LIKE ?</code></pre>
+<p>or write it like</p>
+<pre><code class="undefined">LIKE '%" . $db-&gt;escape($_POST['term']) . "%'</code></pre>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even depth-1 thread">
+<a name="comment-1202"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author"><a href="http://www.kedesign.co.il/" rel="external nofollow" class="url">בניית אתרים</a></span>,
+<span class="date">2012-03-15, 09:10</span>
+</div>
+<p>I believe you have to modify the code query like that:</p>
+<p>if($replacement === NULL)<br>
+{<br>
+$replacements2[$key] = ‘NULL’;<br>
+}<br>
+else<br>
+{<br>
+$replacements2[$key] = ‘\” . preg_replace(‘/\$([0-9]*)/’, ‘\\\$$1′, $this-&gt;escape($replacement)) . ‘\”;<br>
+}</p>
+<p>some times we need to put NULL in insert.</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1202#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/73f90ba2616e9e83f20f908279a8b941" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1203"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-03-15, 09:15</span>
+</div>
+<p>indeed. it was suggested before, but I forgot about it. I’ll add that to the next release. thanks!</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even thread-even depth-1 thread">
+<a name="comment-1293"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Allan</span>,
+<span class="date">2012-04-15, 23:51</span>
+</div>
+<p>Hi Stefan.<br>
+I am getting bounce messages from the slow query notification …<br>
+<code class="php">A message that you sent contained no recipient addresses, <span class="keyword">and</span> therefore no delivery could be attempted.</code><br>
+I have the following set<br>
+<code class="php"><span class="variable">$db</span>-&gt;notifier_address = <span class="string">'me@myemail.com'</span>;</code>
+</p><div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1293#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/8ef731f7c4ea8edd8122e9eca0a8f1d2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1295"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-04-16, 20:43</span>
+</div>
+<p>thanks! i’ll have a look</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="bypostauthor even depth-2">
+<a name="comment-1296"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-04-16, 20:46</span>
+</div>
+<p>the property’s name is “notification_address” and not  “notifier_address”…</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="depth-1 thread">
+<a name="comment-1376"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">kumbing</span>,
+<span class="date">2012-05-06, 19:53</span>
+</div>
+<p>There have a tutorial how to use the<br>
+<strong>cache</strong> or <strong>memcached</strong> with zebra?</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1376#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/bbd863b3584ea96254720df671d53adb" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+<li class="even thread-even depth-1 thread">
+<a name="comment-1503"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">albert</span>,
+<span class="date">2012-06-08, 02:20</span>
+</div>
+<p>Hi,I’m wondering about how to keep consistency within zebra-database ?</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1503#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/6a93f3b969bc0d8e61ad2e332ab3b2a4" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1511"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-06-09, 05:58</span>
+</div>
+<p>what you mean?</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+<li class="even depth-1 thread">
+<a name="comment-1525"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Emilio</span>,
+<span class="date">2012-06-14, 10:05</span>
+</div>
+<p>Hello Stefan, just wondering if you can help me to use <strong>select</strong> or <strong>query</strong> with this query:</p>
+<p><code class="sql"><span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> id <span class="keyword">DESC</span> LIMIT $<span class="keyword">from</span>, $<span class="keyword">to</span></span></code>
+</p><p>I tried this but I got errors:</p>
+<pre><code class="php"><span class="variable">$result</span> = <span class="variable">$db</span>-&gt;select(
+<span class="string">'field'</span>,
+<span class="string">'table'</span>,
+<span class="string">''</span>, <span class="comment">//where</span>
+<span class="string">''</span>, <span class="comment">//replacements</span>
+<span class="string">'$from, $to'</span>, <span class="comment">//limit</span>
+<span class="string">'id DESC'</span> <span class="comment">//</span>
+);
+</code></pre>
+<pre><code class="php"><span class="variable">$result</span> = <span class="variable">$db</span>-&gt;query(<span class="string">'SELECT * FROM table ORDER BY id DESC LIMIT $from, $to'</span>);
+</code></pre>
+<p>Thanks in advance.</p>
+<div class="clear"></div>
+<a href="http://stefangabos.ro/php-libraries/zebra-database/?replytocom=1525#respond" class="button comment-reply png"><span>Reply</span></a>
+</div>
+<img alt="" src="./usage_overview_files/4f8450966f637a9f6d8b4aa9b74b4b1e" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+<ul class="children">
+<li class="bypostauthor depth-2">
+<a name="comment-1533"></a>
+<div class="comment-content">
+<div class="comment-author">
+<span class="author">Stefan Gabos</span>,
+<span class="date">2012-06-18, 08:19</span>
+</div>
+<p>what is the error message you’re getting? are you sure you have a connection to the database? are you sure your $from and $to variables exist?</p>
+<p>both</p>
+<pre><code class="php"><span class="variable">$db</span>-&gt;select(<span class="string">'*'</span>, <span class="string">'city'</span>, <span class="string">''</span>, <span class="string">''</span>, <span class="string">'0, 10'</span>, <span class="string">'population DESC'</span>);</code></pre>
+<p>and </p>
+<pre><code class="php"><span class="variable">$db</span>-&gt;query(<span class="string">'SELECT * FROM city ORDER BY population DESC LIMIT 0, 10'</span>);</code></pre>
+<p>and both are working fine.</p>
+<div class="clear"></div>
+</div>
+<img alt="" src="./usage_overview_files/3cd637f68374dc735dc89b48508910b2" class="avatar avatar-64 photo" height="64" width="64">
+<div class="clear"></div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="navigation">
+<div class="alignleft"><a href="http://stefangabos.ro/php-libraries/zebra-database/comment-page-2/#comments">« Older comments</a></div>
+<div class="alignright"></div>
+<div class="clear"></div>
+</div>
+<div class="reply-form">
+<a name="respond"></a>
+<h3>Leave a Reply</h3>
+<form name="commentform" id="commentform" action="http://stefangabos.ro/wp-comments-post.php" method="post" class="Zebra_Form"><div class="hidden"><input type="hidden" name="comment_post_ID" id="comment_post_ID" value="508"><input type="hidden" name="comment_parent" id="comment_parent" value="0"><input type="hidden" name="name_commentform" id="name_commentform" value="commentform"><label for="zebra_honeypot_commentform" style="display:none">Leave this field blank</label><input type="text" name="zebra_honeypot_commentform" id="zebra_honeypot_commentform" value="" class="control text" autocomplete="off"><input type="hidden" name="zebra_csrf_token_commentform" id="zebra_csrf_token_commentform" value="d88d1e460f2d4879c5e562ea70ab8877"></div><div class="row"><label for="author" id="label_author">Name<span class="required">*</span></label><input type="text" name="author" id="author" value="" class="control text validate[required]"></div><div class="row even"><label for="email" id="label_email">Email<span class="required">*</span></label><input type="text" name="email" id="email" value="" class="control text validate[required,email]"><div class="note" id="note_email">Your email address will not be published</div></div><div class="row"><label for="url" id="label_url">Website</label><input type="text" name="url" id="url" value="" class="control text"></div><div class="row even"><label for="comment" id="label_comment">Message<span class="required">*</span></label><textarea name="comment" id="comment" rows="5" cols="80" class="control validate[required]"></textarea><div class="note" id="note_comment">You can use &lt;strong&gt;, &lt;em&gt;, &lt;a&gt;, &lt;img&gt;, &lt;code&gt;</div></div><div class="row"><img src="./usage_overview_files/process.php" alt=""><label for="captcha" id="label_captcha">Enter the characters that stand out in the image above</label><input type="text" name="captcha" id="captcha" value="" class="control text validate[captcha]"><div class="note" id="note_captcha">Characters are not case-sensitive</div></div><div class="row even last"><input type="submit" name="cmdsubmit" id="cmdsubmit" value="Submit" class="submit"></div></form><script type="text/javascript">function init_2bc6b52c6dc0103aabcab02ee6389794(){if(typeof jQuery=="undefined"||typeof jQuery.fn.Zebra_Form=="undefined"){setTimeout("init_2bc6b52c6dc0103aabcab02ee6389794()",100);return}$("#commentform").Zebra_Form({scroll_to_error:true,tips_position:'left',close_tips:true,validate_on_the_fly:false,validate_all:false,error_messages:{"author":{"required":"Name is required!"},"email":{"required":"Email address is required!","email":"Email address is invalid!"},"comment":{"required":"Message is required!"},"captcha":{"captcha":"Characters not entered correctly!"}}})}init_2bc6b52c6dc0103aabcab02ee6389794()</script>
+</div>
+</div>
+</div>
+<div id="right-sidebar" class="clearfix">
+<div class="widget widget_text">			<div class="textwidget"><div style="margin-left: 7px; margin-top: 5px">
+<a href="http://themeforest.net/?ref=stefangabos" style="float:left" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Affiliates&#39;, &#39;Click&#39;, &#39;ThemeForest&#39;]);"><img src="./usage_overview_files/tf_125x125_v2.gif" width="125" height="125" alt="1000s of Site Templates" style="border:none; margin:0 5px 5px 0"></a><a href="http://www.elegantthemes.com/affiliates/idevaffiliate.php?id=13552_0_1_3" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Affiliates&#39;, &#39;Click&#39;, &#39;ElegantThemes&#39;]);"><img border="0" src="./usage_overview_files/125x125-2.gif" width="125" height="125" style="border:none; margin:0"></a><div class="clear"></div></div>
+<div class="clear"></div>
+<div style="margin-left: 7px">
+<a href="http://tokokoo.com/member/aff/go?r=225&i=19" style="float:left" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Affiliates&#39;, &#39;Click&#39;, &#39;Tokokoo&#39;]);"><img src="./usage_overview_files/225" border="0" alt="ikonik 125" width="125" height="125" style="border:none; margin:0 5px 5px 0"></a><a href="http://www.shopify.com/?ref=stefangabos" onclick="_gaq.push([&#39;_trackEvent&#39;, &#39;Affiliates&#39;, &#39;Click&#39;, &#39;Shopify&#39;]);"><img width="125" border="0" height="125" src="./usage_overview_files/Shopify-Buttons-125x125-white.png" alt="" style="border:none; margin:0"></a><div class="clear"></div></div>
+<div class="clear"></div></div>
+</div>		<div class="widget zebra_recent_posts">		<h3>Recent Posts</h3>		<ul>
+<li style="font-size: 11px; color: #222; font-weight: normal"><a href="http://stefangabos.ro/jquery/zebra_transform-version-2-3-now-available/" title="Zebra_TransForm, version 2.3 now available">Zebra_TransForm, version 2.3 now available</a><br><em>August 14, 2012</em><br><p>Here’s what’s new in 2.8.4: elements created by the plugin will now also copy the original elements’ events which, when triggered, will run in the context of the original element – so this will be the original element rather than the replacement; for example, a “click” event attached to an checkbox will also be triggered [...]</p>
+</li>
+<li style="font-size: 11px; color: #222; font-weight: normal"><a href="http://stefangabos.ro/php-libraries/zebra_form-version-2-8-6-now-available/" title="Zebra_Form, version 2.8.6 now available">Zebra_Form, version 2.8.6 now available</a><br><em>August 13, 2012</em><br><p>Here’s what’s new in version 2.8.6: fixed a bug where having the ‘other’ option set for select controls having non-numerical values, would result in the form never passing validation; thanks to Edward; fixed a bug where for select boxes having non-numerical indices, a malicious user could submit other values than those defined when creating the [...]</p>
+</li>
+<li style="font-size: 11px; color: #222; font-weight: normal"><a href="http://stefangabos.ro/jquery/zebra_datepicker-version-1-4-1-now-available/" title="Zebra_DatePicker, version 1.4.1 now available">Zebra_DatePicker, version 1.4.1 now available</a><br><em>July 29, 2012</em><br><p>Here’s what’s new in version 1.4.1: fixed a bug where, when two date pickers are paired, the second date picker’s starting date was using the first date picker’s date as starting date *only* after a date was selected in the first date picker and not also when the first date picker already had a default [...]</p>
+</li>
+<li style="font-size: 11px; color: #222; font-weight: normal"><a href="http://stefangabos.ro/php-libraries/zebra_form-version-2-8-5-now-available/" title="Zebra_Form, version 2.8.5 now available">Zebra_Form, version 2.8.5 now available</a><br><em>July 23, 2012</em><br><p>Here’s what’s new in 2.8.5: fixed a bug where file controls were *always* requried even if the “required” rule was not set; thanks Andre fixed a few bugs related to the generation of the CSRF token where the token was always generated with the default values and was re-generated each time the csrf() method was [...]</p>
+</li>
+<li style="font-size: 11px; color: #222; font-weight: normal"><a href="http://stefangabos.ro/jquery/zebra_transform-version-2-2-now-available/" title="Zebra_TransForm, version 2.2 now available">Zebra_TransForm, version 2.2 now available</a><br><em>July 21, 2012</em><br><p>Here’s what’s new in 2.8.4: fixed a bug due to which the “update” method was not working better support for select boxes in all browsers many performance tweaks Visit Zebra_TransForm‘s page</p>
+</li>
+</ul>
+</div><div class="widget widget_text">			<div class="textwidget"><div style="margin-left: 7px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7721503008742862";
+/* stefangabos.ro 250x250, images, sidebar */
+google_ad_slot = "0692456593";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./usage_overview_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px"><iframe allowtransparency="true" frameborder="0" height="250" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+=&#39;.call&#39;;setTimeout(h,0)}else if(h.match){i+=&#39;.nav&#39;;w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" scrolling="no" vspace="0" width="250" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+<div style="margin-top: 5px; margin-left: 7px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7721503008742862";
+/* stefangabos.ro 250x250, images, sidebar, 2 */
+google_ad_slot = "5493023609";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./usage_overview_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px"><iframe allowtransparency="true" frameborder="0" height="250" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+=&#39;.call&#39;;setTimeout(h,0)}else if(h.match){i+=&#39;.nav&#39;;w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" scrolling="no" vspace="0" width="250" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+<div style="margin-top: 7px; margin-left: 7px">
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-7721503008742862";
+/* stefangabos.ro 250x250, images, sidebar, 3 */
+google_ad_slot = "6699545854";
+google_ad_width = 250;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="./usage_overview_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px"><ins id="aswift_3_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:250px"><iframe allowtransparency="true" frameborder="0" height="250" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+=&#39;.call&#39;;setTimeout(h,0)}else if(h.match){i+=&#39;.nav&#39;;w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" scrolling="no" vspace="0" width="250" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div></div>
+</div><div class="widget widget_archive"><h3>Archive</h3>		<ul>
+<li><a href="http://stefangabos.ro/2012/08/" title="August 2012">August 2012</a></li>
+<li><a href="http://stefangabos.ro/2012/07/" title="July 2012">July 2012</a></li>
+<li><a href="http://stefangabos.ro/2012/05/" title="May 2012">May 2012</a></li>
+<li><a href="http://stefangabos.ro/2012/04/" title="April 2012">April 2012</a></li>
+<li><a href="http://stefangabos.ro/2012/03/" title="March 2012">March 2012</a></li>
+<li><a href="http://stefangabos.ro/2012/02/" title="February 2012">February 2012</a></li>
+<li><a href="http://stefangabos.ro/2012/01/" title="January 2012">January 2012</a></li>
+<li><a href="http://stefangabos.ro/2011/12/" title="December 2011">December 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/11/" title="November 2011">November 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/10/" title="October 2011">October 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/09/" title="September 2011">September 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/08/" title="August 2011">August 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/07/" title="July 2011">July 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/06/" title="June 2011">June 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/05/" title="May 2011">May 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/04/" title="April 2011">April 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/03/" title="March 2011">March 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/02/" title="February 2011">February 2011</a></li>
+<li><a href="http://stefangabos.ro/2011/01/" title="January 2011">January 2011</a></li>
+<li><a href="http://stefangabos.ro/2010/12/" title="December 2010">December 2010</a></li>
+</ul>
+</div><div class="widget widget_text">			<div class="textwidget"></div>
+</div>                
+</div>
+<div class="clear"></div>
+<div id="footer" class="png">
+<div class="widget widget_text"><h3>Who am I</h3>			<div class="textwidget"><p><img src="./usage_overview_files/stefan-gabos.jpg" width="75" class="left" alt="Stefan Gabos">I am a 32 year old web developer working from Bucharest, Romania. I am coding since I was 14 and I am extremely passionate about it. For the server side of things I use PHP/MySQL while on the front-end I write valid HTML 5, nice CSS and lots of JavaScript code using jQuery.</p>
+</div>
+</div><div class="widget widget_recent_comments"><h3>Recent Comments</h3><ul id="recentcomments"><li class="recentcomments">Stefan Gabos on <a href="http://stefangabos.ro/php-libraries/zebra-image/comment-page-2/#comment-1845">Zebra_Image, a lightweight image manipulation library written in PHP</a></li><li class="recentcomments">ChrisG on <a href="http://stefangabos.ro/jquery/jquery-plugin-boilerplate-revisited/comment-page-2/#comment-1844">jQuery Plugin Boilerplate</a></li><li class="recentcomments"><a href="http://www.halloo.com/" rel="external nofollow" class="url">Jim Li</a> on <a href="http://stefangabos.ro/php-libraries/zebra-image/comment-page-2/#comment-1843">Zebra_Image, a lightweight image manipulation library written in PHP</a></li><li class="recentcomments">Stefan Gabos on <a href="http://stefangabos.ro/jquery/zebra-datepicker/comment-page-6/#comment-1841">Zebra_Datepicker, a lightweight datepicker jQuery plugin</a></li><li class="recentcomments">keith on <a href="http://stefangabos.ro/jquery/zebra-datepicker/comment-page-6/#comment-1840">Zebra_Datepicker, a lightweight datepicker jQuery plugin</a></li></ul></div>                
+<div class="clear" style="border-top: 1px solid #DEDEDE; padding-top: 5px"></div>
+copyright © 2006 - 2012 Stefan Gabos. all rights reserved.
+</div>
+</div>
+<script type="text/javascript" src="./usage_overview_files/3d7cd6f6d1ce2bd972aeddf65355cf6e_5633627453.js"></script>
+<script type="text/javascript" src="./usage_overview_files/plusone.js" gapi_processed="true"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-20441372-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+
+
+<!-- Dynamic page generated in 0.292 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2012-08-30 16:14:39 -->
+<!-- super cache --><div class="ugdv_contextMenu" id="ugdv_myMenu" style="display: none; "><ul id="ugdv_contextMenu"><li id="ugdv_menuItem_google_docs">Open in Google Docs Viewer</li><li id="ugdv_menuItem_new_tab">Open link in new tab</li><li id="ugdv_menuItem_new_window">Open link in new window</li><li id="ugdv_menuItem_new_incognito">Open link in new incognito window</li><li class="ugdv_seperator"></li><li id="ugdv_menuItem_download_file">Download file</li><li id="ugdv_menuItem_copy">Copy link address</li><li id="ugdv_menuItem_editpdf">Edit PDF File on PDFescape.com</li></ul></div><div style="display: none; " id="hiddenlpsubmitdiv"></div><script>try{for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ d.innerText=i; } } d.dispatchEvent(customEvent); form.lpsubmitorig2(); } } }}catch(e){}</script><div id="ugdv_jqContextMenu" style="display: none; position: absolute; z-index: 9999; "></div><div style="background-color: rgb(0, 0, 0); position: absolute; opacity: 0.2; z-index: 9998; display: none; "></div></body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1"></span><object id="skype_plugin_object" location.href="http://stefangabos.ro/php-libraries/zebra-database/#documentation" location.hostname="stefangabos.ro" style="position: absolute; visibility: hidden; left: -100px; top: -100px; " width="0" height="0" type="application/x-vnd.skype.click2call.chrome.5.7.0"></object></html>

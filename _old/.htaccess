@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule		^[\w\@\/\-]*$			./load.php
+#RewriteRule	^([A-Za-z0-9-]*)/?$		./index.php?p=$1
+
+ErrorDocument 	404 					/jewc2012/404?error=404
+ErrorDocument 	500 					/jewc2012/500?error=500
+
+# Nega o acesso dos clientes ao .htaccess (bom colocar no httpd.conf)
+# – Vem com a configuração padrão do Apache
+#<Files ~ “^\.ht”>
+#Order allow,deny
+#Deny from all
+#</Files>

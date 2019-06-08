@@ -1,0 +1,28 @@
+@import '../adm.less';
+
+h2 {
+  margin-bottom:0px!important;
+}
+div#dados {
+  
+  span {
+      font-family: GauntletClassic !important;
+      font-size: 15px !important;
+      line-height: 18px !important;
+      color: #a8a8a7 - #333 !important;
+      border-bottom: 1px solid #a8a8a7 + #333;
+      width:600px;
+      display: inline-block;
+      
+      b {
+        display: inline-block;
+        width: 120px !important;
+        margin-right:20px;
+        backgroun-color: red;
+      }
+  }
+}
+
+a.button{
+  margin-top:20px;
+}

@@ -1,0 +1,16 @@
+<?php
+/**
+ * Smarty plugin
+ * *feito pelo Werneck
+ * -------------------------------------------------------------
+ * File:     function.flash.php
+ * Type:     function
+ * Name:     flash
+ * Purpose:  script helper
+ * -------------------------------------------------------------
+ */
+function smarty_function_flash($params, &$view)
+{
+	return $view->controller->flash(FALSE);
+}
+?>

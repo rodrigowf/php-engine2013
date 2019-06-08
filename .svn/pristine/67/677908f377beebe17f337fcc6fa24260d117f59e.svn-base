@@ -1,0 +1,5 @@
+/**
+ * Place here code to be executed in all system.
+ */
+
+load('plugins/all_bootstrap.min');

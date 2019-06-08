@@ -1,0 +1,9 @@
+Regras de validação aceitas:
+
+required, matches=?, numeric, alphabetic, alphanum, maxlen=?, minlen=?, length=?, email, regexp=?
+
+
+por vir:
+
+tel,
+format=999-aaa.99 (formato igual ao do jmask)

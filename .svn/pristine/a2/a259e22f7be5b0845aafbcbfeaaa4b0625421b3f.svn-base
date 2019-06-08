@@ -1,0 +1,95 @@
+/***********INICIO DO CSS RESET*************/
+html, body, div, span, applet, object, iframe, table, caption,tbody, tfoot, thead, tr, th, td, del, dfn, em, font, img, ins,kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,acronym, address, big, cite, code, dl, dt, dd, ol, ul, li,fieldset, form, label, legend {
+	vertical-align: baseline;
+	font-family: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+:focus {	
+	outline: 0;
+}
+
+body {	
+	background: white;
+	line-height: 1;
+	color: black;
+}
+
+ol, ul {	
+	list-style: none;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {	
+	content: "";
+}
+
+blockquote, q {	
+	quotes: "" "";
+}
+
+/*****************FIM DO CSS RESET****************/
+/************INICIO CSS DA PÁGINA INICIAL*********/
+
+body{	
+	background: url('./images/fundo.png') no-repeat center fixed;
+	background-size:100% 100%;	
+}
+.conteudo{
+	background: #ffffff;
+	display:block;
+	width:960px;
+	margin:auto;
+	padding:10px;
+	margin-top:20px;
+}
+.displaynone{
+	display:none;
+}
+.clear{
+	clear:both;
+}
+@font-face {
+		     
+	font-family: Cafeta;
+		     
+	src: url('.font/CAFETA__.TTF');
+		
+}
+.meio{
+	overflow:auto;
+}
+.esquerda{
+	display:block;
+	width: 620px;
+	height:auto;
+	margin:10px;
+	margin-left:0;
+	float:left;
+}
+.direita{
+	display:block;
+	width:330px;
+	margin:10px 0 10px 0;
+	float:left;
+}
+.tituloH3{
+	color:#313030;
+	font-size:26px;
+	font-family: Cafeta, Calibri, Arial;
+}

@@ -1,0 +1,24 @@
+﻿{extends file="site.tpl"}
+    
+{block "content"}
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="hero-unit" id="teste1">
+      <h1>Bem Vindo!</h1>
+      <p>Esse sistema tem como objetivo proporcionar o encontro entre alunos de intercâmbio provenientes da Escola Politécnica da UFRJ.</p>
+      <a class="btn primary large">Leia mais &raquo;</a>
+    </div>
+    
+    <!-- Example row of columns -->
+    <div class="row boxes">
+        <div class="box1 span5">
+            <h2>Cadastre-se</h2>
+            <p>Você é aluno da Escola politécnica da UFRJ e pretende fazer ou já fez intercâmbio? Cadastre-se já através do link abaixo! </p>
+            <p>{a class="btn" c="usuarios" a="cadastro"}Cadastro &raquo;{/a}</p>
+        </div>
+        <div class="box2 span5">
+          <h2>Encontre pessoas</h2>
+          <p>Acesse nossa busca avançada e encontre alguém que tenha experiências de seu interesse.</p>
+        <p>{a class="btn" c="usuarios" a="busca"}Busca &raquo;{/a}</p>
+        </div>
+    </div>
+{/block}

@@ -1,0 +1,9 @@
+﻿{extends file="adm.tpl"}
+    
+{block "content2"}
+
+    <h1>Bem Vindo Administrador!</h1>
+    <p>Através dessa área você pode visualizar e manipular dados de diversas tabelas do nosso banco de dados clicando no menu ao lado.
+    </p>
+
+{/block}

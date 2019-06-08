@@ -1,0 +1,24 @@
+<?php
+
+class Noticias extends appModel 
+{
+	var $fields = array
+	(
+		'nome' 		=> 'text',
+		'email' 	=> 'email_from'
+		'mensagem'	=> 'email_message'
+	
+	
+	);
+
+    public function fazAlgumaCoisaNoBD() //Isso é só um exemplo!!
+	{
+		$minhaQuery = "SELECT BLA";
+		
+		$db = $this->getDB();
+		
+		$db->query($minhaQuery);
+	}
+
+
+}

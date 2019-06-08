@@ -1,0 +1,44 @@
+@import '../site.less';
+
+.container {
+  padding-top:30px;
+}
+
+p.error {
+  color:red!important;
+  .cols(9);
+  .push(2.5);
+  margin-top:10px;
+}
+
+legend {
+  position:relative !important;
+  top:-60px;
+  font-size:40px !important;
+  height:0px;
+}
+
+form, fieldset {
+  .cols(13);
+  padding-bottom:20px;
+}
+fieldset {
+  background-color: #ffffff;
+}
+
+label {
+  width:100px !important;
+  margin-top: -7px!important;
+  padding-left:30px;
+  font-size:20px!important;
+}
+
+input[type="text"], 
+input[type="password"] {
+  width:300px!important;
+}
+
+input[type="submit"] {
+  .cols(3);
+  margin-top:20px;
+}

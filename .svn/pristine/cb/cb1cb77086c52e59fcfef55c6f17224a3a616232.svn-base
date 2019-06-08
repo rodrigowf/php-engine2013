@@ -1,0 +1,32 @@
+@import '../admUser.less';
+
+.item{
+    width: 40px;
+}
+ul{
+  list-style-type: none;
+}
+.sussa{
+  height: 26px !important;
+  width: 180px !important;
+}
+#busca{
+  padding: 0;
+}
+#busca input[type='submit']{
+  margin-left: 45px;
+}
+#resultado{
+  position:relative;
+  top:100px;
+  left:40px;
+}
+#buscaFail{
+  position:relative;
+  top:100px;
+  left:40px;
+}
+
+
+
+

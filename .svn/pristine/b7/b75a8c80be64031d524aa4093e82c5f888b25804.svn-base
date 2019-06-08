@@ -1,0 +1,325 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_home;
+#layoutUp .barraMenu .menu ul li.home 
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+
+.esquerda{
+  .cols(16);
+}
+.direita{
+  .r_cols(8, 17);
+}
+.conteudo{
+  .cols(16);
+}
+.conteudo p{
+  //float:none !important;
+}
+
+
+
+//PARTE ESQUERDA ===================================
+
+p {
+  .cols(14);
+}
+
+
+.blog {
+    .cols(15);
+    border-bottom: 2px solid #e1e1e1;
+}
+
+a.button.small {
+  
+  float: right;
+  width: 80px !important;
+  position: relative;
+  right: 35px;
+  margin-top:0!important;
+  
+  &.goBlog{
+      background-color: #f08006;
+  }
+  
+  &.goCity{
+      background-color: #d1535b;
+  }
+}
+
+#blogLink {
+    text-decoration: none;
+}
+
+.paraty {
+    .cols(15);
+    border-bottom: 2px solid #e1e1e1;
+}
+
+
+
+#cityLink {
+    text-decoration: none;
+}
+
+.lista div{
+    margin: 0px;
+}
+
+.vde{
+    margin: 15px;
+    padding: 10px;
+    width: 108px ;
+    height: 73px;
+    background-image: url('../images/home_parceiros_vde.png');
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.paratyPref{
+    margin: 15px;
+    padding: 10px;
+    width: 109px ;
+    height: 73px;
+    background-image: url('../images/home_parceiros_prefeitura.png');
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.paratyConv{
+    margin: 15px;
+    padding: 10px;
+    width: 110px ;
+    height: 73px;
+    background-image: url('../images/home_parceiros_paraty.png');
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.sagre{
+    margin: 15px;
+    padding: 10px;
+    width: 69px ;
+    height: 73px;
+    background-image: url('../images/home_parceiros_sagre.png');
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.estudar{
+    margin: 15px;
+    padding: 10px;
+    width: 109px;
+    height: 65px;
+    background-image: url('../images/home_parceiros_fundacao.png');
+    background-repeat: no-repeat;
+    float: left;
+    clear: left;
+}
+
+.brava{
+    margin: 15px;
+    padding: 10px;
+    width: 125px ;
+    height: 60px;
+    background-image: url('../images/lg_brava.jpg');
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.republica{
+    margin: 15px;
+    padding: 10px;
+    width: 109px ;
+    height: 65px;
+    background-image: url('../images/home_parceiros_republica.png');
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.artemisia{
+    margin: 15px;
+    padding: 10px;
+    width: 69px ;
+    height: 65px;
+    background-image: url('../images/home_parceiros_artemisia.png');
+    background-repeat: no-repeat;
+    float: left;
+}
+
+
+/*============ Menu HOME DIREITA ==================*/
+ul.menuHome {
+  background:#30302f;
+  height: 250px;
+  list-style:none;
+ 
+  a{
+    text-decoration: none !important;
+    
+    li{
+      padding:6px 1px 7px 0px;
+      .r_row(6, 26);
+      font-size:22px;
+      font-family: @fontesTitulos;
+
+      &, * {
+        color: #ffffff;
+      }
+      small{
+        display:block;
+        font-size:11px;
+        font-family: Gauntlet Classic, Calibri, Arial;
+      }
+    }
+  }
+  
+  li.palestrantes {
+    .icon(url('../images/home_icon_palestrantes.png'), 60px, 10px);
+  }
+  li.submission {
+    .icon(url('../images/home_icon_submission.png'), 60px, 10px);
+  }
+  li.programacao {
+    .icon(url('../images/home_icon_programacao.png'), 60px, 10px);
+  }
+  li.cidade {
+    .icon(url('../images/home_icon_cidade.png'), 60px, 10px);
+    padding-bottom: 9px;
+  }
+  li.palestrantes:hover {
+      background-color:#ab2158;
+  }
+  li.submission:hover {
+      background-color:#b7353f;
+  }
+  li.programacao:hover {
+      background-color:#f59d08;
+  }
+  li.cidade:hover {
+      background-color:#23a749;
+  }
+}
+
+#contagem, .facebookBox, .twitterBox, .newsletter {
+    padding-left: 20px;
+    padding-top: 0px;
+    border-left: 2px solid #e1e1e1;
+    margin-bottom: 40px !important;
+    margin-top: 20px !important;
+
+}
+
+.subsectionTitle {
+    margin-top: 0px !important;
+    padding-top: 0px;
+}
+
+
+.newsletter{
+    width: 305px ;
+    height: 200px;
+    position: relative;
+    top: 17px;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin-bottom: 0px;
+
+}
+
+#newsForm{
+    padding-top: 0px !important;
+
+}
+
+.newsletterTitle {
+    margin-top: 0px;
+}
+
+.newsletterSubtitle{
+    font-size: 11pt !important;
+    position: relative;
+    bottom: 10px;
+
+}
+
+.email {
+    width: 250px !important;
+    height: 30px !important;
+    position: relative;
+    bottom: 15px;
+    margin-left:6px;
+}
+
+.mailSubmit {
+     margin: 10px;
+     background-color: #23a749;
+     position: relative;
+     right: 3px;
+ }
+
+.ie .mailSubmit {
+    margin: 10px;
+    background-color: #23a749;
+    position: relative;
+    right: 3px;
+    font-size: 15px;
+}
+
+#contagem {
+    .first();
+    .cols(4);
+}
+
+#countTitle {
+    font-size: 35px !important;
+    text-align: center;
+    width: auto;
+}
+
+.ie #countTitle {
+    font-size: 25px !important;
+}
+
+.dias {
+    font-size: 110px !important;
+    padding-left: 20px;
+    color: #a8a7a7;
+    position: relative;
+    bottom: 10px;
+}
+
+.ie .dias {
+    font-size: 90px !important;
+    padding-left: 20px;
+    color: #a8a7a7;
+    position: relative;
+    bottom: 20px;
+    right: 15px;
+}
+
+
+#countSubtitle {
+    font-size: 14px !important;
+    position: relative;
+    bottom: 20px;
+}
+
+.ie #countSubtitle {
+    font-size: 14px !important;
+    position: relative;
+    bottom: 35px;
+    left: 3px;
+}
+
+#biggestEvent {
+    .cols(3);
+    margin-top: 55px;
+    margin-left:20px;
+}
+
+.ie #biggestEvent {
+    float: right;
+}

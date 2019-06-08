@@ -1,0 +1,61 @@
+﻿{block "content2"}
+
+<div class="page-header">
+    <h1>Busca avançada de usuários</h1>
+</div>
+
+<form class="search well">
+<input type="text" class="big search-query"> &nbsp;
+<button type="submit" class="btn primary">Buscar</button>
+</form>
+
+<div class="result" style="display:none;>
+    <table class="table tableStriped searchResult"">
+        <thead>
+        <tr>
+            <th></th>
+                <th>DRE</th>
+                <th>Nome</th>
+                <th>Curso</th>
+                <th>Destino</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123456789</td>
+                <td>Rodrigo Werneck Franco</td>
+                <td>Ciência da Computação</td>
+                <td>fundão</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123456789</td>
+                <td>Rodrigo Franco</td>
+                <td>Ciência da Computação</td>
+                <td>fundão</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>123456789</td>
+                <td>Rodrigo Werneck Franco</td>
+                <td>Ciência da Computação</td>
+                <td>outra faculdade</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pagination">
+        <ul>
+            <li class="disabled"><a href="#">«</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
+    </div>
+</div>
+
+{/block}

@@ -1,0 +1,56 @@
+﻿{block "content2"}
+
+    <h1>Cadastro de usuários</h1>
+
+    {form class="horizontal" disabled="disabled"}
+
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            {input name='nome' label="Nome" class="{$inputsSize}"}
+            {input name='curso' label="Curso" class="{$inputsSize}"}
+            {input name='dre' label="DRE" class="{$inputsSize}"}
+            {input name='ingresso' label="Ano/Semestre de entrada" class="{$inputsSize}"}
+            {input name='facebook' label="Facebook" class="{$inputsSize}"}
+            {input name='email_poli' label="Email Poli" class="{$inputsSize}"}
+            {input name='email_pessoal' label="E-mail Pessoal" class="{$inputsSize}"}
+            {input name='telefone_br' label="Telefone" class="{$inputsSize}"}
+        </fieldset>
+
+        <fieldset>
+            <legend>Dados De intercâmbio</legend>
+
+            {input name='telefone_ext' label='Telefone do aluno no exterior' class="{$inputsSize}"}
+            {input name='contato_br' label='Nome do contato no Brasil' class="{$inputsSize}"}
+            {input name='tel_contato_br' label='Telefone do contato no Brasil' class="{$inputsSize}"} {*TODO adicionar esse campo no banco!!*}
+            {input name='partida' label='Semestre de partida' class="{$inputsSize}"}
+            {input name='retorno' label='Semestre de partida' class="{$inputsSize}"}
+
+            {input name='modalidade' label='Modalidade de Intercâmbio' class="{$inputsSize}"}
+            {input model='programas' name='nome' label='Programa' class="{$inputsSize}"}
+            {input model='bolsas' name='nome' label='Bolsa' class="{$inputsSize}"}
+
+            <fieldset>
+                <legend>Instituição de destino</legend>
+
+                {input model='destino' name='universidade' label='Universidade' class="{$inputsSize}"}
+                {input model='destino' name='pais' label='País' class="{$inputsSize}"}
+                {input model='destino' name='cidade' label='Cidade' class="{$inputsSize}"}
+                {input name='destino_escola' label='Escola' class="{$inputsSize}"}
+            </fieldset>
+
+            <fieldset>
+                <legend>Módulo Acadêmido</legend>
+
+                {input name='facebook' label='Disciplinas cursadas' class="{$inputsSize}"}
+                {input name='facebook' label='Equivalências solicitadas' class="{$inputsSize}"}
+                {input name='facebook' label='Estágio feito no exterior' class="{$inputsSize}"}
+            </fieldset>
+
+            {input type='file' name='facebook' label='Relatório de intercâmbio' class="{$inputsSize}"}
+            {input type='file' name='facebook' label='Relatório de estágio' class="{$inputsSize}"}
+
+        </fieldset>
+
+    {/form}
+{/block}

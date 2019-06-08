@@ -1,0 +1,13 @@
+﻿{extends file="site.tpl"}
+    
+{block "content"}
+    <h1>Cadastro de usuários</h1>
+    {form}
+        {input name='nome' label='Nome'}
+        {input name='email' label='Email'}
+        {input name='telefone' label='Telefone'}
+        {input name='login' label='Login'}
+        {input name='senha' label='Senha'}
+        {input name='foto' label='Foto'}
+    {/form}
+{/block}

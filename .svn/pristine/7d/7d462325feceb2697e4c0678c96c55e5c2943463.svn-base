@@ -1,0 +1,10 @@
+@import "../site.less";
+
+.box1 {
+    margin-right: @fluidGridColumnWidth * .8;
+}
+
+.boxes {
+    margin-left: @fluidGridColumnWidth * .68;
+    margin-right: @fluidGridColumnWidth * .68;
+}

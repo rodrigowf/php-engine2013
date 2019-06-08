@@ -1,0 +1,109 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_conferencia;
+#layoutUp .barraMenu .menu ul li.conferencia
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+#layoutUp .barraMenu .menu ul li ul li.submission
+{ a { color: #aaaaaa !important; } &:hover, a:hover { border: none !important; } }
+
+input[type="radio"]{
+  margin-left: 100px !important;
+}
+
+textarea.descriptor{
+  .first();
+  .b_cols(20,20);
+  resize: none;
+  width: 660px;
+  height: 300px;
+  margin-bottom: 35px;
+}
+
+button[type="submit"]{
+  .b_cols(7, 4);
+  .push(2);
+  background-color: @color_conferencia;
+}
+
+span.barra{
+  .cols(0);
+  font-size:30px;
+  margin: 7px 5px 0 -3px;
+  color: #d6d6d6 - #111 !important;
+}
+
+span.erro {
+  font-family: GauntletClassic;
+  font-size: 14px;
+  color:red;
+  margin-left: 20px;
+  line-height:35px;
+  vertical-align:center;
+}
+span.termo{
+  .cols(20);
+  margin-top:-15px;
+  margin-left: 45px;
+}
+
+label.radio {
+  width:30px !important;
+}
+
+label[for="agree"] {
+  .cols(10);
+  width:378px !important;
+}
+
+body {
+  font: 0.8em/21px arial,sans-serif;
+}
+
+.subtitle {
+    position: relative;
+    left: 5px;
+    bottom: 13px;
+}
+
+#tagError{
+    position: relative;
+    top: 15px;
+}
+
+.ie #tagError {
+    position: relative;
+    top: 15px;
+
+}
+
+.termo.erro {
+    position: relative;
+    top: 10px;
+
+}
+
+.sublegend {
+    font-size: 24px !important;
+
+}
+
+
+.footnote{
+    font-family: @fontesTitulos !important;
+    color: @color_fale !important;
+    font-size: 17px !important;
+    //text-transform: lowercase !important;
+    margin-left: 20px !important;
+
+}
+
+
+#langWarning{
+    font-family: GauntletThin;
+    color: #bababa;
+    position: relative;
+    left: 27px;
+    bottom: 13px;
+    font-size: 15px !important;
+}

@@ -1,0 +1,59 @@
+/*!
+ * Bootstrap v2.0.0
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Designed and built with all the love in the world @twitter by @mdo and @fat.
+ */
+
+// CSS Reset
+@import "core/reset.less";
+
+@import "core/mixins.less";
+@import "core/grid.less";
+
+@import "layouts.less";
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+
+// Base CSS
+@import "base/patterns.less"; //juntar esse com o debaixo!
+@import "base/general.less";
+@import "base/type.less";
+@import "base/code.less";
+@import "base/forms.less";
+@import "base/tables.less";
+@import "base/buttons.less";
+
+// Components: common
+@import "components_common/icons.less";
+@import "components_common/dropdowns.less";
+@import "components_common/wells.less";
+@import "components_common/component-animations.less";
+@import "components_common/close.less";
+@import "components_common/button-groups.less";
+@import "components_common/alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "components_nav/navs.less";
+@import "components_nav/navbar.less";
+@import "components_nav/breadcrumbs.less";
+@import "components_nav/pagination.less";
+@import "components_nav/pager.less";
+
+// Components: Popovers
+@import "components_popovers/modals.less";
+@import "components_popovers/tooltip.less";
+@import "components_popovers/popovers.less";
+
+// Components: Misc
+@import "components_misc/thumbnails.less";
+@import "components_misc/labels.less";
+@import "components_misc/progress-bars.less";
+@import "components_misc/accordion.less";
+@import "components_misc/carousel.less";
+@import "components_misc/hero-unit.less";
+
+// Utility classes
+@import "utilities.less"; // Has to be last to override when necessary

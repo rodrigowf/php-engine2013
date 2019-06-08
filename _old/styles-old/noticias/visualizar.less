@@ -1,0 +1,26 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_noticias;
+#layoutUp .barraMenu .menu ul li.noticias 
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+
+.postDate{
+    font-family: GauntletThin;
+    color: #bababa;
+}
+
+.newsTitle{
+    text-decoration: none;
+    .cols(18);
+}
+
+#newsBox{
+    border-right: 1px solid #d6d5d5 ;
+    .cols(19);
+}
+
+.newsBody{
+    .cols(16);
+    word-wrap: break-word;
+}

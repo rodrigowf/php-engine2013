@@ -1,0 +1,9 @@
+﻿{extends file="site.tpl"}
+    
+{block "content2"}
+
+    <h1>Bem Vindo {$nome}!</h1>
+    {a class="btn" a="alterar"}Editar meus dados{/a} &nbsp;
+    {a class="btn" a="busca"}Procurar pessoas{/a} &nbsp;
+    {a class="btn" a="busca"}Ajuda?{/a}
+{/block}

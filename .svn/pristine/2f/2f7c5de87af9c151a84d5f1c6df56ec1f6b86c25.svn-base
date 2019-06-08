@@ -1,0 +1,188 @@
+<?php
+/**
+ * Alguns detalhes importantes: um modelo é uma entidade que inclui dados e funções.
+ * Esse dados podem incluir listas de modelos que também possuem funções.
+ * Essas funções são de acesso à dados do banco, por isso o nome 'dataAcess' para a classe que as encapsula.
+ *
+ * Um DAO é um data acess object, objeto que também possui as mesmas funções dos modelos (do dataAcess.class),
+ * mas que não representa um dado em específico mas o banco de dados, ou o "provedor de dados".
+ *
+ * Os dados de cada objeto do tipo Modelo (atributos ou modelos) estão encapsulados em uma variável de instância $data,
+ * mas se você tentar acessá-los como se estivessem dentro do próprio objeto obterá sucesso, graças aos métodos getter and setter
+ *
+ */
+
+/**
+ * Todas que herdarem dessa classe vão conter somente as peculiaridades de cada tipo de objeto (tabela)
+ * Essas serão instanciadas como DAO ou DO, pois ambos os objetos possuem as mesmas peculiaridades.
+ * A diferença de uma instância DAO ou DO será o singleton que será chamado quando forem tentadas executar
+ * funções inexistentes na classe (que não deve possuí-las mesmo por padrão)
+ *
+ */
+
+require_once CORE . 'Validation.class.php';
+require_once CORE . 'DataAcess.class.php';
+
+require_once CONFIG . 'database.php';
+require_once CONFIG . 'email.php';
+
+class Model
+{
+	private $type = 'DAO';
+	private $dbInteraction = null;
+
+	private	$name;
+
+	private	$fields;
+	private	$validations;
+	private	$types;
+	private	$valErrors;					//erros de validação
+
+	/**
+	 * @var array of this model's attributes
+	 */
+	private	$data = array();
+	/**
+	 * @var array of Model - lista com modelos pertencentes à esse mesmo tipo de DAO
+	 */
+	private	$list = array();
+
+	private $validator 		= NULL;		//instancia da classe validadora
+
+	// Relacionamentos deste modelo
+	private	$hasMany;
+	private	$hasOne;
+	private	$belongsTo;
+	private	$hasAndBelongsToMany;
+
+	private	$primaryKey = 'id';
+
+	static $typesList = array(
+		//TODO essa lista
+	);
+
+	public function __get($name)
+	{
+		return $this->data[$name];
+	}
+	public function __set($name, $value)
+	{
+		$this->data[$name] = $value;
+	}
+
+	function __call($funcName, $args)
+	{
+
+
+		$ret = call_user_func_array(array($this, $funcName), $arrArgs);
+		return $ret;
+	}
+
+	public function __construct($dataArr = null)
+	{
+		//Se o usuário não tiver setado o nome da tabela na mão ele seta automaticamente
+		if( !isset($this->name) || $this->name === NULL ) $this->name = strtolower(__CLASS__);
+		$this->table = $this->name; //para uso das funções de dataAcess
+
+		if ( $this->type == 'DAO' )
+		{
+			$this->dbInteraction = new DataAcessObject();
+		}
+		else
+		{
+
+		}
+
+		$dataArr and $this->setDataFromArray($dataArr); //se estiver carregando com dados
+		$this->constructor_behaviours();
+	}
+
+	/**
+	 * Carrega no controller o modelo desejado (esse método é chamado automaticamente)
+	 *
+	 * @param String $modelName (optional) nome do modelo. Se for vazio carrega o nome que está em $this->modelName
+	 * @param Boolean $triggerError (optional) se for false não dispara nenhum warning
+	 * @return Boolean False or Model loaded model
+	 */
+	public function loadDAO($modelName = NULL )
+	{
+		$modelName = strtolower($modelName);
+
+		if ( isset($this->data[$modelName.'DAO']) ) return $this->data[$modelName.'DAO'];
+
+		if ( file_exists(MODEL . "$modelName.php") )
+		{
+			require_once 	MODEL . 'app_model.php';
+			require_once	MODEL . "$modelName.php";
+
+			$className = ucfirst($modelName);
+
+			if( !class_exists($className) )
+			{
+				trigger_error("Nomenclatura inconsistente: classe modelo modelName nomeada incorretamente!!", E_USER_WARNING);
+				return false;
+			}
+
+			//passa a referencia da classe para a variável de instancia com seu nome em letras minúsculas
+			return $this->data[$modelName.'DAO'] = NEW $className();
+		}
+		else
+		{
+			trigger_error("Não existe o aruivo de modelo $modelName.php que se tentou carregar!", E_USER_NOTICE);
+			return false;
+		}
+	}
+
+
+
+
+	public function setDataFromArray($dataArr)
+	{
+		/*
+		 * trata dos casos em que cada elemento do $dataArr é:
+		 * um atributo (index = nome do atributo no banco, value = valor no banco) desse modelo atual
+		 * um modelo (index = daoName, value = array com atributos)
+		 * um DAO (index = daoName, value = array com vários modelos)
+		 * DAO = modelo cujo valor da var $data é um array ( index = numérico, value = um modelo )
+		 */
+		foreach ( $dataArr as $index => $value )
+		{
+			// checa se é um modelo ou DAO
+			if ( is_array($value) )
+			{
+				$someDAO = $this->loadDAO($index);
+				$someDAO->loadModelsFromArray($value);
+
+			}
+			else
+			{
+				//se é um atributo:
+				$this->data[$index] = $value;
+			}
+		}
+	}
+
+	public function prepareParameters()
+	{
+
+	}
+
+	public function autoloadTypes()
+	{
+		foreach ( $this->fields as $name => $value )
+		{
+			$this->types['name'] = self::$typesList[$value];
+		}
+	}
+
+	public function default_fieldBehaviour($fieldName)
+	{
+		$this->validations[$fieldName]['method'] or $this->validations[$fieldName]['method'] = $this->fields[$fieldName];
+		$this->validations[$fieldName]['dependencies']
+	}
+
+	public function email_fieldBehaviour($fieldName)
+	{
+
+	}
+}

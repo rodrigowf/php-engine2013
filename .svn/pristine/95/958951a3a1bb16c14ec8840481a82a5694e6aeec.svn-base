@@ -1,0 +1,152 @@
+/*============ Layout Up =============*/
+
+.logoPrincipal{
+	background: url('./images/logo.png') no-repeat;
+	display:block;
+	width:124px;
+	height:50px;
+	float:left;
+	margin-left:10px;
+}
+.subtituloPrincipal{
+	background: url('./images/subtituloPrincipal.png') no-repeat;
+	display:block;
+	width:270px;
+	height:52px;
+	float:left;
+	margin-left:20px;
+}
+
+#redesSociais{
+	display:block;
+	float:left;
+	width:120px;
+	margin-left:350px;
+}
+.tituloPrincipal{
+	display:block;
+	float:left;
+	width:430px;
+}
+.tituloRedesSociais{
+	background: url('./images/espalheporai.png') no-repeat;
+	display:block;
+	width:77px;
+	height:15px;
+}
+/*============= Menu ===================*/
+
+.barraPretaMenu{
+	background: #30302f;
+	margin-top:30px;
+}
+.menu{
+	float: left;
+    	width: 700px;
+}
+.menu ul {
+    	padding:0px;
+    	margin:0px;
+    	float: left;
+    	width: 700px;
+    	list-style:none;
+	padding-top:5px;
+}
+.menu ul li { 
+	display: inline; 
+}
+.menu ul li.menuHome a {
+    	float:left;
+    	text-decoration: none;
+	background:url('./images/menu.png') no-repeat;
+	height: 24px;
+	width:	33px;
+	margin-left:20px;
+}
+.menu ul li.menuHome a:hover {
+   	background:url('./images/menuSelected.png') no-repeat;
+	height: 24px;
+	width:	33px;
+	margin-left:20px;
+}
+.menu ul li.menuInscricao a {
+    	float:left;
+    	text-decoration: none;
+	background:url('./images/menu.png') no-repeat;
+	height: 24px;
+	width:	60px;
+	background-position:-73px 0;
+	margin-left:40px;
+}
+.menu ul li.menuInscricao a:hover {
+   	background:url('./images/menuSelected.png') no-repeat;
+	height: 24px;
+	width:	60px;
+	background-position:-73px 0;
+	margin-left:40px;
+}
+.menu ul li.menuConferencia a {
+    	float:left;
+    	text-decoration: none;
+	background:url('./images/menu.png') no-repeat;
+	height: 24px;
+	width:	80px;
+	background-position:-181px 0;
+	margin-left:40px;
+}
+.menu ul li.menuConferencia a:hover {
+   	background:url('./images/menuSelected.png') no-repeat;
+	height: 24px;
+	width:	80px;
+	background-position:-181px 0;
+	margin-left:40px;
+}
+.menu ul li.menuBlog a {
+    	float:left;
+    	text-decoration: none;
+	background:url('./images/menu.png') no-repeat;
+	height: 24px;
+	width:	26px;
+	background-position:-309px 0;
+	margin-left:40px;
+}
+.menu ul li.menuBlog a:hover {
+   	background:url('./images/menuSelected.png') no-repeat;
+	height: 24px;
+	width:	26px;
+	background-position:-309px 0;
+	margin-left:40px;
+}
+.menu ul li.menuFale a {
+    	float:left;
+    	text-decoration: none;
+	background:url('./images/menu.png') no-repeat;
+	height: 24px;
+	width:	93px;
+	background-position:-378px 0;
+	margin-left:40px;
+}
+.menu ul li.menuFale a:hover {
+   	background:url('./images/menuSelected.png') no-repeat;
+	height: 24px;
+	width:	93px;
+	background-position:-378px 0;
+	margin-left:40px;
+}
+/*============ Lingua =============*/
+.divisaoCinza{
+	background: #b3b3b3;
+	width:4px;
+	display:block;
+	height: 29px;
+	float:left;
+}
+.divisaoCinza p{ 
+	color: #b3b3b3;
+}
+.lingua{
+	width:100px;
+	display:block;
+	float:left;
+	margin-left:20px;
+}

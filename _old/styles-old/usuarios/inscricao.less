@@ -1,0 +1,67 @@
+@import '../site.less';
+
+//coloca corzinha no menu
+@page_color: @color_inscricao;
+#layoutUp .barraMenu .menu ul li.inscricao 
+{ border-bottom-width: 5px; border-bottom-style: solid; }
+
+input[type="radio"]{
+  margin-left: 100px !important;
+}
+
+.loading_valor{
+	width:16px;
+	height:16px;
+}
+
+textarea.termo{
+  .b_cols(20,20);
+  resize: none;
+  width: 660px;
+  height: 300px;
+  margin-bottom: 35px;
+  word-wrap: break-word !important;
+  white-space:pre-wrap !important;
+  display: inline-block;
+}
+
+button[type="submit"]{
+  .b_cols(7, 4);
+  .push(2);
+  background-color: @color_inscricao;
+}
+
+span.barra{
+  .cols(0);
+  font-size:30px;
+  margin: 7px 5px 0 -3px;
+  color: #d6d6d6 - #111 !important;
+}
+
+span.erro {
+  font-family: GauntletClassic;
+  font-size: 14px;
+  color:red;
+  margin-left: 20px;
+  line-height:35px;
+  vertical-align:center;
+}
+span.termo{
+  .cols(20);
+  margin-top:-15px;
+  margin-left: 45px;  
+}
+
+label.radio {
+  width:30px !important;
+}
+
+label[for="agree"] {
+  .cols(10);
+  width:378px !important;
+}
+
+body {
+  font: 0.8em/21px arial,sans-serif;
+}
+

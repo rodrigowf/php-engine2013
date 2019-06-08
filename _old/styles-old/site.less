@@ -1,0 +1,291 @@
+@import './import.less';
+@import './padroes.less';
+@import './typography.css';
+
+// Valores da grid
+@column-width: 30px;
+@gutter-width: 10px;
+@columns: 24px;
+
+// Utility variable — you should never need to modify this
+@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+
+// Set @total-width to 100% for a fluid layout
+@total-width: @gridsystem-width;
+
+
+@page_color: #dadada; //a cor tema da pagina atual
+
+@color_home        : #ffffff;
+@color_inscricao   : #23a749;
+@color_conferencia : #b72756;
+@color_noticias    : #f9b205;
+@color_fale        : #dadada;
+
+
+// LAYOUTS DE CADA PARTE COMUM DO SITE ========================================
+
+#layoutUp {
+  .row(@columns);
+  .expand(25px);
+  margin-top:     35px;
+  padding-top:    20px;
+  
+  background-color: #ffffff;
+  
+  .topo {
+    .row(@columns);
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    background-image: url('../images/logo.png');
+    clear:none;
+    
+    &, span {
+      .cols(5);
+      height: 90px;
+      font-size: 0px;
+    }
+  }
+
+  .subtitulo {
+    .cols(16);
+    border-left: 3px solid #e6e6e6;
+    margin-left: -8px;
+    margin-top: -10px;
+    padding-left: 8px;
+    margin-top:15px;
+    p{
+      .cols(@columns);
+      margin-bottom: 0px !important;
+      line-height: 17px !important;
+      
+      &.big{
+        line-height: 27px !important;
+      }
+    }
+  }
+
+  .redesSociais{
+    .row(3);
+    h4 {
+      .cols(3);
+      margin-top: 17px;
+      margin-left:24px
+    }
+
+    .facebook {
+      .cols(1);
+      margin-left: 38px;
+      height: 28px;
+      background-image: url('../images/facebook.png');
+    }
+    .twitter {
+      .cols(1);
+      height: 28px;
+      background-image: url('../images/twitter.png');
+    }
+
+    a span {
+      font-size: 0px;
+    }
+  }
+
+  .barraMenu {
+    .row(@columns);
+    height: 30px;
+    background-color: #30302f;
+    
+    border-bottom: 6px solid;
+    border-bottom-color: @page_color;
+    
+    text-transform: uppercase;
+    font-family: @fontesTitulos;
+
+    .menu { .cols(21); }
+
+    ul {
+      list-style:none;
+      li {
+        display: inline;
+        margin: 0 22px 0 22px !important;
+        float:left;
+        clear:none;
+        
+        &:hover, &.hover  { border-bottom: 5px solid; }
+        &.home        { border-bottom-color: @color_home; }
+        &.inscricao   { border-bottom-color: @color_inscricao; }
+        &.conferencia { border-bottom-color: @color_conferencia; }
+        &.noticias    { border-bottom-color: @color_noticias; }
+        &.fale        { border-bottom-color: @color_fale; }
+
+        a, & {
+          font-size: 18px;
+          color: #ffffff;
+          text-decoration: none;
+          margin: 0 3px 0 3px;
+          width: auto;
+          height: 30px;
+          line-height: 30px;
+          padding: -40px 0 -40px 0;
+        }
+
+        overflow:hidden;
+        
+        ul { //SUBMENU
+          display:none;
+          padding-left: 245px;
+          margin-left:-5px!important;
+          position:absolute;
+          height: 9px !important;
+          margin-top: 0px !important;
+          padding-top: 1px !important;
+          z-index: 999;
+          width:@total-width - 240px;
+          background-color:#ffffff;
+          
+          a, li, a:hover, li:hover
+          {
+            font-family: GauntletClassic;
+            text-transform: none;
+            text-decoration: none;
+            font-weight:bold;
+            font-size: 16px;
+            color: #777777;
+            line-height: 23px !important;
+            height: 23px !important;
+            margin: 0px 1px 0px 1px !important;
+            padding: 0px 5px 0px 5px;
+          //  border-bottom: 2px solid @color_conferencia;
+            
+            &:hover {
+              border-bottom: 2px solid @color_conferencia;
+            }
+            
+            &.speakers, &.submission, &.schedule, &.city {            
+              &:before{
+                content:"/";
+                margin-left:-10px;
+                margin-right:10px;
+                //padding-left:100px;
+                border:none !important;
+                font-weight:normal !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .idioma {
+      //.b_cols(2, 2);
+      float:right;
+      height: 30px;
+      border-left: 2px solid #fff;
+
+      a {
+        color: #ffffff;
+        display:block;
+        height: 30px;
+        padding-right:10px;
+        line-height: 32px;
+        font-size:13px;
+        text-decoration: none;
+        
+        &.en {
+          .icon(url('../images/lang-en.png'), 35px, 9px);
+        }
+        &.pt-br {
+          .icon(url('../images/lang-ptbr.png'), 35px, 9px);
+        }
+        
+      }
+    }
+
+  }
+  
+}
+
+#bodyContent {
+  .row(@columns);
+  .expand(25px);
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
+}
+#rodape {
+  .row(@columns);
+  .expand(25px);
+  margin-top: 25px;
+  margin-bottom: 35px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #ffffff;
+  
+  #organizacao{
+    .cols(6);
+  }
+  #apoio{
+    .cols(6);
+  }
+  
+  #fejemg{
+    display:block;
+    background: url('./images/fejemg.gif') no-repeat;
+    width: 129px;
+    height: 28px;
+    float: left;
+  }
+  
+  #fejemg span{
+    display: none;
+  }
+  
+  #riojunior{
+    display:block;
+    background: url('./images/riojunior.gif') no-repeat;
+    width: 65px;
+    height: 60px;
+    margin-left: 150px;
+    margin-top: 12px;
+  }
+  
+  #riojunior span{
+    display: none;
+  }
+  
+  #jade{
+    display:block;
+    background: url('./images/jade.gif') no-repeat;
+    width: 86px;
+    height: 45px;
+    float: left;
+  }
+  
+  #jade span{
+    display: none;
+  }
+  
+  #brasiljunior{
+    display:block;
+    background: url('./images/brasiljunior.png') no-repeat;
+    width: 78px;
+    height: 45px;
+    margin-left: 100px;
+    margin-top: 22px;
+  }
+  
+  #brasiljunior span{
+    display: none;
+  }
+}
+
+p{
+  .cols(5); .first();
+
+  font-size: 15px !important;
+  line-height: 18px !important;
+  color: #a8a8a7 - #111 !important;
+  margin-bottom: 20px !important;
+}

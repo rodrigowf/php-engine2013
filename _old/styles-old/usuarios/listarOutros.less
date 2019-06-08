@@ -1,0 +1,61 @@
+@import '../adm.less';
+
+@cor-titulo: #9bb58f;
+
+table {
+	text-align: center;
+	margin-bottom: 15px;
+	.cols(23);
+	font-family: GauntletClassic;
+}
+
+label[for=search]
+{
+	.cols(2);
+	margin-left:15px;
+	margin-top: 20px;
+}
+#search {
+	.cols(10);
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+h2 {
+  margin-bottom:0px!important;
+}
+h4{
+  margin-bottom:20px!important;
+	font-weight: bold;
+	color: @cor-titulo;
+	font-size: 20px;
+	font-family: GauntletClassic;
+}
+
+table tr td,table tr th {
+	border-bottom: 1px solid #cacaca;
+	line-height: 9px;
+	text-align: center;
+	padding: 10px;
+	word-wrap: break-word;
+
+	&.nome {
+		text-align: left;
+	}
+}
+#searchresultdata{
+      height:100%;
+      width:300px;
+      overflow-y:auto;
+      overflow-x:hidden;
+}
+td.first {
+  text-align: left;
+}
+
+th {
+	font-weight: bold;
+	color: @cor-titulo;
+	font-size: 20px;
+	border-bottom: 2px solid #aaa !important;
+}

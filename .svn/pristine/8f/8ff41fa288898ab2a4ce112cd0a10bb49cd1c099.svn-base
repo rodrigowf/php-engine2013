@@ -1,0 +1,20 @@
+<?php
+
+class Usuarios extends AppModel
+{
+	var $primaryKey = 'id';
+	
+	var $fields = array
+	(
+		'id'		=> array( 'pk', 'num', 'ai', 'nn' ),
+		'nome'		=> array( 'text', 'maxlenght_255', 'nn' ),
+		'email'		=> array( 'email', 'nn', 'maxlenght_255' ),
+		'telefone'	=> array( 'tel', 'nn' ),
+		'login'		=> array( 'text', 'nn', 'maxlenght_255', 'unique' ),
+		'senha'		=> array( 'password', 'nn', 'alphanum', 'maxlenght_18', 'minlenght_4' ),
+		'foto'		=> array( 'file', 'maxsize_1024' )
+	);
+	
+	$hasMany['livros'] = 'idUsuario'
+}
+	

@@ -1,0 +1,21 @@
+{extends file="admUser.tpl"}
+
+{block "content"}
+    
+    <h1>Payment</h1>
+
+    <h2 class="icon">OH, YEAH! I DID IT!</h2>
+
+    <p>Now you are truly part of the World's Biggest Event.We really hope you enjoy it!</p>
+    <p>You know what? Don't you feel like telling everybody you're going to be in JEWC 2012? Just click in the button below and share it on Facebook or Twitter!</p>
+    
+    <div id="fb-root"></div>
+    <a class="button" href="https://www.facebook.com/sharer.php?u=http://www.jewc2012.com&t='JEWC2012'">
+        SHARE ON FACEBOOK
+    </a>
+
+    <a class="button" href="https://twitter.com/share?url=https%3A%2F%2Fwww.jewc2012.com%2F" target="_blank">
+       SHARE ON TWITTER
+    </a>
+
+{/block}

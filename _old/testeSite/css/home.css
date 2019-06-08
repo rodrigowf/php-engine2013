@@ -1,0 +1,99 @@
+/*============ Menu HOME DIREITA ==================*/
+ul.menuHome {
+	background:#30302f;
+	height: 250px;
+}
+ul.menuHome li{
+	padding:15px 0 15px 45px;
+}
+ul.menuHome li a{
+	color: #ffffff;
+	font-size:22px;
+	font-family: Cafeta, Calibri, Arial;
+}
+ul.menuHome li a small{
+	display:block;
+	font-size:11px;
+	font-family: Gauntlet Classic, Calibri, Arial;
+}
+ul.menuHome li.menuHomePalestrantes:hover {
+   	background:#ab2158;
+}
+ul.menuHome li.menuHomeWorkshop:hover {
+   	background:#b7353f;
+}
+ul.menuHome li.menuHomeProgramacao:hover {
+   	background:#f59d08;
+}
+ul.menuHome li.menuHomeCidade:hover {
+   	background:#23a749;
+}
+ul.menuHome li.menuHomePalestrantes a{
+   	background: url('./images/PalestrantesIcon.png') no-repeat;
+}
+ul.menuHome li.menuHomeWorkshop a{
+   	background: url('./images/WorkshopsIcon.png') no-repeat;
+}
+ul.menuHome li.menuHomeProgramacao a{
+   	background: url('./images/ProgramacaoIcon.png') no-repeat;
+}
+ul.menuHome li.menuHomeCidade a{
+   	background: url('./images/ACidadeIcon.png') no-repeat;
+}
+/*============ Conteudo Home ============*/
+.meioHomeConteudo{
+	margin-top:30px;
+}
+.meioHomeConteudo p{
+	color:#a8a8a7;
+	font-size:16px;
+	font-family: Gauntlet Classic, Calibri, Arial;
+}
+
+/*============== Direita Home ================*/
+.direitaHomeNews{
+	margin-top:30px;
+	border-left:1px solid #e6e6e6;
+	padding-left:20px;	
+}
+.direitaHomeFacebook{
+	margin-top:20px;
+	border-left:1px solid #e6e6e6;
+	padding-left:20px;
+}
+.direitaHomeTwitter{
+	margin-top:20px;
+	border-left:1px solid #e6e6e6;
+	padding-left:20px;
+}
+.direitaHomeContagem{
+	margin-top:20px;
+	border-left:1px solid #e6e6e6;
+	padding-left:20px;
+}
+.direitaHomeClima{
+	margin-top:20px;
+	border-left:1px solid #e6e6e6;
+	padding-left:20px;
+}
+/*======== Contagem ============*/
+.direitaHomeContagemEsquerda{
+	display:block;
+	width:135px;
+	float:left;
+}
+.direitaHomeContagemEsquerda p{
+	color:#a8a8a7;
+	font-size:12px;
+	font-family: Gauntlet Classic, Calibri, Arial;
+}
+.direitaHomeContagemDireita{
+	display:block;
+	margin-left:30px;
+	width:100px;
+	float:left;
+}
+p.contagemDias{
+	font-size:90px !important;
+	font-family: Cafeta, Calibri, Arial !important;
+}

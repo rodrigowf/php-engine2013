@@ -1,0 +1,39 @@
+/*
+$("#done").click(function(){
+    var erro = 0;
+    var campo = "";
+    var parent = "";
+
+    campo = $("#primeiro_nome");
+    if(campo.val() == ""){
+    parent = campo.parent(); $(".erro", parent).html("Campo Obrigatório"); erro = 1;
+    }
+campo = $("#sobrenome");
+if(campo.val() == ""){
+    parent = campo.parent(); $(".erro", parent).html("Campo Obrigatório"); erro = 1;
+    }
+if(erro == 0){
+    $("#cadastro").submit();
+    return true;
+    }
+return false;
+*/
+/*login
+password
+email
+cpf_passaporte
+niver_dia
+niver_mes
+niver_ano
+idioma
+tamanho -> Choose One
+estado
+cidade
+telefone
+nome_ej
+confederacao -> Choose One
+federacao -> Escolha um
+cargo
+tempo
+instituicao*/
+//});

@@ -1,0 +1,131 @@
+@import "general.less";
+
+html, body {
+    height: 100%;
+}
+
+body, body *{
+    .clearfix();
+}
+
+@import "../../modules/styles/structure/responsive.less";
+
+
+#contentContainer {
+    padding-bottom: 40 + @baseLineHeight*2; //the same as footer height
+    margin-top: 70px;
+}
+@media (max-width: 979px) {
+    #contentContainer {
+        margin-top: 30px;
+    }
+}
+
+#mainContainer{
+    position: relative;
+    min-height:100%;
+    margin-bottom: 0 - 40 - @baseLineHeight*2; //the same as footer height
+}
+
+footer {
+    margin-top: @baseLineHeight - 1;
+    padding-top: @baseLineHeight - 1;
+    position:relative;
+    bottom:0;
+    width:100%;
+    border-top: 2px solid @myYellow;
+    height: 40px;
+}
+
+a.brand {
+    padding: 7px 25px !important;
+
+    span.text {
+        line-height: 25px !important;
+        vertical-align: bottom !important;
+    }
+
+    .logo {
+        height: 25px;
+        margin: 0;
+    }
+}
+
+//Padrões ============================================
+
+.well {
+    padding-right: 20px;
+}
+
+fieldset {
+    margin-top: 20px;
+    margin-bottom: 25px;
+    clear:left;
+}
+form.horizontal div.control-group {
+    margin-bottom: 15px;
+}
+form.horizontal label.control-label,
+form.horizontal fieldset > label {
+    //display:inline;
+    float: left;
+    width: 140px;
+    text-align: right;
+    margin-right: 20px;
+    margin-bottom: 0;
+    text-align: right;
+    padding: 0;
+//    line-height: 28px;
+    clear:left;
+}
+
+form.horizontal fieldset > input {
+    float:left;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 500px) {
+
+    form.horizontal div.control-group {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    form.horizontal label.control-label,
+    form.horizontal fieldset > label {
+        text-align: center;
+        width: auto;
+        float: none;
+    }
+    form.horizontal input {
+        position:relative;
+        width: 97% !important;
+    }
+}
+
+div.page-fixed-top {
+//    position: fixed;
+    background-color: @bodyBackground;
+    width: auto;
+    float:none;
+    display:block;
+}
+
+@media (max-width: 767px)
+{
+    div.page-fixed-top {
+        position: static;
+    }
+}
+
+div.page-header
+{
+    margin-top:0px;
+    padding-bottom: 10px;
+
+    h1 {
+        margin-bottom: 0px;
+    }
+}
+
+

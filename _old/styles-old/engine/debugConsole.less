@@ -1,0 +1,204 @@
+@import url('debugConsole_jquery-ui.css');
+
+div#engine-debugConsole {
+  
+	overflow: hidden;
+//	position: absolute;
+	bottom:0px;
+	width: 100%;
+	height: auto;
+	margin-top:10px;
+	z-index:999;
+	float:none!important;
+	
+}
+
+div#engine-debugConsole-containner {
+	border: 1px solid black;
+}
+
+#engineConsole-body{
+	margin: 0;
+	padding: 0;
+	*{
+  	float:none!important;
+	}
+}
+
+div#engine-debugConsole div span#title {
+	float:right!important;
+	margin-right:15px;
+	font-size: 20px;
+}
+
+/* Console dump ====================================================================== */
+
+ul.engineDump-node {
+	margin: 0px;
+	padding: 0px;
+}
+ul.engineDump-node ul {
+	margin-left: 20px;
+}
+* html ul.engineDump-node ul {
+	margin-left: 24px;
+}
+div.engineDump-root {
+	//border-top: solid 1px black;
+	margin: 0;
+}
+ul.engineDump-first {
+	font: normal 12px arial;
+	border: solid 2px white;
+	border-top-width:1px;
+}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+li.engineDump-child {
+	display:block;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	overflow:hidden;
+}
+div.engineDump-element {
+	cursor:default;
+
+	line-height: 24px;
+	display:block;
+	
+	clear:both;
+	white-space:nowrap;
+	
+	border-top: solid 1px white;
+	background: #E8E8E8;
+	padding-left: 10px;
+}
+* html div.engineDump-element {
+	padding-bottom: 3px;
+}
+a.engineDump-name {
+	color:#2C5858;
+	font: bold 13px Arial;
+}
+a.engineDump-name big {
+	font: bold 20pt Georgia;
+	line-height: 14px;
+	position:relative;
+	top:2px;
+	left:-2px;
+}
+* html a.engineDump-name big {
+	font: bold 19pt Georgia;
+	top: 5px;
+	left: 0px;
+	line-height: 9px;
+	height: 12px;
+	padding: 0px;
+	margin: 0px;
+}
+span.engineDump-name {
+	color:#2C5858;
+	font: bold 13px Arial;
+}
+span.engineDump-name big {
+	font: bold 20pt Georgia;
+	line-height: 14px;
+	position:relative;
+	top:2px;
+	left:-2px;
+}
+* html span.engineDump-name big {
+	font: bold 19pt Georgia;
+	top: 5px;
+	left: 0px;
+	line-height: 9px;
+	height: 12px;
+	padding: 0px;
+	margin: 0px;
+}
+div.engineDump-expand {
+	background: #CCCCCC;
+	cursor:pointer;
+}
+div.engineDump-hover {
+	background: #B7DBDB;
+}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+div.engineDump-preview {
+	font: normal 13px courier new;
+	padding: 5px 5px 14px 5px;
+	background: white;
+	border-top: 0px;
+	overflow:auto;
+}
+* html div.engineDump-preview {
+	padding-top: 2px;
+}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+li.engineDump-footnote {
+	background:white;
+	padding: 2px 5px;
+	list-style:none;
+	border-top: solid 1px #bebebe;
+	margin-top:2px;
+	cursor:default;
+}
+* html li.engineDump-footnote {
+	line-height: 13px;
+}
+li.engineDump-footnote h6 {
+	font: bold 11px verdana;
+	margin: 0px;
+	padding: 0px;
+	color:#366D6D;
+	display:inline;
+}
+* html li.engineDump-footnote h6 {
+	margin-right: 3px;
+}
+li.engineDump-footnote a {
+	font: bold 10px arial;
+	color: #434343;
+	text-decoration:none;
+}
+li.engineDump-footnote a:hover {
+	color:black;
+}
+
+li.engineDump-footnote span.engineDump-call {
+	font:normal 11px verdana;
+	position: relative;
+	top: 1px;
+}
+li.engineDump-footnote span.engineDump-call code {
+	font-weight:bold;
+}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+div.engineDump-title {
+	font: normal 11px verdana ;
+	position:relative;
+	top:9px;
+	cursor:default;
+	line-height:2px;
+}
+
+em.engineDump-type{
+	opacity:0.15;
+}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+
+strong.engineDump-array-length,
+strong.engineDump-string-length {
+	font-weight: normal;
+}
+
+/* -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */

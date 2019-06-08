@@ -1,0 +1,199 @@
+// BUTTON STYLES
+// -------------
+
+// Base styles
+// --------------------------------------------------
+
+// Mixin for generating button backgrounds
+// ---------------------------------------
+.buttonBackground(@startColor, @endColor) {
+  // gradientBar will set the background to a pleasing blend of these, to support IE<=9
+  .gradientBar(@startColor, @endColor);
+  .reset-filter();
+
+  // STATES (coloquei aqui porque muda para cada cor de background)
+  // --------------------------------------------------
+
+  // Hover state
+  &:hover {
+    color: @grayDark;
+    text-decoration: none;
+    background: none;
+    #gradient > .vertical(lighten(@endColor, 2%), lighten(@endColor, 2%));
+    
+    .transition( all .1s linear);
+  }
+  
+  // Focus state for keyboard and accessibility
+  &:focus {
+    // #gradient > .vertical(darken(@startColor, 5%), @endColor);
+    // .box-shadow(1px 1px 0px rgba(0,0,0, .34));      
+    
+    border: 1px solid #53a8ec + #111;
+    border-color: rgba(82,168,236,.8);
+    @shadow: 0 0 4px rgba(82,168,236,1);
+    .box-shadow(@shadow);      
+    
+    outline: 0;
+    .transition( all .1s linear);
+  }
+  
+  // Active state
+  &.active,
+  &:active {
+    background-image: none;
+    
+    @shadow: inset 0 2px 4px rgba(0,0,0,.15), 1px 1px 0 rgba(0,0,0,.09);
+    .box-shadow(@shadow);
+    
+    outline: none;
+    
+    // IE 7 + 8 can't handle isset box-shadow to show active, so we darken a bit ourselves 
+    .lt-ie9 & {
+      #gradient > .vertical(darken(@startColor, 15%), lighten(@endColor, 1%));
+    }
+    .transition( all .1s linear);
+  }
+  
+  // Disabled state
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background-image: none;
+    background-color: darken(@white, 10%);
+    .opacity(65);
+    .box-shadow(none);
+  }
+  
+}
+
+// Core
+input[type="button"],
+input[type="submit"],
+button,
+.btn {
+  display: inline-block;
+  .ie7-inline-block();
+  padding: 4px 10px 4px;
+  margin-bottom: 0; // For input.btn
+  font-size: @baseFontSize;
+  line-height: @baseLineHeight;
+  color: @grayDark;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  vertical-align: middle;
+  .buttonBackground(@btnBackground, @btnBackgroundHighlight);
+  border: 1px solid @btnBorder;
+  border-bottom-color: darken(@btnBorder, 10%);
+  .border-radius(4px);
+  @shadow: inset 0 1px 0 rgba(255,255,255,.2), 1px 1px 0px rgba(0,0,0,.1);
+  .box-shadow(@shadow);
+  cursor: pointer;
+
+  // Give IE7 some love
+   .ie7-restore-left-whitespace();
+
+  // Alternate buttons
+  // --------------------------------------------------
+  
+  // Set the backgrounds
+  // -------------------------
+  &.primary { .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight); }
+  // Warning appears are orange
+  &.warning { .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight); }
+  // Danger and error appear as red
+  &.danger { .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight); }
+  // Success appears as green
+  &.success { .buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight); }
+  // Info appears as a neutral blue
+  &.info { .buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight); }
+  // Inverse appears as dark gray
+  &.inverse { .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight); }
+  
+  // Set text color
+  // -------------------------
+  &.primary,
+  &.primary:hover,
+  &.warning,
+  &.warning:hover,
+  &.danger,
+  &.danger:hover,
+  &.success,
+  &.success:hover,
+  &.info,
+  &.info:hover,
+  &.inverse,
+  &.inverse:hover {
+    text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+    color: @white;
+  }
+  // Provide *some* extra contrast for those who can get it
+  &.primary.active,
+  &.warning.active,
+  &.danger.active,
+  &.success.active,
+  &.info.active,
+  &.inverse.active {
+    color: rgba(255,255,255,.75);
+  }
+  
+  // SIZES
+  // --------------------------------------------------
+  
+  // Large
+  &.large {
+    padding: 9px 14px;
+    font-size: @baseFontSize + 2px;
+    line-height: normal;
+    .border-radius(5px);
+  }
+  &.large [class^="icon-"] {
+    margin-top: 1px;
+  }
+  
+  // Small
+  &.small {
+    padding: 5px 9px;
+    font-size: @baseFontSize - 2px;
+    line-height: @baseLineHeight - 2px;
+  }
+  &.small [class^="icon-"] {
+    margin-top: -1px;
+  }
+  
+  // Mini
+  &.mini {
+    padding: 2px 6px;
+    font-size: @baseFontSize - 2px;
+    line-height: @baseLineHeight - 4px;
+  }
+}
+  
+// Cross-browser Jank
+// --------------------------------------------------
+
+button,
+input[type="submit"] {
+
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // IE7 has some default padding on button controls
+  *padding-top: 2px;
+  *padding-bottom: 2px;
+  &.large {
+    *padding-top: 7px;
+    *padding-bottom: 7px;
+  }
+  &.small {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  }
+  &.mini {
+    *padding-top: 1px;
+    *padding-bottom: 1px;
+  }
+}

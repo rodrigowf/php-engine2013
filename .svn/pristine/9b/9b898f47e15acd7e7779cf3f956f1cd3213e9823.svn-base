@@ -1,0 +1,67 @@
+<?php
+
+class Usuarios extends AppModel
+{
+	var $primaryKey = 'id';
+	
+	var $fields = array
+	(
+		'nome'		=> array( 'text', 'maxlenght_255', 'nn' ),
+		'email'		=> array( 'email', 'nn', 'maxlenght_255' ),
+		'telefone'	=> array( 'tel', 'nn' ),
+		'login'		=> array( 'text', 'nn', 'maxlenght_255', 'unique' ),
+		'foto'		=> array( 'file', 'maxsize_1024' ),
+
+		'senha'			=> array( 'password', 'nn', 'alphanum', 'maxlenght_18', 'minlenght_4' ),
+		'user_level'	=> array( 'user_level', 'nn', 'alphanum', 'maxlenght_18', 'minlenght_4' ),
+		'id'			=> array( 'pk', 'num', 'ai', 'nn' ),
+		'nome'			=> array( 'text', 'maxlenght_255', 'nn' ),
+		'curso'			=> array( 'text', 'maxlenght_255', 'nn' ),
+		'dre'			=> array( 'dre', 'maxlenght_255', 'nn' ),
+		'ingresso'		=> array( 'datetime', 'nn' ),
+		'facebook'		=> array( 'text', 'maxlenght_255', 'nn' ),
+		'email_poli'	=> array( 'email', 'nn', 'maxlenght_255' ),
+		'email_pessoal'	=> array( 'email', 'nn', 'maxlenght_255' ),
+		'telefone_br'	=> array( 'tel', 'nn' ),
+
+		'telefone_ext' 		=> array( 'tel' ),
+		'contato_br'		=> array( 'text', 'maxlenght_255' ),
+		'tel_contato_br'	=> array( 'tel' ),
+		'partida'			=> array( 'datetime'),
+		'retorno'			=> array( 'datetime' ),
+
+		'modalidade'
+
+		'destino_escola'	=> array( 'text', 'maxlenght_255', 'nn' ),
+
+		'realtorio_estagio'		=> array( 'file', 'maxsize_1024' ),
+		'realtorio_intercambio'	=> array( 'file', 'maxsize_1024' ),
+	);
+
+
+model='programas' name='nome'
+
+model='bolsas' name='nome'
+
+model='destino' name='universidade'
+model='destino' name='pais'
+model='destino' name='cidade'
+
+
+
+{input name='facebook' label='Disciplinas cursadas' class="{$inputsSize}"}
+{input name='facebook' label='Equivalências solicitadas' class="{$inputsSize}"}
+{input name='facebook' label='Estágio feito no exterior' class="{$inputsSize}"}
+
+{input type='file' name='facebook' label='Relatório de intercâmbio' class="{$inputsSize}"}
+{input type='file' name='facebook' label='Relatório de estágio' class="{$inputsSize}"}
+
+
+	$hasMany['livros'] = 'idUsuario'
+	$hasOne[] = array(
+		'programas' => 'usuario_id',
+		'bolsas',
+		'destinos',
+	);
+}
+	

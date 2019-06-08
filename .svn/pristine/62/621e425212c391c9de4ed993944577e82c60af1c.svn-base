@@ -1,0 +1,4 @@
+paths.root        = paths.root;
+paths.libs        = paths.root + 'libs/';
+paths.plugins     = paths.root + 'plugins/';
+paths.polyfills   = paths.root + 'polyfills/';

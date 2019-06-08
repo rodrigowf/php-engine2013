@@ -1,0 +1,127 @@
+<?php
+/**
+* @name Validacao: uma classe para  validar formularios
+* @author Felipe de Souza
+* @version 1.2
+* @property mixed results
+*/
+
+/**
+ * rules
+ * not_empty
+ * is_numeric
+ * is_email
+ * is_checked
+ */
+
+class Validation {
+
+   	/** 
+	* Carrega as regras
+	*/
+    private $_rules;
+
+    /**
+     * Retorna formulario validado
+     *
+     * @var boolean
+     */
+    private $validate = true;
+
+    /**
+     * Carrega as msgs de erro
+     *
+     * @var array
+     */
+    private $error_msgs = array();
+
+    public $errorArray;
+
+    public function setRules($rules) {
+        $this->_rules = $rules;
+    }
+    
+    /**
+    * Metodo principal que e o trigger da validacaoo
+    *
+    * @return boolean
+    */
+    public function validate($a){
+
+        foreach ($a as $key => $val) {
+            if ($skey = $this->hasRule($key)) {
+                $rule = $this->_rules[$skey];
+
+                if (method_exists($this, $rule['rule'])) {
+                    if (!call_user_func(array($this, $rule['rule']), $val)) {
+                        $this->validate = false;
+                        $array[$skey] = $rule['msg'];
+                        $this->error_msgs;
+                    }
+                } else {
+                    $this->error_msgs[] = "Metodo insuportado {$rule['rule']}";
+                }
+            }
+        }
+        $this->errorArray = $array;
+        return $this->validate;
+    }
+    
+    /*
+    * Checa se a regra existe
+    *
+    * @return boolean
+    */
+    private function hasRule($key) {
+        if (!is_array($this->_rules) || count($this->_rules) < 1) { return false; }
+
+        foreach ($this->_rules as $k => $rule) {
+			$z = "/($k)/i";
+			if (preg_match($z, $key)) { return $k; }
+        }
+
+        return false;
+    }
+
+    public function getErrorMsg() {
+        return $this->error_msgs;
+    }
+
+    /**
+     * V� se o valor esta vazio.
+     *
+     * @return boolean
+     */
+    private function not_empty($field = null) 
+    {
+        return ( isset($field) && !empty($field) && ( strlen(trim($field)) > 0 ) );
+    }
+    
+    /**
+     * V� se � numerico
+     *
+     * @return boolean
+     */
+    private function is_numeric($field = null) {
+        return (is_numeric($field));
+    }
+    
+    /**
+     * V� se � email
+     *
+     * @return boolean
+     */
+    private function is_email($field) {
+        return preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", $field);
+    }
+    
+    /**
+     * Para ver se o valor esta 'checked'
+     *
+     * @return boolean
+     */
+    private function is_checked($field = null) {
+        return (!is_null($field));
+    }
+}
+?>

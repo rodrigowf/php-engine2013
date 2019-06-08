@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br" class=" webkit chrome win js"><head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		
+		<link href="/jewc2012/css/images/favicon.ico" type="image/x-icon" rel="icon">
+		<link href="/jewc2012/css/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+
+		<link rel="stylesheet" type="text/css" href="/jewc2012/css/reset.css">
+		<!--[if lt IE 8]>
+		  <link rel="stylesheet" href="/jewc2012/css/ie.css" type="text/css" media="screen, projection" />
+		<![endif]-->
+
+        <script src="/jewc2012/js/libs/svgweb/svg.js" data-path="/jewc2012/js/libs/svgweb/"></script>
+
+        <link rel="stylesheet" type="text/css" href="/jewc2012/inscricao/css_min.css">
+
+		<title>JEWC 2012</title>
+
+</head>
+
+	<body>
+	    <div class="svgBackground">
+
+	<!--[if !IE]>-->
+		<object data="/jewc2012/css/images/background.svg" type="image/svg+xml" class="svgBackground" width="100%" height="100%" style="overflow-x: hidden; overflow-y: hidden; visibility: visible; " id="__svg__random___0__object"> <!--<![endif]-->
+	<!--[if lt IE 9]>
+		<object src='/jewc2012/css/images/background.svg' classid='image/svg+xml'  class='svgBackground' width='100%' height='100%' > <![endif]-->
+	<!--[if gte IE 9]>
+		<object data='/jewc2012/css/images/background.svg' type='image/svg+xml'  class='svgBackground' width='100%' height='100%' > <![endif]-->
+		</object>
+
+	    </div>
+
+		<div class="container">
+
+
+
+
+    <div id="layoutUp">
+
+        <div class="topo">
+            <div class="titulo">
+                <a class="logo" href="/jewc2012/"><span>JEWC 2012</span></a>
+                <div class="subtitulo">
+                    <p class="big">Junior Enterprise World Conference</p>
+                    <p>Paraty, Rio de Janeiro - Brasil</p>
+                    <p>6 a 10 de Agosto, 2012</p>
+                </div>
+            </div>
+            <div class="redesSociais">
+                    <h4>ESPALHE POR AÍ</h4>
+                    <a class="facebook" href="http://www.facebook.com/pages/JEWC-2012/249307708415706" target="_blank"><span>Facebook</span></a>
+                    <a class="twitter" href="http://twitter.com/jewc2012" target="_blank"><span>Twitter</span></a>
+            </div>
+
+        </div>
+
+        <div class="barraMenu">
+            <div class="menu">
+                <ul>
+                    <li class="home"><a href="/jewc2012/">Home</a></li>
+                    <li class="inscricao"><a href="/jewc2012/usuarios/inscricao/">INSCRIÇÕES</a></li>
+                    <li class="conferencia dropdown"><a href="/jewc2012/conference/">A CONFERÊNCIA</a>
+                        <ul class="dropdown" style="display: none; ">
+                            <li class="jewc2012"><a href="/jewc2012/conference/">JEWC 2012</a></li>
+                            <li class="speakers"><a href="/jewc2012/speakers/">Palestrantes</a></li>
+                            <li class="submission"><a href="/jewc2012/cases/submission/">Envio de Cases</a></li>
+                            <li class="schedule"><a href="/jewc2012/schedule/">Programação</a></li>
+                            <li class="city"><a href="/jewc2012/city/">A Cidade</a></li>
+                        </ul>
+                    </li>
+                    <li class="noticias"><a href="/jewc2012/noticias/">Blog</a></li>
+                    <li class="fale"><a href="/jewc2012/fale_conosco/">Fale Conosco</a></li>
+                    <li class="login"><a href="/jewc2012/usuarios/login/">Login</a></li>
+                </ul>
+            </div>
+            <div class="idioma">
+                <a href="/jewc2012/changeLanguage/en" class="locale en">English</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="bodyContent">
+        
+    <h1 id="inscricoes_h1">INSCRIÇÕES</h1>
+
+    <div if="form_principal">
+
+    <form id="cadastro" method="post" action="/jewc2012/usuarios/inscricao/i" onsubmit="return validar_dados();">
+        <input type="hidden" name="data[usuarios][id]" value="DEFAULT">
+        <input type="hidden" name="data[usuarios][registro]" value="NOW()">
+        <input type="hidden" name="data[usuarios][nivel]" value="usuario">
+        <fieldset id="userInfo">
+            <legend>Quem é você?</legend>
+             <div class="row">
+                
+<label id="primeiro_nome_label" for="primeiro_nome">Primeiro Nome</label>
+<input name="data[usuarios][primeiro_nome]" id="primeiro_nome" value="" type="text">
+                <span class="erro"></span>
+            </div>
+            <div class="row">
+                
+<label id="sobrenome_label" for="sobrenome">Sobrenome</label>
+<input name="data[usuarios][sobrenome]" id="sobrenome" value="" type="text">
+                <span class="erro"></span>
+            </div>
+            <div class="row">
+                
+<label id="login_label" for="login">Login</label>
+<input name="data[usuarios][login]" id="login" value="" type="text">
+                <span class="erro"></span>
+            </div>
+            <div class="row">
+                
+<label id="senha_label" for="senha">Senha</label>
+<input type="password" name="data[usuarios][password]" id="senha">
+                <span class="erro"></span>
+            </div>
+            <div class="row">
+                
+<label id="password_check_label" for="password_check">Redigite a senha</label>
+<input type="password" class="passwordCheck" name="data[usuarios][password_check]" id="password_check">
+                <span class="erro"></span> <br>
+            </div>
+            <div class="row">
+                
+<label id="email_label" for="email">E-mail</label>
+<input name="data[usuarios][email]" id="email" value="" type="text">
+                <span class="erro"></span>
+            </div>
+            <div class="row">
+                
+<label id="cpf_passaporte_label" for="cpf_passaporte">CPF/Passaporte</label>
+<input name="data[usuarios][cpf_passaporte]" id="cpf_passaporte" value="" type="text">
+                <span class="erro"></span>
+            </div>
+            <div class="row">
+                
+<label id="niver_dia_label" for="niver_dia">Aniversário (dd/mm/aaaa)</label>
+<input class="data" name="data[usuarios][niver_dia]" id="niver_dia" type="text">
+                <span class="barra">/</span> 
+                <input class="data" name="data[usuarios][niver_mes]" id="niver_mes" type="text">  
+                <span class="barra">/</span>
+                <input class="data ano" name="data[usuarios][niver_ano]" id="niver_ano" type="text">     
+                 <span class="erro"></span>
+            </div>
+            <div class="row">
+                
+<label id="idioma_label" for="idioma">Idiomas</label>
+<input class="inputLanguage" name="data[usuarios][idioma]" id="idioma" value="" type="text">
+                <span class="erro"></span>
+            </div>
+            <div class="row">
+                
+<label id="sexoM_label" for="sexoM">Sexo</label>
+<input type="radio" class="inputSex" name="data[usuarios][sexo]" id="sexoM" checked="checked" value="M"><label for="sexo" class="radio">M</label>
+                <input type="radio" class="inputSex" name="data[usuarios][sexo]" id="sexoF" checked="checked" value="F"><label for="sexo" class="radio">F</label>
+            </div>
+            <div class="row">
+                
+<label id="locSim_label" for="locSim">Necessidades especiais de locomoção?</label>
+<input type="radio" class="inputLoc" name="data[usuarios][locomocao]" id="locSim" value="1"><label for="locSim" class="radio">Sim</label>
+                <input type="radio" class="inputLoc" name="data[usuarios][locomocao]" id="locNao" value="0" checked="checked"><label for="locNao" class="radio">Não</label>
+            </div>
+            <div class="row">
+                <label for="tamanho">Tamanho da camiseta</label>
+                <select id="tamanho" class="tamanho" name="data[usuarios][tamanho]">
+                    <option value="" selected="selected" disabled="disabled">Escolha Um</option>
+                    <option value="S">P</option>
+                    <option value="M">M</option>
+                    <option value="L">G</option>
+                    <option value="XL">GG</option>
+                </select>
+                <span class="erro"></span>
+            </div>
+
+        </fieldset>
+        
+        <fieldset id="userPlace">
+            <legend>De onde é?</legend>
+
+            <div class="row">                 <label for="pais">País</label>
+                                        <select class="selectGrande" id="pais" name="data[usuarios][pais]">
+                    <option value="" selected="selected" disabled="disabled">Escolha Um</option>
+                    <option value="África do Sul">África do Sul</option>
+                    <option value="Albânia">Albânia</option>
+                    <option value="Alemanha">Alemanha</option>
+                    <option value="Andorra">Andorra</option>
+                    <option value="Angola">Angola</option>
+                    <option value="Anguilla">Anguilla</option>
+                    <option value="Antigua">Antigua</option>
+                    <option value="Arábia Saudita">Arábia Saudita</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Armênia">Armênia</option>
+                    <option value="Aruba">Aruba</option>
+                    <option value="Austrália">Austrália</option>
+                    <option value="Áustria">Áustria</option>
+                    <option value="Azerbaijão">Azerbaijão</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Bahrein">Bahrein</option>
+                    <option value="Bangladesh">Bangladesh</option>
+                    <option value="Barbados">Barbados</option>
+                    <option value="Bélgica">Bélgica</option>
+                    <option value="Benin">Benin</option>
+                    <option value="Bermudas">Bermudas</option>
+                    <option value="Botsuana">Botsuana</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Brunei">Brunei</option>
+                    <option value="Bulgária">Bulgária</option>
+                    <option value="Burkina Fasso">Burkina Fasso</option>
+                    <option value="Butão">Butão</option>
+                    <option value="Cabo Verde">Cabo Verde</option>
+                    <option value="Camarões">Camarões</option>
+                    <option value="Camboja">Camboja</option>
+                    <option value="Canadá">Canadá</option>
+                    <option value="Cazaquistão">Cazaquistão</option>
+                    <option value="Chade">Chade</option>
+                    <option value="Chile">Chile</option>
+                    <option value="China">China</option>
+                    <option value="Cidade do Vaticano">Cidade do Vaticano</option>
+                    <option value="Colômbia">Colômbia</option>
+                    <option value="Congo">Congo</option>
+                    <option value="Coréia do Sul">Coréia do Sul</option>
+                    <option value="Costa do Marfim">Costa do Marfim</option>
+                    <option value="Costa Rica">Costa Rica</option>
+                    <option value="Croácia">Croácia</option>
+                    <option value="Dinamarca">Dinamarca</option>
+                    <option value="Djibuti">Djibuti</option>
+                    <option value="Dominica">Dominica</option>
+                    <option value="EUA">EUA</option>
+                    <option value="Egito">Egito</option>
+                    <option value="El Salvador">El Salvador</option>
+                    <option value="Emirados Árabes">Emirados Árabes</option>
+                    <option value="Equador">Equador</option>
+                    <option value="Eritréia">Eritréia</option>
+                    <option value="Escócia">Escócia</option>
+                    <option value="Eslováquia">Eslováquia</option>
+                    <option value="Eslovênia">Eslovênia</option>
+                    <option value="Espanha">Espanha</option>
+                    <option value="Estônia">Estônia</option>
+                    <option value="Etiópia">Etiópia</option>
+                    <option value="Fiji">Fiji</option>
+                    <option value="Filipinas">Filipinas</option>
+                    <option value="Finlândia">Finlândia</option>
+                    <option value="França">França</option>
+                    <option value="Gabão">Gabão</option>
+                    <option value="Gâmbia">Gâmbia</option>
+                    <option value="Gana">Gana</option>
+                    <option value="Geórgia">Geórgia</option>
+                    <option value="Gibraltar">Gibraltar</option>
+                    <option value="Granada">Granada</option>
+                    <option value="Grécia">Grécia</option>
+                    <option value="Guadalupe">Guadalupe</option>
+                    <option value="Guam">Guam</option>
+                    <option value="Guatemala">Guatemala</option>
+                    <option value="Guiana">Guiana</option>
+                    <option value="Guiana Francesa">Guiana Francesa</option>
+                    <option value="Guiné-bissau">Guiné-bissau</option>
+                    <option value="Haiti">Haiti</option>
+                    <option value="Holanda">Holanda</option>
+                    <option value="Honduras">Honduras</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="Hungria">Hungria</option>
+                    <option value="Iêmen">Iêmen</option>
+                    <option value="Ilhas Cayman">Ilhas Cayman</option>
+                    <option value="Ilhas Cook">Ilhas Cook</option>
+                    <option value="Ilhas Curaçao">Ilhas Curaçao</option>
+                    <option value="Ilhas Marshall">Ilhas Marshall</option>
+                    <option value="Ilhas Turks &amp; Caicos">Ilhas Turks &amp; Caicos</option>
+                    <option value="Ilhas Virgens (brit.)">Ilhas Virgens (brit.)</option>
+                    <option value="Ilhas Virgens(amer.)">Ilhas Virgens(amer.)</option>
+                    <option value="Ilhas Wallis e Futuna">Ilhas Wallis e Futuna</option>
+                    <option value="Índia">Índia</option>
+                    <option value="Indonésia">Indonésia</option>
+                    <option value="Inglaterra">Inglaterra</option>
+                    <option value="Irlanda">Irlanda</option>
+                    <option value="Islândia">Islândia</option>
+                    <option value="Israel">Israel</option>
+                    <option value="Itália">Itália</option>
+                    <option value="Jamaica">Jamaica</option>
+                    <option value="Japão">Japão</option>
+                    <option value="Jordânia">Jordânia</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Líbano">Líbano</option>
+                    <option value="Liechtenstein">Liechtenstein</option>
+                    <option value="Lituânia">Lituânia</option>
+                    <option value="Luxemburgo">Luxemburgo</option>
+                    <option value="Macau">Macau</option>
+                    <option value="Macedônia">Macedônia</option>
+                    <option value="Madagascar">Madagascar</option>
+                    <option value="Malásia">Malásia</option>
+                    <option value="Malaui">Malaui</option>
+                    <option value="Mali">Mali</option>
+                    <option value="Malta">Malta</option>
+                    <option value="Marrocos">Marrocos</option>
+                    <option value="Martinica">Martinica</option>
+                    <option value="Mauritânia">Mauritânia</option>
+                    <option value="Mauritius">Mauritius</option>
+                    <option value="México">México</option>
+                    <option value="Moldova">Moldova</option>
+                    <option value="Mônaco">Mônaco</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Nepal">Nepal</option>
+                    <option value="Nicarágua">Nicarágua</option>
+                    <option value="Niger">Niger</option>
+                    <option value="Nigéria">Nigéria</option>
+                    <option value="Noruega">Noruega</option>
+                    <option value="Nova Caledônia">Nova Caledônia</option>
+                    <option value="Nova Zelândia">Nova Zelândia</option>
+                    <option value="Omã">Omã</option>
+                    <option value="Palau">Palau</option>
+                    <option value="Panamá">Panamá</option>
+                    <option value="Papua-nova Guiné">Papua-nova Guiné</option>
+                    <option value="Paquistão">Paquistão</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Polinésia Francesa">Polinésia Francesa</option>
+                    <option value="Polônia">Polônia</option>
+                    <option value="Porto Rico">Porto Rico</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Quênia">Quênia</option>
+                    <option value="Rep. Dominicana">Rep. Dominicana</option>
+                    <option value="Rep. Tcheca">Rep. Tcheca</option>
+                    <option value="Reunion">Reunion</option>
+                    <option value="Romênia">Romênia</option>
+                    <option value="Ruanda">Ruanda</option>
+                    <option value="Rússia">Rússia</option>
+                    <option value="Saipan">Saipan</option>
+                    <option value="Samoa Americana">Samoa Americana</option>
+                    <option value="Senegal">Senegal</option>
+                    <option value="Serra Leone">Serra Leone</option>
+                    <option value="Seychelles">Seychelles</option>
+                    <option value="Singapura">Singapura</option>
+                    <option value="Síria">Síria</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="St. Kitts &amp; Nevis">St. Kitts &amp; Nevis</option>
+                    <option value="St. Lúcia">St. Lúcia</option>
+                    <option value="St. Vincent">St. Vincent</option>
+                    <option value="Sudão">Sudão</option>
+                    <option value="Suécia">Suécia</option>
+                    <option value="Suiça">Suiça</option>
+                    <option value="Suriname">Suriname</option>
+                    <option value="Tailândia">Tailândia</option>
+                    <option value="Taiwan">Taiwan</option>
+                    <option value="Tanzânia">Tanzânia</option>
+                    <option value="Togo">Togo</option>
+                    <option value="Trinidad &amp; Tobago">Trinidad &amp; Tobago</option>
+                    <option value="Tunísia">Tunísia</option>
+                    <option value="Turquia">Turquia</option>
+                    <option value="Ucrânia">Ucrânia</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Uruguai">Uruguai</option>
+                    <option value="Venezuela">Venezuela</option>
+                    <option value="Vietnã">Vietnã</option>
+                    <option value="Zaire">Zaire</option>
+                    <option value="Zâmbia">Zâmbia</option>
+                    <option value="Zimbábue">Zimbábue</option>
+                    </select>
+
+
+                                   <span class="erro"></span>
+ </div>
+            <div class="row" id="estado">
+                
+<label id="estado_label" for="estado">Estado</label>
+<input class="estado" id="estado_input" name="data[usuarios][estado]" value="" type="text" />
+                <span id="erro_estado" class="erro"></span>
+            </div>
+            <div class="row" id="cidade">
+                
+<label id="cidade_label" for="cidade">Cidade</label>
+<input class="city" name="data[usuarios][cidade]" id="cidade_input" value="" type="text" />
+                <span id="erro_cidade" class="erro"></span>
+            </div>
+            <div class="row" id="telefone">
+                
+<label id="telefone_label" for="telefone">Telefone (apenas números)</label>
+<input name="data[usuarios][telefone]" id="telefone_input" value="" type="text">
+                <span id="erro_telefone" class="erro"></span>
+            </div>
+
+        </fieldset>
+        
+        <fieldset id="userWork">
+            <legend>Onde Trabalha?</legend>
+            
+            <div class="row" id="nome_ej">
+                 
+<label id="nome_ej_label" for="nome_ej">Nome da EJ</label>
+<input name="data[usuarios][nome_ej]" id="nome_ej_input" value="" type="text">
+                 <span class="erro"></span>
+            </div>
+
+            <div class="row">
+            <label for="confederacao">Federação</label>
+            <select class="selectGrande" id="confederacao" name="data[usuarios][confederacao]">
+                <option selected="selected" value="" disabled="disabled">Escolha Um</option>
+                <option value="JADE">JADE</option>
+                <option value="Brasil Junior">Brasil Júnior</option>
+                <option value="Nao Confederada JADE">EJ Não Confederada JADE</option>
+                <option value="Nao Confederada BJ">EJ Não Confederada Brasil Júnior</option>
+                <option value="Pos Junior JADE">Pós-Júnior JADE</option>
+                <option value="Pos Junior BJ">Pós-Júnior Brasil Júnior</option>
+            </select><span class="erro"></span>
+            </div>
+            <div class="row" id="federacao_ej" style="display: none; ">
+
+                <label for="federacao" data-tipo="0" style="display: none; ">Federação</label>
+                <label for="federacao" data-tipo="1" style="display: none; ">Federation</label>
+
+                <select class="selectGrande" data-tipo="0" id="federacao" name="data[usuarios][federacao_ej]" style="display: none; ">
+                   <option selected="selected" value="" disabled="disabled">Escolha Um</option>
+                    <option value="Concentro">Concentro</option>
+                    <option value="FEJEA">FEJEA</option>
+                    <option value="FEJECE">FEJECE</option>
+                    <option value="FEJEMG">FEJEMG</option>
+                    <option value="FEJEPAR">FEJEPAR</option>
+                    <option value="FEJEPE">FEJEPE</option>
+                    <option value="FEJERS">FEJERS</option>
+                    <option value="FEJESC">FEJESC</option>
+                    <option value="FEJESP">FEJESP</option>
+                    <option value="JuniorES">JuniorES</option>
+                    <option value="PB Júnior">PB Júnior</option>
+                    <option value="RioJunior">RioJunior</option>
+                    <option value="RN Júnior">RN Júnior</option>
+                    <option value="UNIJr-BA">UNIJr-BA</option>
+                    <option value="other_outros_ej">Outra</option>
+                </select>
+
+                <select class="selectGrande" data-tipo="1" id="federacao" name="data[usuarios][federacao_ej]" style="display: none; ">
+                    <option selected="selected" value="" disabled="disabled">Escolha Um</option>
+                    <option value="Bundesverband Deutscher Studentischer Unternehmensberatungen">Bundesverband Deutscher Studentischer Unternehmensberatungen</option>
+                    <option value="Confederación Española de Junior Empresas">Confederación Española de Junior Empresas</option>
+                    <option value="Confédération Nationale des Junior-Entreprises">Confédération Nationale des Junior-Entreprises</option>
+                    <option value="JADE Austria">JADE Austria</option>
+                    <option value="JADE Belgium">JADE Belgium</option>
+                    <option value="JADE Hellas">JADE Hellas</option>
+                    <option value="JADE Italy">JADE Italy</option>
+                    <option value="JADE Poland">JADE Poland</option>
+                    <option value="JADE Portugal">JADE Portugal</option>
+                    <option value="JADE Romania">JADE Romania</option>
+                    <option value="JADE Switzerland">JADE Switzerland</option>
+                    <option value="JADE UK">JADE UK</option>
+                    <option value="UNIGroup - Kosovo">UNIGroup - Kosovo</option>
+                    <option value="UNIPartners - The Nederlands">UNIPartners - The Nederlands</option>
+                    <option value="UniQue">UniQue</option>
+                    <option value="other_outros_ej">Outros</option>
+                 </select>       
+                 <span id="erro_federacao" class="erro"></span>
+                 </div>
+            <div class="row" id="outros_ej">
+                
+<label id="outros_ej_label" for="outros_ej">Outros</label>
+<input name="data[usuarios][outros_ej]" id="outros_ej_input" value="" type="text">
+            </div>
+            <div class="row" id="cargo">
+                
+<label id="cargo_label" for="cargo">Cargo</label>
+            </div>
+            <div class="row" id="instituicao">
+                
+<label id="instituicao_label" for="instituicao">Onde você estuda?</label>
+<input name="data[usuarios][instituicao]" id="instituicao_input" value="" type="text">
+                <span class="erro"></span>
+            </div>
+        </fieldset>
+
+        <fieldset id="userAgreement">
+            <legend>Termo de Compromisso</legend>
+        </fieldset>
+    <br>
+            <textarea rows="30" cols="90" readonly="readonly" class="termo scapeTranslation">                                    Termo de Compromisso JEWC 2012
+
+Eu assumo o compromisso de, durante as atividades intelectuais, integração,
+hospedagem e demais, seguir as cláusulas elaboradas e apresentadas abaixo pela
+organização do V Congresso Mundial de Empresas Juniores, JEWC 2012, mantendo a
+ordem e a organização durante o período de realização do mesmo.
+
+A confirmação deste termo por parte do inscrito implicará em concordância com os
+termos aqui expostos e compromisso com o desenvolvimento do mesmo.
+
+
+•Caso tais normas não sejam cumpridas a organização poderá entrar em contato com
+a Empresa Júnior responsável para que sejam tomadas as medidas cabíveis;
+
+•Ocorrências, consideradas pela organização, como gravíssimas acarretarão em
+desvinculamento imediato do evento, sem necessidade de advertências;
+
+•Todas as ocorrências causadas durante o período do JEWC 2012 serão avaliadas
+pela organização do evento e tomadas as medidas mais sensatas para minimizar os
+danos e restaurar a ordem.
+
+Responsabilidades dos inscritos no Evento:
+
+•Preservar a ordem e a integridade das atividades intelectuais e de integração do
+JEWC 2012, ausentando-se definitivamente das atividades do JEWC 2012 em caso de
+desrespeito as restrições impostas a cada momento específico;
+
+•Prezar pela integridade física dos demais congressistas, dos palestrantes,
+patrocinadores, staffs e da organização assim como dos demais funcionários locais;
+
+•Danos às instalações dos hotéis, pousadas, auditórios, infraestrutura das palestras,
+stands, espaço de festas, ônibus ou demais equipamentos, provocados pelo
+congressista são de sua inteira responsabilidade, cabendo à indenização e/ou multa
+devidas;
+
+•Não consumir, dentro dos estabelecimentos e estruturas disponibilizados para
+a realização do JEWC 2012, quaisquer bebidas alcoólicas (exceto nas festas e as
+comercializadas pelo próprio evento), caso contrário estas serão confiscadas pela
+organização;
+
+•É expressamente proibido o uso e/ou posse de substâncias ilícitas. O
+descumprimento destas cláusulas obrigará o congressista a se ausentar
+definitivamente das atividades do JEWC 2012. Em caso de confirmação o
+congressista poderá responder criminalmente;
+
+•Apresentar-se aos locais em que ocorrerão as programações científicas com
+antecedência. Caso o congressista se atrase por mais de 10 (dez) minutos, sua
+entrada não será permitida;
+
+•Atentar-se ao pacote definido no momento da inscrição do JEWC 2012, ciente de
+que a organização não realizará nenhuma modificação do mesmo tanto no momento
+do check-in quanto durante o período que anteceda o evento;
+
+•Comparecer ao local de realização do evento na data e horário especificados na
+programação para realização do check-in e aquisição dos materiais disponibilizados
+para o evento;
+
+•O participante que por quaisquer motivos perceber a impossibilidade da
+participação no evento não terá direito de reembolso da quantia quitada até o
+instante. O presente terá a alternativa de transferi-la a outro interessado que,
+ao confirmar o pagamento dos boletos relativos, deverá entrar em contato com
+a organização para adequação das informações pessoais necessárias para o
+cadastramento e participação nas atividades do JEWC 2012;
+
+•Informar à organização do evento com o máximo de antecedência modificações em
+inscrições – transferências a outro participante etc – adequando-se as exigências
+impostas pela mesma;
+
+•O não pagamento de uma ou mais parcelas impossibilitará o inscrito de participar do
+evento, salvo de optar pela alternativa exposta no item anterior;
+
+•Para congressistas hospedados em hotéis e pousadas, deve-se prezar pela segurança
+interna dos apartamentos, mantendo-os trancados durante a ausência de hóspedes;
+
+•A organização do evento não se responsabilizará por possíveis furtos, extravios e
+outros danos aos seus pertences. É de responsabilidade do próprio congressista
+prezar pela segurança de seus bens;
+
+•Os congressistas só poderão ficar nos hotéis/pousadas em que estiverem inscritos.
+
+
+Não será permitido que os participantes entrem em outros hotéis/pousadas do
+evento;
+
+•Caso seja oferecido transporte entre as acomodações dos participantes e o local
+do evento, os congressistas deverão respeitar os horários pré-estabelecidos pela
+organização. Se alguém perder o transporte, deverá arcar com possíveis custos;
+
+•Os pacotes turísticos não são de responsabilidade da organização do evento, assim
+como quaisquer ocorrências durante essas atividades;
+
+•Demais transtornos transcorridos durante o período do JEWC 2012 serão avaliados
+pela Coordenação e tomadas as medidas apropriadas para minimizar os danos e a
+ordem do mesmo.                            </textarea>
+            <div class="row" id="agreeduihui">
+                 <input type="checkbox" name="data[usuarios][agree]" id="agree">
+                <label for="agree">Concordo com os termos e condições acima</label>
+                
+                
+                <button id="done" type="button">Pronto!</button>
+                <span class="termo erro"></span>
+            </div>
+    <br><br>
+    </form>
+
+    </div>
+
+    <div id="confirmacao_inscricao">
+
+
+
+
+
+       </div>
+
+    </div>
+
+    <div id="rodape">
+        <div id="organizacao">
+    <h4>REALIZAÇÃO</h4>
+            <a id="jade" href="http://www.jadenet.org/" target="_blank"><span>Jade</span></a>
+            <a id="brasiljunior" href="http://www.brasiljunior.com.br" target="_blank"><span>Brasil Júnior</span></a>
+        </div>
+
+        <div id="apoio">
+    <h4>APOIO</h4>
+            <a id="fejemg" href="http://www.fejemg.org.br" target="_blank"><span>FEJEMG</span></a>
+            <a id="riojunior" href="http://www.riojunior.com.br" target="_blank"><span>RioJunior</span></a>
+        </div>
+    </div>
+
+
+
+    </div>
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/jewc2012/inscricao/js_min.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/ga.js"></script>
+    <script type="text/javascript">
+
+    </script>
+
+
+
+	</body>
+</html>

@@ -1,0 +1,70 @@
+@import './import.less';
+@import './padroes.less';
+//@import './typography.css';
+
+// Valores da grid
+@column-width: 30px;
+@gutter-width: 10px;
+@columns: 24px;
+
+div.container {
+  .grid_container();
+  background-color: #ffffff;
+  // height:100%;
+  // position:absolute;
+  // overflow-y:scroll;
+  // left:50%;
+  // margin-left: -510px;
+  padding-top:30px;
+  padding-bottom: 50px;
+}
+
+div#layoutUp {
+  .row(@columns);
+  
+  h1#tituloAdm {
+    .icon(url('./images/adm_icone_gear.png'), 80px);
+    padding-top:17px;
+  
+    .cols(17);
+  }
+  
+  .logo {
+    background-image: url('./images/logo.png');
+    &, span {
+      .cols(5);
+      height: 90px;
+      font-size: 0px;
+    }
+  }
+}
+div#menuLeft {
+  .row(4);
+  margin-top:10px;
+  border-right:2px solid #dadada;
+
+  a {
+    .cols(4);
+    padding-left: 6px;
+    font-family: @fontesTitulos;
+    font-size:20px;
+    text-decoration:none;
+    
+    //border-bottom: 1px solid #dadada;
+    
+    &:hover {
+      background-color: #eeeeee;
+    }
+  }  
+}
+
+a.logoff {
+  .icon(url('./images/user_logoff.png'), 40px, 5px);
+  padding-left:30px!important;
+  width: (@column-width+@gutter-width)*4 - @gutter-width/2 - 30px !important;
+}
+
+div#bodyContent {
+  padding: 10px 0px 30px 25px;
+  .b_cols(25, 20);
+}

@@ -1,0 +1,35 @@
+<?php
+class DataStream 
+{
+
+	public $data = NULL;
+	
+	public function __construct()
+	{
+		//Trata os dados que vêm do post
+		$this->data = isset($_POST['data']) ? $_POST['data'] : null;
+	}
+
+	public function convertToModel($dataArr, &$model)
+	{
+		foreach ( $dataArr as $index => $value )
+		{
+		//	$model =
+			if ( is_array($value) )
+			{
+				$this->convertToModel();
+			}
+		}
+	}
+
+	public function fromViewToController()
+	{
+
+	}
+	
+	public function fromControllerToView()
+	{
+		
+	}
+	
+}
